@@ -9,10 +9,12 @@ export function Section({
 }: SectionProps) {
   return (
     <>
-      <section id={id} className={className}>
-        {title && <h2>{title}</h2>}
-        {subtitle && <p>{subtitle}</p>}
-        {children}
+      <section id={id} className={`w-full px-6 py-16 sm:py-24 ${className}`}>
+        <div className="mx-auto max-w-5xl">
+          {title && <h2>{title}</h2>}
+          {subtitle && <p>{subtitle}</p>}
+          {children}
+        </div>
       </section>
     </>
   );
