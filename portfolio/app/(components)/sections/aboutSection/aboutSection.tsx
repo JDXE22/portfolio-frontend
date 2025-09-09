@@ -8,10 +8,7 @@ export default async function AboutSection() {
     <Section id="about" title="About-me" subtitle="short-introduction">
       <div className="grid gap-6 sm:grid-cols-2 md: grid-cols-3">
         {aboutInfo.map((info) => (
-          <div
-            key={info.headline}
-            className="rounded-lg border border-gray-200 bg-white p-6 shadow-md"
-          >
+          <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-md">
             <h3 className="mb-2 text-xl font-semibold text-gray-800">
               {info.headline}
             </h3>
