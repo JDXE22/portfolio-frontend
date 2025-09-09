@@ -1,4 +1,4 @@
-import { SectionProps } from "../../../types/types.ts";
+import { SectionProps } from "@/types/types";
 
 export function Section({
   id,
