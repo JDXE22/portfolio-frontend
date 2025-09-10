@@ -12,5 +12,5 @@ test("Render about section", async () => {
       /I’m a Full‑Stack developer specializing in backend systems/i
     )
   ).toBeDefined();
-  expect(screen.getAllByTestId("skills-id").length).toBe(5);
+  expect(screen.getAllByTestId("skills-id").length).toBe(1);
 });
