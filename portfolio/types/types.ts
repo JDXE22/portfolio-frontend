@@ -36,3 +36,19 @@ export interface AboutInfo {
   certifications?: { title: string; issuer: string; date: string }[];
   socialLinks: SocialLink[];
 }
+
+export type LiveStatus = "Live" | "Maintenance" | "Planned" | "Development";
+export type DifficultyLevel = "Easy" | "Medium" | "Hard";
+
+export interface IProject {
+  id: string;
+  title: string;
+  description: string;
+  techStack: string[];
+  imgUrl?: string;
+  repoUrl?: string;
+  liveUrl?: string;
+  liveStatus: LiveStatus;
+  difficultyLevel: DifficultyLevel;
+  reasoning: string;
+}
