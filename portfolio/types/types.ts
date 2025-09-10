@@ -5,3 +5,50 @@ export type SectionProps = {
   className?: string;
   children: React.ReactNode;
 };
+
+export interface SocialLink {
+  name?: string;
+  url?: string;
+  username?: string;
+  iconPublicId?: string;
+}
+
+export interface TechStackItem {
+  name: string;
+  iconPublicId?: string;
+}
+
+export interface EducationItem {
+  degree: string;
+  institution: string;
+  duration?: string;
+  iconPublicId?: string;
+}
+
+export interface AboutInfo {
+  headline: string;
+  bio: string;
+  avatarIconUrl: string;
+  skills: string[];
+  techStack: TechStackItem[];
+  experience?: { title: string; company: string; duration: string }[];
+  education: EducationItem[];
+  certifications?: { title: string; issuer: string; date: string }[];
+  socialLinks: SocialLink[];
+}
+
+export type LiveStatus = "Live" | "Maintenance" | "Planned" | "Development";
+export type DifficultyLevel = "Easy" | "Medium" | "Hard";
+
+export interface IProject {
+  id: string;
+  title: string;
+  description: string;
+  techStack: string[];
+  imgUrl?: string;
+  repoUrl?: string;
+  liveUrl?: string;
+  liveStatus: LiveStatus;
+  difficultyLevel: DifficultyLevel;
+  reasoning: string;
+}
