@@ -37,7 +37,12 @@ export interface AboutInfo {
   socialLinks: SocialLink[];
 }
 
-export type LiveStatus = "Live" | "Maintenance" | "Planned" | "Development";
+export type LiveStatus =
+  | "Live"
+  | "Maintenance"
+  | "Down"
+  | "Development"
+  | "Planned";
 export type DifficultyLevel = "Easy" | "Medium" | "Hard";
 
 export interface IProject {
