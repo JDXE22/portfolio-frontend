@@ -30,7 +30,9 @@ export default async function AboutSection() {
                 <h4 className="mb-1 font-semibold text-gray-700">Skills:</h4>
                 <ul className="list-disc list-inside text-gray-600">
                   {info.skills.map((skill, i) => (
-                    <li key={i}>{skill}</li>
+                    <li data-testid="skills-id" key={i}>
+                      {skill}{" "}
+                    </li>
                   ))}
                 </ul>
               </div>
