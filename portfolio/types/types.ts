@@ -6,14 +6,33 @@ export type SectionProps = {
   children: React.ReactNode;
 };
 
+export interface SocialLink {
+  name?: string;
+  url?: string;
+  username?: string;
+  iconPublicId?: string;
+}
+
+export interface TechStackItem {
+  name: string;
+  iconPublicId?: string;
+}
+
+export interface EducationItem {
+  degree: string;
+  institution: string;
+  duration?: string;
+  iconPublicId?: string;
+}
+
 export interface AboutInfo {
   headline: string;
   bio: string;
   avatarIconUrl: string;
   skills: string[];
-  techStack: string[];
+  techStack: TechStackItem[];
   experience?: { title: string; company: string; duration: string }[];
-  education: string[];
+  education: EducationItem[];
   certifications?: { title: string; issuer: string; date: string }[];
-  socialLinks: string[];
+  socialLinks: SocialLink[];
 }
