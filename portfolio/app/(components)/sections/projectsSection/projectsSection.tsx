@@ -11,7 +11,7 @@ export default async function ProjectsSection() {
           <p className="text-center text-gray-500">[]</p>
         ) : (
           projects.map((project) => (
-            <div key={project._id}>
+            <div key={project._id} className="mb-8" test-id="project-card">
               <img src={project.imgUrl} alt="project-img" />
               <h4> {project.title}</h4>
               <p>{project.description}</p>
