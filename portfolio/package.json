@@ -8,7 +8,8 @@
     "start": "next start",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "testProjects": "vitest run app/(components)/sections/projectsSection/projectsSection.test.tsx"
   },
   "dependencies": {
     "next": "15.5.2",
