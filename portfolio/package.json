@@ -9,7 +9,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
-    "testProjects": "vitest run app/(components)/sections/projectsSection/projectsSection.test.tsx"
+    "test:int": "vitest run **/*.integration.test.tsx",
+    "testProjects": "vitest run app/(components)/sections/projectsSection/projectsSection.integration.test.tsx"
   },
   "dependencies": {
     "next": "15.5.2",
