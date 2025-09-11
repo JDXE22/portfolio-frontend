@@ -19,7 +19,7 @@ export default async function ProjectsSection() {
           >
             {projects.map((project) => (
               <div
-                key={project._id ?? project.id}
+                key={project._id ?? project._id}
                 data-testid="project-card"
                 className="rounded-lg border border-gray-200 p-4"
               >
