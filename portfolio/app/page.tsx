@@ -1,10 +1,12 @@
 import AboutSection from "@/app/(components)/sections/aboutSection/aboutSection";
+import ProjectsSection from "@/app/(components)/sections/projectsSection/projectsSection";
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-between p-24">
       Home
-      <AboutSection></AboutSection>
+      <AboutSection />
+      <ProjectsSection />
     </div>
   );
 }
