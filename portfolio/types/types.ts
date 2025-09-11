@@ -46,7 +46,7 @@ export type LiveStatus =
 export type DifficultyLevel = "Easy" | "Medium" | "Hard";
 
 export interface IProject {
-  id: string;
+  _id: string;
   title: string;
   description: string;
   techStack: string[];
