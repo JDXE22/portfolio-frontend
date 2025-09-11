@@ -1,3 +1,5 @@
+import React from "react";
+
 export type SectionProps = {
   id?: string;
   title?: string;
@@ -57,3 +59,19 @@ export interface IProject {
   difficultyLevel: DifficultyLevel;
   reasoning: string;
 }
+
+export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  variant?: "primary" | "secondary" | "ghost";
+  size?: "sm" | "md";
+};
+
+export type ModalProps = {
+  open: boolean;
+  onClose: () => void;
+  title?: string;
+  children: React.ReactNode;
+  footer?: React.ReactNode;
+  className?: string;
+};
+
+export type ClassValue = string | false | null | undefined;
