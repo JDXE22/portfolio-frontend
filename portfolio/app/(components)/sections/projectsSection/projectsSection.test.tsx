@@ -10,6 +10,6 @@ describe("Projects Section", () => {
   test("Renders empty state when no projects", async () => {
     const ui = await ProjectsSection();
     render(ui);
-    expect(screen.getByTestId("projects-empty")).toBeInTheDocument();
+    expect(screen.getByTestId("projects-empty")).toBeDefined();
   });
 });
