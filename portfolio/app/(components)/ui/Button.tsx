@@ -9,6 +9,7 @@ export function Button({
   variant = "primary",
   size = "md",
   className,
+  children,
   ...rest
 }: ButtonProps) {
   const base =
@@ -33,6 +34,8 @@ export function Button({
         className,
         { ...rest }
       )}
-    ></button>
+    >
+      {children}
+    </button>
   );
 }
