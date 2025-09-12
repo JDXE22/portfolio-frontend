@@ -31,9 +31,9 @@ export function Button({
         base,
         variants[variant],
         sizes[size],
-        className,
-        { ...rest }
+        className
       )}
+      {...rest}
     >
       {children}
     </button>
