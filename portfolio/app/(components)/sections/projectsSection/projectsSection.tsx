@@ -1,7 +1,7 @@
 import { getProjects } from "@/data/projects";
 import { Section } from "@/app/(components)/layout/Section";
 import { IProject } from "@/types/types";
-import { ProjectsGrid } from "@/app/(components)/sections/projectsSection/projectsGrid";
+import ProjectsGrid from "@/app/(components)/sections/projectsSection/projectsGrid";
 
 export default async function ProjectsSection() {
   const projects: IProject[] = await getProjects();

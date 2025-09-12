@@ -11,7 +11,7 @@ const hasLiveUrl = (p: IProject): p is IProject & { liveUrl: string } =>
   typeof p.liveUrl === "string" &&
   p.liveUrl.length > 0;
 
-export const ProjectsGrid = ({ projects }: Props) => {
+export default function ProjectsGrid({ projects }: Props) {
   const [isOpen, setIsOpen] = React.useState(false);
   const [selectedProject, setSelectedProject] = React.useState<IProject | null>(
     null
@@ -151,4 +151,4 @@ export const ProjectsGrid = ({ projects }: Props) => {
       </Modal>
     </>
   );
-};
+}
