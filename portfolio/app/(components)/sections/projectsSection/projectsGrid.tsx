@@ -72,7 +72,18 @@ export const ProjectsGrid = ({ projects }: Props) => {
         ))}
       </div>
 
-      <Modal open={isOpen} onClose={onClose} title={selectedProject?.title}>
+      <Modal
+        open={isOpen}
+        onClose={onClose}
+        title={selectedProject?.title}
+        footer={
+          <div className="flex gap-2 justify-end">
+            <Button variant="ghost" onClick={() => setOpen(false)}>
+              Close
+            </Button>
+          </div>
+        }
+      >
         {selectedProject && (
           <div className="space-y-3">
             <h5 className="text-md text-foreground/90">
