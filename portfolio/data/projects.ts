@@ -16,3 +16,11 @@ export async function getProjects(): Promise<IProject[]> {
   });
   return projects.json();
 }
+
+export async function sendContactForm(formData: FormData) {
+  const response = await fetch(`${API_BASE_URL}/contact`, {
+    method: "POST",
+    body: formData,
+  });
+  return response.json();
+}
