@@ -1,6 +1,7 @@
 "use client";
 import { Section } from "@/app/(components)/layout/Section";
 import { Button } from "@/app/(components)/ui/Button";
+import { sendContactForm } from "@/data/projects";
 import React from "react";
 
 export default function ContactSection() {
@@ -13,7 +14,7 @@ export default function ContactSection() {
     const selectedFiles = Array.from(event.target.files ?? []);
     setFiles(selectedFiles);
   };
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSubmitting(true);
     setError(null);
@@ -24,16 +25,15 @@ export default function ContactSection() {
       formData.append("files", file);
     });
     try {
+      const response = await sendContactForm(formData);
       form.reset();
       setFiles([]);
-      setSuccess("Thanks! I'll get back to you soon.");
+      setSuccess(response?.success ?? "Thanks! I'll get back to you soon.");
     } catch (error) {
       setError("Something went wrong, please try again.");
     } finally {
       setSubmitting(false);
     }
-
-    // Handle form submission logic here
   };
 
   return (
