@@ -23,7 +23,6 @@ export function Modal({ open, onClose, title, children }: ModalProps){
                     <div className="max-h-[70vh] overflow-auto">{children}</div>
                 </div>
             </div>
-
         </div>
     )
 };
