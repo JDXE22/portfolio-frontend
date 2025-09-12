@@ -35,7 +35,7 @@ export const ProjectsGrid = ({ projects }: Props) => {
       >
         {projects.map((project) => (
           <div
-            key={project._id}
+            key={project.id}
             data-testid="project-card"
             className="rounded-lg border border-gray-300 p-4"
           >
@@ -86,7 +86,7 @@ export const ProjectsGrid = ({ projects }: Props) => {
               <ul className="flex flex-wrap gap-2">
                 {selectedProject.techStack.map((tech, i) => (
                   <li
-                    key={`${selectedProject._id}-tech-${i}`}
+                    key={`${selectedProject.id}-tech-${i}`}
                     className="rounded-full bg-foreground/10 px-3 py-1 text-xs text-foreground"
                   >
                     {tech}
