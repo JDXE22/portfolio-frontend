@@ -1,4 +1,4 @@
-("use client");
+"use client";
 
 import React from "react";
 import { sendContactForm } from "@/data/projects";
@@ -30,7 +30,7 @@ export default function ContactSection() {
       event.currentTarget.reset();
       setFiles([]);
     } catch (e) {
-      setError(e.message);
+      setError(type of e === "object" && e !== null && "message" in e ? e.message : "An unexpected error occurred. Please try again.");
     } finally {
       setSubmitting(false);
     }
