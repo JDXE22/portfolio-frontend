@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 import { ModalProps } from "@/types/types";
+import { classNameGenerator } from "@/lib/className";
 
 export function Modal({
   open,
@@ -29,7 +30,10 @@ export function Modal({
         role="dialog"
         aria-modal="true"
         aria-label={title}
-        className="relative z-10 w-[min(92vw, 700px)] rounded-lg border border-foreground/10 bg-background p-6 shadow-xl"
+        className={classNameGenerator(
+          "relative z-10 w-[min(92vw, 700px)] rounded-lg border border-foreground/10 bg-background p-6 shadow-xl",
+          className
+        )}
       >
         {title && <h3 className="text-lg font-semibold mb-3">{title}</h3>}
         <div className="max-h-[70vh] overflow-auto">{children}</div>
