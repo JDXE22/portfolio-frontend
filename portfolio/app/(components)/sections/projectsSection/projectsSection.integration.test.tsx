@@ -1,6 +1,5 @@
 import { render, screen, within } from "@testing-library/react";
 import ProjectsSection from "./projectsSection";
-import { vi } from "vitest";
 import { serverEnv } from "@/config/env";
 import { getProjects } from "@/data/projects";
 
