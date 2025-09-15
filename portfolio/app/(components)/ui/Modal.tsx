@@ -2,7 +2,14 @@
 import React, { useEffect } from "react";
 import { ModalProps } from "@/types/types";
 
-export function Modal({ open, onClose, title, children }: ModalProps) {
+export function Modal({
+  open,
+  onClose,
+  title,
+  children,
+  footer,
+  className,
+}: ModalProps) {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
     if (open) {
@@ -26,6 +33,7 @@ export function Modal({ open, onClose, title, children }: ModalProps) {
       >
         {title && <h3 className="text-lg font-semibold mb-3">{title}</h3>}
         <div className="max-h-[70vh] overflow-auto">{children}</div>
+        {footer && <div className="mt-4">{footer}</div>}
       </div>
     </div>
   );
