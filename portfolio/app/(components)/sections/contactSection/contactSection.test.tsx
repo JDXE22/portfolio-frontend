@@ -4,7 +4,9 @@ import userEvent from "@testing-library/user-event";
 
 vi.mock("@/data/projects", () => ({
   __esModule: true,
-  sendContactForm: vi.fn().mockResolvedValue({ success: true }),
+  sendContactForm: vi
+    .fn()
+    .mockResolvedValue({ message: "Message sent successfully" }),
 }));
 
 import ContactSection from "./contactSection";

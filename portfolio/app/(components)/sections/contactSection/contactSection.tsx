@@ -30,7 +30,11 @@ export default function ContactSection() {
       event.currentTarget.reset();
       setFiles([]);
     } catch (e) {
-      setError(type of e === "object" && e !== null && "message" in e ? e.message : "An unexpected error occurred. Please try again.");
+      setError(
+        typeof e === "object" && e !== null && "message" in e
+          ? e.message
+          : "An unexpected error occurred. Please try again."
+      );
     } finally {
       setSubmitting(false);
     }
