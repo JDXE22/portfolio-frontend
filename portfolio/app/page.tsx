@@ -4,10 +4,10 @@ import ContactSection from "@/app/(components)/sections/contactSection/contactSe
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col items-stretch">
+    <main className="flex min-h-screen flex-col items-stretch">
       <AboutSection />
       <ProjectsSection />
       <ContactSection />
-    </div>
+    </main>
   );
 }
