@@ -5,7 +5,7 @@ export default async function AboutSection() {
   const aboutInfo = await getAboutMeInfo();
 
   return (
-    <Section id="about" title="About Me" subtitle="short-introduction">
+    <Section id="about" title="About Me">
       <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
         {aboutInfo.map((info) => (
           <div

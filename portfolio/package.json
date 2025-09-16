@@ -10,9 +10,11 @@
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
     "test:int": "vitest run **/*.integration.test.tsx",
-    "testProjects": "vitest run app/(components)/sections/projectsSection/projectsSection.integration.test.tsx"
+    "testProjects": "vitest run app/(components)/sections/projectsSection/projectsSection.integration.test.tsx",
+    "testContactForm": "vitest run app/(components)/sections/contactSection/contactSection.test.tsx"
   },
   "dependencies": {
+    "@vitest/browser": "3.2.4",
     "next": "15.5.2",
     "react": "19.1.0",
     "react-dom": "19.1.0"
