@@ -10,6 +10,7 @@ export function Modal({
   children,
   footer,
   className,
+  header,
 }: ModalProps) {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
@@ -25,6 +26,7 @@ export function Modal({
   if (!open) return null;
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
+      {header && <div className="mt-4">{header}</div>}
       <div className="absolute inset-0 bg-black/50" onClick={onClose} />
       <div
         role="dialog"
@@ -37,7 +39,6 @@ export function Modal({
       >
         {title && <h3 className="text-lg font-semibold mb-3">{title}</h3>}
         <div className="max-h-[70vh] overflow-auto">{children}</div>
-        {footer && <div className="mt-4">{footer}</div>}
       </div>
     </div>
   );
