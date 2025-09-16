@@ -2,10 +2,8 @@
 import React from "react";
 import { Button } from "@/app/(components)/ui/Button";
 import { Modal } from "@/app/(components)/ui/Modal";
-import type { IProject } from "@/types/types";
+import type { IProject, Props } from "@/types/types";
 import { statusClass } from "@/lib/statusClass";
-
-type Props = { projects: ReadonlyArray<IProject> };
 
 const hasLiveUrl = (p: IProject): p is IProject & { liveUrl: string } =>
   p.liveStatus === "Live" &&
