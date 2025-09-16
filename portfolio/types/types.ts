@@ -73,6 +73,7 @@ export type ModalProps = {
   footer?: React.ReactNode;
   className?: string;
   header?: React.ReactNode;
+  showCloseButton?: boolean;
 };
 
 export type ClassValue = string | false | null | undefined;
