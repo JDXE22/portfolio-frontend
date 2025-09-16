@@ -4,6 +4,7 @@ import { Button } from "@/app/(components)/ui/Button";
 import { Modal } from "@/app/(components)/ui/Modal";
 import type { IProject, Props } from "@/types/types";
 import { statusClass } from "@/lib/statusClass";
+import { difficultyLevelClass } from "@/lib/difficultyClass";
 
 const hasLiveUrl = (p: IProject): p is IProject & { liveUrl: string } =>
   p.liveStatus === "Live" &&
@@ -103,7 +104,13 @@ export default function ProjectsGrid({ projects }: Props) {
               {selectedProject.description}
             </p>
 
-            <p>{selectedProject.difficultyLevel}</p>
+            <p
+              className={`text-sm ${difficultyLevelClass(
+                selectedProject.difficultyLevel
+              )}`}
+            >
+              Difficulty: {selectedProject.difficultyLevel}
+            </p>
 
             {selectedProject.techStack?.length > 0 && (
               <ul className="flex flex-wrap gap-2">

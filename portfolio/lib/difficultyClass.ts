@@ -1,6 +1,6 @@
 import { DifficultyLevel } from "@/types/types";
 
-export const difficultyLevelClass = (difficultyLevel?: DifficultyLevel) => {
+export const difficultyColorClass = (difficultyLevel?: DifficultyLevel) => {
   switch (difficultyLevel) {
     case "Easy":
       return "bg-blue-500/15 text-blue-400 ring-1 ring-blue-500/20";
@@ -11,4 +11,11 @@ export const difficultyLevelClass = (difficultyLevel?: DifficultyLevel) => {
     default:
       return "bg-foreground/10 text-foreground ring-1 ring-foreground/15";
   }
+};
+
+export const badgeBase =
+  "inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ring-1";
+
+export const difficultyLevelClass = (difficultyLevel?: DifficultyLevel) => {
+  return `${badgeBase} ${difficultyColorClass(difficultyLevel)}`;
 };
