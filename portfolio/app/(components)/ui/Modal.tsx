@@ -34,6 +34,7 @@ export function Modal({
         aria-label={title}
         className={classNameGenerator(
           "relative z-10 w-[min(92vw, 700px)] rounded-lg border border-foreground/10 bg-background p-6 shadow-xl",
+          showCloseButton && "pt-5",
           className
         )}
       >

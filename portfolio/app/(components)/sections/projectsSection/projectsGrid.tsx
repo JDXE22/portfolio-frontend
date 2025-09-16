@@ -87,19 +87,10 @@ export default function ProjectsGrid({ projects }: Props) {
         open={isOpen}
         onClose={onClose}
         title={selectedProject?.title}
-        footer={
-          <div className="flex gap-2 justify-end">
-            <Button variant="ghost" onClick={() => setIsOpen(false)}>
-              Close
-            </Button>
-          </div>
-        }
+        showCloseButton
       >
         {selectedProject && (
           <div className="space-y-3">
-            <h5 className="text-md text-foreground/90">
-              {selectedProject.title}
-            </h5>
             <p className="text-sm text-foreground/80">
               {selectedProject.description}
             </p>
