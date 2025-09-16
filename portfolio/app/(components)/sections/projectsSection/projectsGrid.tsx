@@ -104,13 +104,16 @@ export default function ProjectsGrid({ projects }: Props) {
               {selectedProject.description}
             </p>
 
-            <p
-              className={`text-sm ${difficultyLevelClass(
-                selectedProject.difficultyLevel
-              )}`}
-            >
-              Difficulty: {selectedProject.difficultyLevel}
-            </p>
+            {selectedProject.difficultyLevel && (
+              <span
+                aria-label={`Difficulty level: ${selectedProject.difficultyLevel}`}
+                className={`${difficultyLevelClass(
+                  selectedProject.difficultyLevel
+                )} rounded-full px-2 py-0.5 text-[11px]`}
+              >
+                Difficulty: {selectedProject.difficultyLevel}
+              </span>
+            )}
 
             {selectedProject.techStack?.length > 0 && (
               <ul className="flex flex-wrap gap-2">
