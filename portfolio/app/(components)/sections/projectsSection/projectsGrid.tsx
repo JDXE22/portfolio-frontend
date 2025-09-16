@@ -103,6 +103,8 @@ export default function ProjectsGrid({ projects }: Props) {
               {selectedProject.description}
             </p>
 
+            <p>{selectedProject.difficultyLevel}</p>
+
             {selectedProject.techStack?.length > 0 && (
               <ul className="flex flex-wrap gap-2">
                 {selectedProject.techStack.map((tech, i) => (
