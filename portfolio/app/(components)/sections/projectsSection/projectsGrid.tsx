@@ -6,6 +6,23 @@ import type { IProject, LiveStatus } from "@/types/types";
 
 type Props = { projects: ReadonlyArray<IProject> };
 
+const statusClass = (status?: LiveStatus) => {
+  switch (status) {
+    case "Live":
+      return "bg-emerald-500/15 text-emerald-400 ring-1 ring-emerald-500/20";
+    case "Development":
+      return "bg-amber-500/15 text-amber-400 ring-1 ring-amber-500/20";
+    case "Maintenance":
+      return "bg-blue-500/15 text-blue-400 ring-1 ring-blue-500/20";
+    case "Planned":
+      return "bg-violet-500/15 text-violet-400 ring-1 ring-violet-500/20";
+    case "Down":
+      return "bg-zinc-500/15 text-zinc-400 ring-1 ring-zinc-500/20";
+    default:
+      return "bg-foreground/10 text-foreground ring-1 ring-foreground/15";
+  }
+};
+
 const hasLiveUrl = (p: IProject): p is IProject & { liveUrl: string } =>
   p.liveStatus === "Live" &&
   typeof p.liveUrl === "string" &&
@@ -31,44 +48,55 @@ export default function ProjectsGrid({ projects }: Props) {
     <>
       <div
         data-testid="projects-grid"
-        className="grid gap-6 sm:grid-cols-2 md:grid-cols-3"
+        className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
       >
         {projects.map((project) => (
-          <div
+          <article
             key={project.id}
             data-testid="project-card"
-            className="rounded-lg border border-gray-300 p-4"
+            className="group relative overflow-hidden rounded-xl border border-foreground/10 bg-background/80 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg focus-within:-translate-y-0.5 focus-within:shadow-lg"
           >
             {project.imgUrl && (
-              <img
-                src={project.imgUrl}
-                alt={`${project.title} image`}
-                className="mb-3 h-32 w-full object-cover rounded-md"
-              />
+              <div className="p-4 pb-0">
+                <img
+                  src={project.imgUrl}
+                  alt={`${project.title} image`}
+                  className="aspect-[16/9] w-full rounded-lg object-cover ring-1 ring-foreground/10 transition-transform duration-300 group-hover:scale-[1.01]"
+                />
+              </div>
             )}
-            <h4 className="font-semibold mb-2">{project.title}</h4>
-            <p className="text-sm text-gray-600 mb-4 line-clamp-4">
-              {project.description}
-            </p>
+            <div className="p-4">
+              <div className="mb-2 flex items-start justify-between gap-3">
+                <h4 className="font-semibold text-foreground">
+                  {project.title}
+                </h4>
 
-            {/* Optional small badge */}
-            {project.liveStatus && (
-              <span className="mr-2 rounded bg-foreground/10 px-2 py-0.5 text-xs">
-                {project.liveStatus}
-              </span>
-            )}
+                {project.liveStatus && (
+                  <span
+                    className={`shrink-0 rounded-full px-2 py-0.5 text-[11px] ${statusClass(
+                      project.liveStatus
+                    )}`}
+                  >
+                    {project.liveStatus}
+                  </span>
+                )}
+              </div>
+              <p className="mb-4 line-clamp-4 text-sm text-foreground/70">
+                {project.description}
+              </p>
 
-            <div className="mt-3">
-              <Button
-                variant="secondary"
-                size="sm"
-                data-testid="more-projectInfo-btn"
-                onClick={() => onMore(project)}
-              >
-                More Info
-              </Button>
+              <div className="mt-3">
+                <Button
+                  variant="secondary"
+                  size="sm"
+                  data-testid="more-projectInfo-btn"
+                  onClick={() => onMore(project)}
+                >
+                  More Info
+                </Button>
+              </div>
             </div>
-          </div>
+          </article>
         ))}
       </div>
 
@@ -129,7 +157,7 @@ export default function ProjectsGrid({ projects }: Props) {
                   href={selectedProject.repoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-blue-900 hover:underline"
+                  className="text-sm text-foreground hover:opacity-80 underline underline-offset-4 decoration-foreground/20 hover:decoration-foreground/30"
                 >
                   View repository
                 </a>
@@ -140,7 +168,7 @@ export default function ProjectsGrid({ projects }: Props) {
                   href={selectedProject.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-blue-900 hover:underline"
+                  className="text-sm text-foreground hover:opacity-80 underline underline-offset-4 decoration-foreground/30"
                 >
                   Live site
                 </a>
