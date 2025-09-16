@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { sendContactForm } from "@/data/projects";
+import { sendContactForm } from "@/data/dataApi";
 import { Button } from "@/app/(components)/ui/Button";
 import { Section } from "@/app/(components)/layout/Section";
 

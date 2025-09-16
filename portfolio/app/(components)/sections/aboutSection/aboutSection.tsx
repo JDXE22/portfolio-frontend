@@ -1,5 +1,5 @@
 import { Section } from "@/app/(components)/layout/Section";
-import { getAboutMeInfo } from "@/data/projects";
+import { getAboutMeInfo } from "@/data/dataApi";
 
 export default async function AboutSection() {
   const aboutInfo = await getAboutMeInfo();

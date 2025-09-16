@@ -1,4 +1,4 @@
-import { getProjects } from "@/data/projects";
+import { getProjects } from "@/data/dataApi";
 import { Section } from "@/app/(components)/layout/Section";
 import { IProject } from "@/types/types";
 import ProjectsGrid from "@/app/(components)/sections/projectsSection/projectsGrid";
