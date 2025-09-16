@@ -41,14 +41,15 @@ export async function getProjects(): Promise<IProject[]> {
   }
 }
 
-export async function sendContactForm(formData: FormData) {
-  try {
-    const response = await fetch(`${API_BASE_URL}/contact`, {
-      method: "POST",
-      body: formData,
-    });
-    return await jsonOrThrow<{ message: string }>(response);
-  } catch {
-    return [];
+export async function sendContactForm(
+  formData: FormData
+): Promise<{ message?: string }> {
+  if (!API_BASE_URL) {
+    throw new Error("Missing API base URL");
   }
+  const response = await fetch(`${API_BASE_URL}/contact`, {
+    method: "POST",
+    body: formData,
+  });
+  return jsonOrThrow<{ message?: string }>(response);
 }
