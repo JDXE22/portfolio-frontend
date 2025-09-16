@@ -39,6 +39,7 @@ export function Modal({
       >
         {title && <h3 className="text-lg font-semibold mb-3">{title}</h3>}
         <div className="max-h-[70vh] overflow-auto">{children}</div>
+        {footer && <div className="mt-4">{footer}</div>}
       </div>
     </div>
   );
