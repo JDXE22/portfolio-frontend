@@ -4,6 +4,7 @@ import React from "react";
 import { sendContactForm } from "@/data/dataApi";
 import { Button } from "@/app/(components)/ui/Button";
 import { Section } from "@/app/(components)/layout/Section";
+import { errorMessage } from "@/lib/errors";
 
 export default function ContactSection() {
   const [files, setFiles] = React.useState<File[]>([]);
@@ -30,11 +31,7 @@ export default function ContactSection() {
       event.currentTarget.reset();
       setFiles([]);
     } catch (e) {
-      setError(
-        typeof e === "object" && e !== null && "message" in e
-          ? e.message
-          : "An unexpected error occurred. Please try again."
-      );
+      setError(errorMessage(e));
     } finally {
       setSubmitting(false);
     }
