@@ -72,6 +72,7 @@ export type ModalProps = {
   children: React.ReactNode;
   footer?: React.ReactNode;
   className?: string;
+  header?: React.ReactNode;
 };
 
 export type ClassValue = string | false | null | undefined;
