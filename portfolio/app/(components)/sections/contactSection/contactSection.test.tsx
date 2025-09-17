@@ -10,7 +10,7 @@ vi.mock("@/data/projects", () => ({
 }));
 
 import ContactSection from "./contactSection";
-import { sendContactForm } from "@/data/projects";
+import { sendContactForm } from "@/data/dataApi";
 
 afterEach(() => vi.clearAllMocks());
 

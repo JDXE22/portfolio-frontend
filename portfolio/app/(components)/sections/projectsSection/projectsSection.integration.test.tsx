@@ -1,7 +1,7 @@
 import { render, screen, within } from "@testing-library/react";
 import ProjectsSection from "./projectsSection";
 import { serverEnv } from "@/config/env";
-import { getProjects } from "@/data/projects";
+import { getProjects } from "@/data/dataApi";
 
 const baseUrl = serverEnv.PUBLIC_DB_CONNECTION;
 (baseUrl ? describe : describe.skip)(

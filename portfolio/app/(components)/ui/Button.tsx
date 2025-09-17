@@ -1,9 +1,7 @@
 "use client";
 import React from "react";
-import type { ButtonProps, ClassValue } from "@/types/types";
-
-const classNameGenerator = (...cls: ClassValue[]) =>
-  cls.filter(Boolean).join(" ");
+import type { ButtonProps } from "@/types/types";
+import { classNameGenerator } from "@/lib/className";
 
 export function Button({
   variant = "primary",

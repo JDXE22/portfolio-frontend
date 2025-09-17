@@ -72,6 +72,10 @@ export type ModalProps = {
   children: React.ReactNode;
   footer?: React.ReactNode;
   className?: string;
+  header?: React.ReactNode;
+  showCloseButton?: boolean;
 };
 
 export type ClassValue = string | false | null | undefined;
+
+export type Props = { projects: ReadonlyArray<IProject> };

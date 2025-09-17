@@ -1,8 +1,18 @@
 "use client";
 import React, { useEffect } from "react";
 import { ModalProps } from "@/types/types";
+import { classNameGenerator } from "@/lib/className";
 
-export function Modal({ open, onClose, title, children }: ModalProps) {
+export function Modal({
+  open,
+  onClose,
+  title,
+  children,
+  footer,
+  className,
+  header,
+  showCloseButton = true,
+}: ModalProps) {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
     if (open) {
@@ -22,10 +32,26 @@ export function Modal({ open, onClose, title, children }: ModalProps) {
         role="dialog"
         aria-modal="true"
         aria-label={title}
-        className="relative z-10 w-[min(92vw, 700px)] rounded-lg border border-foreground/10 bg-background p-6 shadow-xl"
+        className={classNameGenerator(
+          "relative z-10 w-[min(92vw, 700px)] rounded-lg border border-foreground/10 bg-background p-6 shadow-xl",
+          showCloseButton && "pt-5",
+          className
+        )}
       >
+        {showCloseButton && (
+          <button
+            type="button"
+            aria-label="Close"
+            onClick={onClose}
+            className="absolute right-2 top-2 rounded-full p-2 text-foreground/70 hover:bg-foreground/10 hover:text-foreground focus:outline-none focus:ring-2 focus:ring-foreground/30
+          "
+          >
+            <span aria-hidden>x</span>
+          </button>
+        )}
         {title && <h3 className="text-lg font-semibold mb-3">{title}</h3>}
         <div className="max-h-[70vh] overflow-auto">{children}</div>
+        {footer && <div className="mt-4">{footer}</div>}
       </div>
     </div>
   );
