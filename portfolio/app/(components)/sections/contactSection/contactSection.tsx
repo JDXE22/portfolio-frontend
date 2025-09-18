@@ -57,7 +57,7 @@ export default function ContactSection() {
   };
 
   return (
-    <Section id="contact" title="Contact">
+    <Section id="contact" title="Contact Me" align="center">
       <div className="group relative mx-auto max-w-xl">
         <div
           className="
