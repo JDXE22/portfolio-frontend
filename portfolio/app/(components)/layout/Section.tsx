@@ -14,14 +14,19 @@ export function Section({
   }[align];
   return (
     <>
-      <section id={id} className={`w-full px-6 py-16 sm:py-24 ${className}`}>
-        <div className="mx-auto max-w-5xl">
+      <section id={id} className={`w-full px-6 py-20 sm:py-28 ${className}`}>
+        <div className="mx-auto max-w-5xl min-h-[560px] flex flex-col">
           {title && (
-            <header className={`mb-8 ${alignmentClasses}`}>
-              <h2 className={`text-lg sm:text-2xl font-semibold`}>{title}</h2>
+            <header className={`mb-10 ${alignmentClasses}`}>
+              <h2
+                className={`text-2xl sm:text-3xl font-semibold tracking-tight`}
+              >
+                {title}
+              </h2>
             </header>
           )}
-          {children}
+
+          <div className="flex-1">{children}</div>
         </div>
       </section>
     </>
