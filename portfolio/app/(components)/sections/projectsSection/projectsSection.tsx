@@ -7,10 +7,13 @@ export default async function ProjectsSection() {
   const projects: IProject[] = await getProjects();
 
   return (
-    <Section id="projects" title="Projects">
-      <div>
+    <Section id="projects" title="Projects" align="center">
+      <div className="h-full w-full flex items-center justify-center py-10">
         {projects.length === 0 ? (
-          <p data-testid="projects-empty" className="text-center text-gray-500">
+          <p
+            data-testid="projects-empty"
+            className="m-auto text-center text-foreground/50"
+          >
             []
           </p>
         ) : (

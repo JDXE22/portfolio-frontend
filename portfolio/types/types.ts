@@ -5,6 +5,7 @@ export type SectionProps = {
   title?: string;
   subtitle?: string;
   className?: string;
+  align?: "left" | "center" | "right";
   children: React.ReactNode;
 };
 

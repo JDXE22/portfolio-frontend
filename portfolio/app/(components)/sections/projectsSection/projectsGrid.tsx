@@ -31,25 +31,38 @@ export default function ProjectsGrid({ projects }: Props) {
     <>
       <div
         data-testid="projects-grid"
-        className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+        className={
+          projects.length < 3
+            ? "flex flex-wrap justify-center gap-8"
+            : "grid items-stretch gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+        }
       >
         {projects.map((project) => (
           <article
             key={project.id}
             data-testid="project-card"
-            className="group relative overflow-hidden rounded-xl border border-foreground/10 bg-background/80 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg focus-within:-translate-y-0.5 focus-within:shadow-lg"
+            className={`group relative flex min-h-[360px] flex-col overflow-hidden rounded-xl border border-foreground/10 bg-background/80 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg focus-within:-translate-y-0.5 focus-within:shadow-lg ${
+              projects.length < 3 ? "w-[280px] sm:w-[320px]" : ""
+            }`}
           >
-            {project.imgUrl && (
-              <div className="p-4 pb-0">
+            <div className="p-4 pb-3">
+              {project.imgUrl ? (
                 <img
                   src={project.imgUrl}
                   alt={`${project.title} image`}
                   className="aspect-[16/9] w-full rounded-lg object-cover ring-1 ring-foreground/10 transition-transform duration-300 group-hover:scale-[1.01]"
                 />
-              </div>
-            )}
-            <div className="p-4">
-              <div className="mb-2 flex items-start justify-between gap-3">
+              ) : (
+                // Placeholder preserves vertical space for alignment
+                <div
+                  className="aspect-[16/9] w-full rounded-lg bg-foreground/5 ring-1 ring-foreground/5"
+                  aria-hidden
+                />
+              )}
+            </div>
+
+            <div className="flex flex-1 flex-col px-4 pb-4">
+              <div className="mb-3 flex items-start justify-between gap-3">
                 <h4 className="font-semibold text-foreground">
                   {project.title}
                 </h4>
@@ -64,11 +77,11 @@ export default function ProjectsGrid({ projects }: Props) {
                   </span>
                 )}
               </div>
-              <p className="mb-4 line-clamp-4 text-sm text-foreground/70">
+              <p className="mb-4 line-clamp-5 text-sm text-foreground/70">
                 {project.description}
               </p>
 
-              <div className="mt-3">
+              <div className="mt-auto pt-2 flex justify-center">
                 <Button
                   variant="secondary"
                   size="sm"
@@ -91,7 +104,7 @@ export default function ProjectsGrid({ projects }: Props) {
       >
         {selectedProject && (
           <div className="space-y-3">
-            <p className="text-sm text-foreground/80">
+            <p className="text-sm leading-relaxed text-foreground/80">
               {selectedProject.description}
             </p>
 
@@ -122,7 +135,7 @@ export default function ProjectsGrid({ projects }: Props) {
             {selectedProject.reasoning && (
               <div>
                 <h5 className="font-medium">Why did I build this project?</h5>
-                <p className="text-sm text-foreground/80">
+                <p className="text-sm leading-relaxed text-foreground/80">
                   {selectedProject.reasoning}
                 </p>
               </div>
@@ -142,7 +155,7 @@ export default function ProjectsGrid({ projects }: Props) {
                   href={selectedProject.repoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-foreground hover:opacity-80 underline underline-offset-4 decoration-foreground/20 hover:decoration-foreground/30"
+                  className="text-sm text-foreground underline underline-offset-4 decoration-foreground/20 hover:decoration-foreground/40 hover:opacity-80"
                 >
                   View repository
                 </a>
@@ -153,7 +166,7 @@ export default function ProjectsGrid({ projects }: Props) {
                   href={selectedProject.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-foreground hover:opacity-80 underline underline-offset-4 decoration-foreground/30"
+                  className="text-sm text-foreground underline underline-offset-4 decoration-foreground/30 hover:decoration-foreground/50 hover:opacity-80"
                 >
                   Live site
                 </a>
