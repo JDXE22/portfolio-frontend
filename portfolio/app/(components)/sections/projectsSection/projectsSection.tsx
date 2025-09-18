@@ -8,7 +8,7 @@ export default async function ProjectsSection() {
 
   return (
     <Section id="projects" title="Projects" align="center">
-      <div>
+      <div className="h-full w-full flex items-center justify-center py-10">
         {projects.length === 0 ? (
           <p
             data-testid="projects-empty"
@@ -17,9 +17,7 @@ export default async function ProjectsSection() {
             []
           </p>
         ) : (
-          <div className="flex-1">
-            <ProjectsGrid projects={projects} />
-          </div>
+          <ProjectsGrid projects={projects} />
         )}
       </div>
     </Section>
