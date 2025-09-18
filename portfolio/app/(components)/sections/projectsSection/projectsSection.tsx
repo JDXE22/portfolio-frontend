@@ -10,11 +10,16 @@ export default async function ProjectsSection() {
     <Section id="projects" title="Projects" align="center">
       <div>
         {projects.length === 0 ? (
-          <p data-testid="projects-empty" className="text-center text-gray-500">
+          <p
+            data-testid="projects-empty"
+            className="m-auto text-center text-foreground/50"
+          >
             []
           </p>
         ) : (
-          <ProjectsGrid projects={projects} />
+          <div className="flex-1">
+            <ProjectsGrid projects={projects} />
+          </div>
         )}
       </div>
     </Section>
