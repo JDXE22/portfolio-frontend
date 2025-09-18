@@ -9,7 +9,7 @@ export default async function AboutSection() {
     Array.isArray(aboutInfo) && aboutInfo.length > 0 ? aboutInfo : [];
 
   return (
-    <Section id="about">
+    <Section id="about" title="About Me" align="center">
       <div className="grid gap-6">
         {items.map((info) => (
           <div
@@ -30,7 +30,7 @@ export default async function AboutSection() {
             )}
 
             {info.skills?.length > 0 && (
-              <div className="mt-4">
+              <div className="mt-6">
                 <h4 className="mb-1 font-semibold text-foreground/90">
                   Skills:
                 </h4>
@@ -45,7 +45,7 @@ export default async function AboutSection() {
             )}
 
             {info.techStack?.length > 0 && (
-              <div className="mt-4">
+              <div className="mt-6">
                 <h4 className="mb-2 font-semibold text-foreground/90">
                   Tech Stack:
                 </h4>
