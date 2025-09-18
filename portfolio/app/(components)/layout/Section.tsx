@@ -1,9 +1,23 @@
 import { SectionProps } from "@/types/types";
 
-export function Section({ id, title, className, children }: SectionProps) {
+export function Section({
+  id,
+  title,
+  className,
+  children,
+  align = "left",
+}: SectionProps) {
+  const alignmentClasses = {
+    left: "text-left",
+    center: "text-center",
+    right: "text-right",
+  }[align];
   return (
     <>
-      <section id={id} className={`w-full px-6 py-16 sm:py-24 ${className}`}>
+      <section
+        id={id}
+        className={`w-full ${alignmentClasses} px-6 py-16 sm:py-24 ${className}`}
+      >
         <div className="mx-auto max-w-5xl">
           {title && (
             <header className="mb-8">
