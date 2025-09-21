@@ -1,7 +1,10 @@
 import { AboutInfo, IProject } from "@/types/types";
-import { serverEnv } from "@/config/env";
+import { serverEnv, publicEnv } from "@/config/env";
 
-const API_BASE_URL = serverEnv.PUBLIC_DB_CONNECTION;
+const API_BASE_URL =
+  typeof window === "undefined"
+    ? serverEnv.PUBLIC_DB_CONNECTION
+    : publicEnv.NEXT_PUBLIC_DB_CONNECTION;
 
 async function jsonOrThrow<T>(response: Response): Promise<T> {
   if (!response.ok) {
@@ -44,6 +47,7 @@ export async function getProjects(): Promise<IProject[]> {
 export async function sendContactForm(
   formData: FormData
 ): Promise<{ message?: string }> {
+
   if (!API_BASE_URL) {
     throw new Error("Missing API base URL");
   }
