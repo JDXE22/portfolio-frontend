@@ -39,18 +39,21 @@ export default function ContactSection() {
     setError(null);
     setSuccess(null);
 
+    const formEl = event.currentTarget;
+
     const data = new FormData(event.currentTarget);
     files.forEach((f) => data.append("files", f));
 
     try {
       const res = await sendContactForm(data);
       setSuccess(res?.message ?? "Thanks! I’ll get back to you soon.");
-      event.currentTarget.reset();
+      formEl.reset();
       setFiles([]);
       setShowCc(false);
       setShowBcc(false);
     } catch (e) {
       setError(errorMessage(e));
+      setSuccess(null);
     } finally {
       setSubmitting(false);
     }
