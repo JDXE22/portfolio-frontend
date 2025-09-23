@@ -8,7 +8,7 @@ export const dictionaries = {
       buttons: {
         projects: "Projects",
         contact: "Contact",
-        education: "Education",
+        about: "About Me",
       },
     },
   },
@@ -19,14 +19,16 @@ export const dictionaries = {
       buttons: {
         projects: "Proyectos",
         contact: "Contacto",
-        education: "Educación",
+        about: "Sobre Mí",
       },
     },
   },
 } as const;
 
-export type HeroMessages = typeof dictionaries.en.hero;
+export type HeroMessages =
+  | typeof dictionaries.en.hero
+  | typeof dictionaries.es.hero;
 
 export function getDictionary(lang: SupportedLanguage): { hero: HeroMessages } {
-  return dictionarie[lang] || dictionaries.en;
+  return dictionaries[lang] || dictionaries.en;
 }
