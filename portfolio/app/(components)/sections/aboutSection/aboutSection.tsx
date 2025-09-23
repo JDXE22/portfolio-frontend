@@ -128,7 +128,7 @@ export default async function AboutSection() {
                             group-hover:opacity-100 group-focus-visible:opacity-100
                           "
                           >
-                            {link.name || link.url}
+                            {label}
                           </span>
                         </a>
                       </li>
