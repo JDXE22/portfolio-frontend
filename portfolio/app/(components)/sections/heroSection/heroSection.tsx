@@ -47,6 +47,14 @@ export function HeroSection({ lang = "en" }: HeroProps) {
           <Button
             variant="secondary"
             size="sm"
+            onClick={() => scrollTo("about")}
+            aria-label="Jump to About Me"
+          >
+            {dictionary?.buttons.about}
+          </Button>
+          <Button
+            variant="secondary"
+            size="sm"
             onClick={() => scrollTo("projects")}
             aria-label="Jump to Projects"
           >
