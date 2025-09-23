@@ -8,6 +8,8 @@ export type SectionProps = {
   className?: string;
   align?: "left" | "center" | "right";
   children: React.ReactNode;
+  noPadding?: boolean;
+  noMinHeight?: boolean;
 };
 
 export interface SocialLink {
