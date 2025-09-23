@@ -1,3 +1,4 @@
+import { SupportedLanguage } from "@/i18n/dictionaries";
 import React from "react";
 
 export type SectionProps = {
@@ -80,3 +81,7 @@ export type ModalProps = {
 export type ClassValue = string | false | null | undefined;
 
 export type Props = { projects: ReadonlyArray<IProject> };
+
+export interface HeroProps {
+  lang?: SupportedLanguage;
+}
