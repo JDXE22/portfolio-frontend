@@ -1,3 +1,4 @@
+import { SupportedLanguage } from "@/i18n/dictionaries";
 import React from "react";
 
 export type SectionProps = {
@@ -7,6 +8,8 @@ export type SectionProps = {
   className?: string;
   align?: "left" | "center" | "right";
   children: React.ReactNode;
+  noPadding?: boolean;
+  noMinHeight?: boolean;
 };
 
 export interface SocialLink {
@@ -80,3 +83,7 @@ export type ModalProps = {
 export type ClassValue = string | false | null | undefined;
 
 export type Props = { projects: ReadonlyArray<IProject> };
+
+export interface HeroProps {
+  lang?: SupportedLanguage;
+}

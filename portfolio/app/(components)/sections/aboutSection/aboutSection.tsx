@@ -50,35 +50,41 @@ export default async function AboutSection() {
                   Tech Stack:
                 </h4>
                 <ul className="flex flex-wrap items-center gap-3">
-                  {info.techStack.map((tech, i) => (
-                    <li
-                      key={i}
-                      className="group relative flex h-10 w-10 items-center justify-center rounded-md border border-foreground/10 bg-foreground/[0.05] p-1 transition-colors hover:bg-foreground/[0.08] focus-within:bg-foreground/[0.08]"
-                    >
-                      {tech.iconPublicId && (
-                        <img
-                          src={tech.iconPublicId}
-                          alt=""
-                          aria-hidden="true"
-                          className="h-7 w-7 object-contain"
-                        />
-                      )}
-                      <span className="sr-only">{tech.name}</span>
-                      {/* Tooltip */}
-                      <span
-                        role="tooltip"
-                        className="
+                  {info.techStack.map((tech, i) => {
+                    const tipId = `tech-tooltip-${i}`;
+                    return (
+                      <li
+                        key={i}
+                        tabIndex={0}
+                        aria-describedby={tipId}
+                        className="group relative flex h-10 w-10 items-center justify-center rounded-md border border-foreground/10 bg-foreground/[0.05] p-1 transition-colors hover:bg-foreground/[0.08] focus-within:bg-foreground/[0.08]"
+                      >
+                        {tech.iconPublicId && (
+                          <img
+                            src={tech.iconPublicId}
+                            alt=""
+                            aria-hidden="true"
+                            className="h-7 w-7 object-contain"
+                          />
+                        )}
+                        <span className="sr-only">{tech.name}</span>
+                        {/* Tooltip */}
+                        <span
+                          id={tipId}
+                          role="tooltip"
+                          className="
                           pointer-events-none absolute -bottom-8 left-1/2 z-10 
                           -translate-x-1/2 whitespace-nowrap rounded-md
                           bg-foreground/90 px-2 py-1 text-[11px] font-medium
                           text-background opacity-0 shadow-md transition
                           group-hover:opacity-100 group-focus-within:opacity-100
                         "
-                      >
-                        {tech.name}
-                      </span>
-                    </li>
-                  ))}
+                        >
+                          {tech.name}
+                        </span>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             )}
@@ -89,39 +95,45 @@ export default async function AboutSection() {
                   Social Links:
                 </h4>
                 <ul className="flex flex-wrap items-center gap-4">
-                  {info.socialLinks.map((link, i) => (
-                    <li key={link.name ?? i}>
-                      <a
-                        href={link.url ?? "#"}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={link.name || link.url}
-                        className="group relative inline-flex h-9 w-9 items-center justify-center rounded-md border border-foreground/10 bg-foreground/[0.05] p-1 transition-colors hover:bg-foreground/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/30"
-                      >
-                        {link.iconPublicId && (
-                          <img
-                            src={link.iconPublicId}
-                            alt=""
-                            aria-hidden="true"
-                            className="h-5 w-5 object-contain"
-                          />
-                        )}
-                        {/* Tooltip */}
-                        <span
-                          role="tooltip"
-                          className="
+                  {info.socialLinks.map((link, i) => {
+                    const tipId = `social-tooltip-${i}`;
+                    const label = link.name || link.url || `Link`;
+                    return (
+                      <li key={link.name ?? i}>
+                        <a
+                          href={link.url ?? "#"}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-describedby={tipId}
+                          s
+                          className="group relative inline-flex h-9 w-9 items-center justify-center rounded-md border border-foreground/10 bg-foreground/[0.05] p-1 transition-colors hover:bg-foreground/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/30"
+                        >
+                          {link.iconPublicId && (
+                            <img
+                              src={link.iconPublicId}
+                              alt=""
+                              aria-hidden="true"
+                              className="h-5 w-5 object-contain"
+                            />
+                          )}
+                          {/* Tooltip */}
+                          <span
+                            id={tipId}
+                            role="tooltip"
+                            className="
                             pointer-events-none absolute -bottom-8 left-1/2
                             -translate-x-1/2 whitespace-nowrap rounded-md
                             bg-foreground/90 px-2 py-1 text-[11px] font-medium
                             text-background opacity-0 shadow-md transition
                             group-hover:opacity-100 group-focus-visible:opacity-100
                           "
-                        >
-                          {link.name || link.url}
-                        </span>
-                      </a>
-                    </li>
-                  ))}
+                          >
+                            {label}
+                          </span>
+                        </a>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             )}
