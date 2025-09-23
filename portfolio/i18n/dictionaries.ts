@@ -27,6 +27,6 @@ export const dictionaries = {
 
 export type HeroMessages = typeof dictionaries.en.hero;
 
-export function getDictionary(lang: SupportedLanguage): { hero: HeroMesage } {
+export function getDictionary(lang: SupportedLanguage): { hero: HeroMessages } {
   return dictionarie[lang] || dictionaries.en;
 }
