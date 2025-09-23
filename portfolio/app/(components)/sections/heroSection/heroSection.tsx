@@ -2,19 +2,12 @@
 import React from "react";
 import { Button } from "@/app/(components)/ui/Button";
 import Particles from "@/app/(components)/backgrounds/Background";
-import { getDictionary } from "@/i18n/dictionaries";
+import { getDictionary, SupportedLanguage } from "@/i18n/dictionaries";
 import { HeroProps } from "@/types/types";
-import { Section } from "../../layout/Section";
-
-const userLanguage =
-  typeof navigator !== "undefined"
-    ? navigator.language.startsWith("es")
-      ? "es"
-      : "en"
-    : "en";
+import { Section } from "@/app/(components)/layout/Section";
 
 export function HeroSection({ lang }: HeroProps) {
-  const dictionary = getDictionary((lang ?? userLanguage) as any).hero;
+  const dictionary = getDictionary((lang ?? "en") as SupportedLanguage).hero;
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
