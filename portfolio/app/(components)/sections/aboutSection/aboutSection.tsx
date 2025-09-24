@@ -10,7 +10,7 @@ export default async function AboutSection() {
     Array.isArray(aboutInfo) && aboutInfo.length > 0 ? aboutInfo : [];
 
   return (
-    <Section id="about" title="About Me" align="center">
+    <Section id="about" title="About Me" equalHeight>
       <div className="grid gap-6">
         {items.map((info) => (
           <div
