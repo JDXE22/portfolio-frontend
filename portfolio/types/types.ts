@@ -38,8 +38,10 @@ export interface AboutInfo {
   skills: string[];
   techStack: TechStackItem[];
   experience?: { title: string; company: string; duration: string }[];
-  education: EducationItem[];
+  education?: EducationItem[];
   certifications?: { title: string; issuer: string; date: string }[];
+  cvUrl?: string;
+  cerficateUrl?: string;
   socialLinks: SocialLink[];
 }
 
