@@ -105,7 +105,6 @@ export default async function AboutSection() {
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-describedby={tipId}
-                          s
                           className="group relative inline-flex h-9 w-9 items-center justify-center rounded-md border border-foreground/10 bg-foreground/[0.05] p-1 transition-colors hover:bg-foreground/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/30"
                         >
                           {link.iconPublicId && (
