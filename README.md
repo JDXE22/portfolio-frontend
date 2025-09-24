@@ -87,11 +87,12 @@ portfolio/
 
 ## Environment
 
-The app expects a base URL for the backend API.
+The app expects a base URL for the backend API. In the folder /data there's a file with the api operations there you will see the API_BASE_URL variable which contains either or the PUBLIC_DB | NEXT_PUBLIC_DB_CONNECTION variable that is set in the /config folder
 
 Example `.env` (in the `portfolio/` directory):
 
 ```
+
 PUBLIC_DB_CONNECTION=https://your-api.example.com
 # or (client-side only)
 # NEXT_PUBLIC_DB_CONNECTION=https://your-api.example.com
