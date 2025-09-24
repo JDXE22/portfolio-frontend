@@ -8,6 +8,8 @@ export function Section({
   align = "left",
   noPadding,
   noMinHeight,
+  equalHeight,
+  customMinHeight,
 }: SectionProps) {
   const alignmentClasses = {
     left: "text-left",
@@ -16,7 +18,13 @@ export function Section({
   }[align];
 
   const paddingClasses = noPadding ? "px-0 py-0" : "px-6 py-20 sm:py-28";
-  const minHeightClass = noMinHeight ? "" : "min-h-[560px]";
+  const heightClass = noMinHeight
+    ? ""
+    : customMinHeight
+    ? customMinHeight
+    : "min-h-[560px]";
+
+  const flexClass = equalHeight ? "flex-1" : "";
 
   return (
     <>
@@ -24,9 +32,11 @@ export function Section({
         id={id}
         className={`w-full ${paddingClasses} ${className || ""}`}
       >
-        <div className={`mx-auto max-w-5xl flex flex-col ${minHeightClass}`}>
+        <div
+          className={`mx-auto max-w-5xl flex flex-col ${alignmentClasses} ${flexClass} ${heightClass}`}
+        >
           {title && (
-            <header className={`mb-10 ${alignmentClasses}`}>
+            <header className={`mb-10`}>
               <h2
                 className={`text-2xl sm:text-3xl font-semibold tracking-tight`}
               >
