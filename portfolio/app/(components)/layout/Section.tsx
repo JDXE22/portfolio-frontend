@@ -33,12 +33,12 @@ export function Section({
         className={`w-full ${paddingClasses} ${className || ""}`}
       >
         <div
-          className={`mx-auto max-w-5xl flex flex-col ${alignmentClasses} ${flexClass} ${heightClass}`}
+          className={`mx-auto max-w-5xl flex flex-col ${flexClass} ${heightClass}`}
         >
           {title && (
             <header className={`mb-10`}>
               <h2
-                className={`text-2xl sm:text-3xl font-semibold tracking-tight`}
+                className={`${alignmentClasses} text-2xl sm:text-3xl font-semibold tracking-tight`}
               >
                 {title}
               </h2>
