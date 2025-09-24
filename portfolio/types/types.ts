@@ -41,7 +41,7 @@ export interface AboutInfo {
   education?: EducationItem[];
   certifications?: { title: string; issuer: string; date: string }[];
   cvUrl?: string;
-  cerficateUrl?: string;
+  certificateUrl?: string;
   socialLinks: SocialLink[];
 }
 
