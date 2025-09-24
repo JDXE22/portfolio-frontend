@@ -1,7 +1,6 @@
 import { Section } from "@/app/(components)/layout/Section";
 import { getAboutMeInfo } from "@/data/dataApi";
 import { AboutInfo } from "@/types/types";
-import { publicEnv } from "@/config/env"; // ← import your front-end env
 
 export default async function AboutSection() {
   const aboutInfo = await getAboutMeInfo();
@@ -134,41 +133,6 @@ export default async function AboutSection() {
                       </li>
                     );
                   })}
-                </ul>
-              </div>
-            )}
-
-            {/* Documents */}
-            {(info.cvUrl || info.certificateUrl) && (
-              <div className="mt-6">
-                <h4 className="mb-1 font-semibold text-foreground/90">
-                  Documents:
-                </h4>
-                <ul className="flex flex-wrap items-center gap-4">
-                  {info.cvUrl && (
-                    <li>
-                      <a
-                        href={`${publicEnv.NEXT_PUBLIC_DB_CONNECTION}${info.cvUrl}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-indigo-500 hover:underline"
-                      >
-                        Download CV
-                      </a>
-                    </li>
-                  )}
-                  {info.certificateUrl && (
-                    <li>
-                      <a
-                        href={`${publicEnv.NEXT_PUBLIC_DB_CONNECTION}${info.certificateUrl}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-indigo-500 hover:underline"
-                      >
-                        View Certificate
-                      </a>
-                    </li>
-                  )}
                 </ul>
               </div>
             )}
