@@ -10,6 +10,8 @@ export type SectionProps = {
   children: React.ReactNode;
   noPadding?: boolean;
   noMinHeight?: boolean;
+  equalHeight?: boolean;
+  customMinHeight?: string;
 };
 
 export interface SocialLink {
