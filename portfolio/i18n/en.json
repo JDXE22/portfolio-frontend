@@ -25,11 +25,15 @@
   "projects": {
     "sectionTitle": "Projects",
     "viewRepository": "View repository",
-    "description": "Description",
     "liveSite": "Live site",
     "moreInfo": "More Info",
     "empty": "[]",
-    "why": "Why did I build this project?"
+    "why": "Why did I build this project?",
+    "modal": {
+      "title": "Project details",
+      "difficulty": "Difficulty:",
+      "close": "Close"
+    }
   },
   "contact": {
     "sectionTitle": "Contact Me",
@@ -41,8 +45,6 @@
     "addCc": "CC",
     "addBcc": "BCC",
     "chooseFiles": "Choose files",
-    "filesSelected": "{{count}} file(s) selected",
-    "success": "Thanks! I’ll get back to you soon.",
-    "error": "An unexpected error occurred. Please try again."
+    "filesSelected": "{{count}} file(s) selected"
   }
 }
