@@ -67,7 +67,7 @@ export default function ProjectsGrid({ projects }: Props) {
             <div className="flex flex-1 flex-col px-4 pb-4">
               <div className="mb-3 flex items-start justify-between gap-3">
                 <h4 className="font-semibold text-foreground">
-                  {dictionary("sectionTitle")}
+                  {project.title}
                 </h4>
 
                 {project.liveStatus && (

@@ -17,6 +17,7 @@
   "projects": {
     "sectionTitle": "Projects",
     "viewRepository": "View repository",
+    "description": "Description",
     "liveSite": "Live site",
     "moreInfo": "More Info",
     "empty": "[]",
