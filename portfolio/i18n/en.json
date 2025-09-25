@@ -1,0 +1,39 @@
+{
+  "hero": {
+    "title": "Behind Every Code, There's a Story",
+    "subtitle": "Welcome to David's Portfolio",
+    "buttons": {
+      "projects": "Projects",
+      "contact": "Contact",
+      "about": "About Me"
+    }
+  },
+  "about": {
+    "sectionTitle": "About Me",
+    "skills": "Skills",
+    "techStack": "Tech Stack",
+    "socialLinks": "Social Links"
+  },
+  "projects": {
+    "sectionTitle": "Projects",
+    "viewRepository": "View repository",
+    "liveSite": "Live site",
+    "moreInfo": "More Info",
+    "empty": "[]",
+    "why": "Why did I build this project?"
+  },
+  "contact": {
+    "sectionTitle": "Contact Me",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "sendMessage": "Send Message",
+    "sending": "Sending...",
+    "addCc": "Add CC",
+    "addBcc": "Add BCC",
+    "chooseFiles": "Choose files",
+    "filesSelected": "{{count}} file(s) selected",
+    "success": "Thanks! I’ll get back to you soon.",
+    "error": "An unexpected error occurred. Please try again."
+  }
+}
