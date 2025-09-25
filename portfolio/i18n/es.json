@@ -17,11 +17,21 @@
   "projects": {
     "sectionTitle": "Proyectos",
     "viewRepository": "Ver repositorio",
-    "liveSite": "URL de la web",
-    "description": "Descripción",
+    "liveSite": "Url en vivo",
     "moreInfo": "Más información",
     "empty": "[]",
-    "why": "¿Por qué construí este proyecto?"
+    "why": "¿Por qué construí este proyecto?",
+    "modal": {
+      "title": "Detalles del proyecto",
+      "difficulty": "Dificultad:",
+      "close": "Cerrar",
+      "reasoning": "Explicación",
+      "levels": {
+        "easy": "Fácil",
+        "medium": "Intermedio",
+        "hard": "Difícil"
+      }
+    }
   },
   "contact": {
     "sectionTitle": "Contáctame",
