@@ -5,6 +5,7 @@ import { sendContactForm } from "@/data/dataApi";
 import { Button } from "@/app/(components)/ui/Button";
 import { Section } from "@/app/(components)/layout/Section";
 import { errorMessage } from "@/lib/errors";
+import { useTranslations } from "next-intl";
 
 export default function ContactSection() {
   const [files, setFiles] = React.useState<File[]>([]);
@@ -13,6 +14,8 @@ export default function ContactSection() {
   const [submitting, setSubmitting] = React.useState(false);
   const [showCc, setShowCc] = React.useState(false);
   const [showBcc, setShowBcc] = React.useState(false);
+
+  const dictionary = useTranslations("contact");
 
   const formRef = React.useRef<HTMLFormElement>(null);
 
@@ -60,7 +63,12 @@ export default function ContactSection() {
   };
 
   return (
-    <Section id="contact" title="Contact Me" equalHeight align="center">
+    <Section
+      id="contact"
+      title={dictionary("sectionTitle")}
+      equalHeight
+      align="center"
+    >
       <div className="group relative mx-auto max-w-xl">
         <div
           className="
@@ -90,7 +98,7 @@ export default function ContactSection() {
                 htmlFor="name"
                 className="text-sm font-medium text-foreground"
               >
-                Name
+                {dictionary("name")}
               </label>
               <input
                 id="name"
@@ -108,7 +116,7 @@ export default function ContactSection() {
                 htmlFor="email"
                 className="text-sm font-medium text-foreground"
               >
-                Email
+                {dictionary("email")}
               </label>
               <div
                 className="
@@ -138,7 +146,7 @@ export default function ContactSection() {
                         onClick={() => setShowCc(true)}
                         className="text-[11px] font-medium text-indigo-400 underline decoration-dotted underline-offset-2 hover:text-indigo-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/40 rounded px-0"
                       >
-                        Add CC
+                        {dictionary("addCc")}
                       </button>
                     )}
                     {!showBcc && (
@@ -147,7 +155,7 @@ export default function ContactSection() {
                         onClick={() => setShowBcc(true)}
                         className="text-[11px] font-medium text-indigo-400 underline decoration-dotted underline-offset-2 hover:text-indigo-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/40 rounded px-0"
                       >
-                        Add BCC
+                        {dictionary("addBcc")}
                       </button>
                     )}
                   </div>
@@ -215,7 +223,7 @@ export default function ContactSection() {
                 htmlFor="message"
                 className="text-sm font-medium text-foreground"
               >
-                Message
+                {dictionary("message")}
               </label>
               <textarea
                 id="message"
@@ -233,7 +241,7 @@ export default function ContactSection() {
                   htmlFor="files"
                   className="inline-flex cursor-pointer items-center rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-indigo-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500/50"
                 >
-                  Choose files
+                  {dictionary("chooseFiles")}{" "}
                 </label>
                 <input
                   id="files"
@@ -277,7 +285,7 @@ export default function ContactSection() {
                 aria-busy={submitting}
                 className="w-full max-w-xs"
               >
-                {submitting ? "Sending..." : "Send Message"}
+                {submitting ? dictionary("sending") : dictionary("sendMessage")}
               </Button>
             </div>
           </div>
