@@ -17,7 +17,7 @@
   "projects": {
     "sectionTitle": "Proyectos",
     "viewRepository": "Ver repositorio",
-    "liveSite": "Sitio en vivo",
+    "liveSite": "URL de la web",
     "description": "Descripción",
     "moreInfo": "Más información",
     "empty": "[]",
