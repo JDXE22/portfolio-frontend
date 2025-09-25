@@ -60,7 +60,7 @@ export default function ContactSection() {
   };
 
   return (
-    <Section id="contact" title="Contact Me" align="center">
+    <Section id="contact" title="Contact Me" equalHeight align="center">
       <div className="group relative mx-auto max-w-xl">
         <div
           className="

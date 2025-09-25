@@ -4,7 +4,7 @@ export const dictionaries = {
   en: {
     hero: {
       title: "Behind Every Code, There's a Story",
-      subtitle: "Hi there! I'm David, a Full Stack Developer",
+      subtitle: "Welcome to David's Portfolio",
       buttons: {
         projects: "Projects",
         contact: "Contact",
@@ -15,7 +15,7 @@ export const dictionaries = {
   es: {
     hero: {
       title: "Tras Cada Línea de Código Hay una Historia",
-      subtitle: "Hola, soy David, Desarrollador Full Stack",
+      subtitle: "Bienvenido al Portafolio de David",
       buttons: {
         projects: "Proyectos",
         contact: "Contacto",

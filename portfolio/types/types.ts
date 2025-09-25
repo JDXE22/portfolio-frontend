@@ -10,6 +10,8 @@ export type SectionProps = {
   children: React.ReactNode;
   noPadding?: boolean;
   noMinHeight?: boolean;
+  equalHeight?: boolean;
+  customMinHeight?: string;
 };
 
 export interface SocialLink {
@@ -38,8 +40,10 @@ export interface AboutInfo {
   skills: string[];
   techStack: TechStackItem[];
   experience?: { title: string; company: string; duration: string }[];
-  education: EducationItem[];
+  education?: EducationItem[];
   certifications?: { title: string; issuer: string; date: string }[];
+  cvUrl?: string;
+  certificateUrl?: string;
   socialLinks: SocialLink[];
 }
 
