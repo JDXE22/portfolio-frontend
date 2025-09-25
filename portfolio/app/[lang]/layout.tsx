@@ -18,18 +18,17 @@ export const metadata: Metadata = {
   description: "Created by David Esparza",
 };
 
-export async function generateStaticParams() {
-  return [{ lang: "es" }, { lang: "en" }];
+export function generateStaticParams() {
+  return [{ lang: "en" }, { lang: "es" }];
 }
 
 export default async function RootLayout(
-  props: Readonly<{
-    children: React.ReactNode;
-    params: { lang: "es" | "en" };
-  }>
+  props: Readonly<{ children: React.ReactNode; params: { lang: "en" | "es" } }>
 ) {
-  const { children, params } = props;
+  const { children } = props;
+  const params = await props.params;
   const lang = params.lang;
+
   const messages = (await import(`../../i18n/${lang}.json`)).default;
   return (
     <html lang={lang}>
