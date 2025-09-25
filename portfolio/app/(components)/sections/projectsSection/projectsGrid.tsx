@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { useTranslations } from "next-intl";
 import { Button } from "@/app/(components)/ui/Button";
 import { Modal } from "@/app/(components)/ui/Modal";
 import type { IProject, Props } from "@/types/types";
@@ -16,6 +17,8 @@ export default function ProjectsGrid({ projects }: Props) {
   const [selectedProject, setSelectedProject] = React.useState<IProject | null>(
     null
   );
+
+  const dictionary = useTranslations("projects");
 
   const onMore = (project: IProject) => {
     setSelectedProject(project);
@@ -64,7 +67,7 @@ export default function ProjectsGrid({ projects }: Props) {
             <div className="flex flex-1 flex-col px-4 pb-4">
               <div className="mb-3 flex items-start justify-between gap-3">
                 <h4 className="font-semibold text-foreground">
-                  {project.title}
+                  {dictionary("sectionTitle")}
                 </h4>
 
                 {project.liveStatus && (
@@ -88,7 +91,7 @@ export default function ProjectsGrid({ projects }: Props) {
                   data-testid="more-projectInfo-btn"
                   onClick={() => onMore(project)}
                 >
-                  More Info
+                  {dictionary("moreInfo")}
                 </Button>
               </div>
             </div>
@@ -157,7 +160,7 @@ export default function ProjectsGrid({ projects }: Props) {
                   rel="noopener noreferrer"
                   className="text-sm text-foreground underline underline-offset-4 decoration-foreground/20 hover:decoration-foreground/40 hover:opacity-80"
                 >
-                  View repository
+                  {dictionary("viewRepository")}
                 </a>
               )}
 
@@ -168,7 +171,7 @@ export default function ProjectsGrid({ projects }: Props) {
                   rel="noopener noreferrer"
                   className="text-sm text-foreground underline underline-offset-4 decoration-foreground/30 hover:decoration-foreground/50 hover:opacity-80"
                 >
-                  Live site
+                  {dictionary("liveSite")}
                 </a>
               )}
             </div>
