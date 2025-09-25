@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
-import { SupportedLanguage } from "@/i18n/dictionaries";
+import { NextIntlClientProvider } from "next-intl";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,19 +18,22 @@ export const metadata: Metadata = {
   description: "Created by David Esparza",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-  params,
+  params: { lang },
 }: Readonly<{
   children: React.ReactNode;
-  params: SupportedLanguage;
+  params: { lang: "es" | "en" };
 }>) {
+  const messages = (await import(`../../i18n/${lang}.json`)).default;
   return (
-    <html lang="en">
+    <html lang={lang}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased app-gradient`}
       >
-        {children}
+        <NextIntlClientProvider locale={lang} messages={messages}>
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );
