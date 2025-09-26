@@ -46,7 +46,7 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
       <Modal
         open={isOpen}
         onClose={close}
-        title={selected ? selected.headline : t("modal.title")}
+        title={selected ? selected.headline : t("sectionTitle")}
         showCloseButton
       >
         {selected && (
@@ -67,7 +67,7 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
               </>
             )}
 
-            {selected.certifications?.length > 0 && (
+            {/* {selected.certifications?.length > 0 && (
               <>
                 <h5 className="font-medium">{t("certifications")}</h5>
                 <ul>
@@ -78,7 +78,7 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
                   ))}
                 </ul>
               </>
-            )}
+            )} */}
 
             <div className="mt-4 flex justify-end gap-2">
               <button onClick={close} className="px-3 py-1 rounded bg-gray-100">
