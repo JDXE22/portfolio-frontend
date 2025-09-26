@@ -2,92 +2,106 @@
 import React from "react";
 import { useTranslations } from "next-intl";
 import { AboutInfo } from "@/types/types";
-import { Modal } from "@/app/(components)/ui/Modal";
 
 export default function AboutClient({ items }: { items: AboutInfo[] }) {
   const t = useTranslations("about");
-
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [selected, setSelected] = React.useState<AboutInfo | null>(null);
-
-  const openDetails = (info: AboutInfo) => {
-    setSelected(info);
-    setIsOpen(true);
-  };
-  const close = () => {
-    setIsOpen(false);
-    setSelected(null);
-  };
 
   if (items.length === 0) {
     return <p>{t("empty")}</p>;
   }
   return (
-    <div>
-      <h2>{t("sectionTitle")}</h2>
+    <div className="grid gap-6">
       {items.map((info) => (
-        <div key={info.headline}>
-          <h3>{info.headline}</h3>
-          <p>{info.bio}</p>
+        <div
+          key={info.headline}
+          className="rounded-lg border border-foreground/10 bg-background p-6 shadow-sm transition-shadow hover:shadow-md"
+        >
+          <h3 className="mb-2 text-xl font-semibold text-foreground">
+            {info.headline}
+          </h3>
+          <p className="text-foreground/80">{info.bio}</p>
+
+          {info.avatarIconUrl && (
+            <img
+              src={info.avatarIconUrl}
+              alt={`${info.headline} avatar`}
+              className="mt-4 h-32 w-32 rounded-full object-cover"
+            />
+          )}
 
           {info.skills?.length > 0 && (
-            <>
-              <h4>{t("skills")}</h4>
-              <ul>
-                {info.skills.map((s) => (
-                  <li key={s}>{s}</li>
+            <div className="mt-6">
+              <h4 className="mb-1 font-semibold text-foreground/90">
+                {t("skills")}:
+              </h4>
+              <ul className="list-disc list-inside text-foreground/80">
+                {info.skills.map((skill, i) => (
+                  <li key={i}>{skill}</li>
                 ))}
               </ul>
-            </>
+            </div>
+          )}
+
+          {info.techStack?.length > 0 && (
+            <div className="mt-6">
+              <h4 className="mb-2 font-semibold text-foreground/90">
+                {t("techStack")}:
+              </h4>
+              <ul className="flex flex-wrap items-center gap-3">
+                {info.techStack.map((tech, i) => (
+                  <li
+                    key={i}
+                    className="group relative flex h-10 w-10 items-center justify-center rounded-md border border-foreground/10 bg-foreground/[0.05] p-1 transition-colors hover:bg-foreground/[0.08] focus-within:bg-foreground/[0.08]"
+                  >
+                    {tech.iconPublicId && (
+                      <img
+                        src={tech.iconPublicId}
+                        alt={tech.name}
+                        aria-hidden="true"
+                        className="h-7 w-7 object-contain"
+                      />
+                    )}
+                    <span className="pointer-events-none absolute left-1/2 top-full z-10 mt-2 -translate-x-1/2 scale-0 rounded bg-black px-2 py-1 text-xs text-white opacity-0 shadow transition-all group-hover:scale-100 group-hover:opacity-100">
+                      {tech.name}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Social Links */}
+          {info.socialLinks?.length > 0 && (
+            <div className="mt-6">
+              <h4 className="mb-1 font-semibold text-foreground/90">
+                {t("socialLinks")}:
+              </h4>
+              <ul className="flex flex-col gap-2">
+                {info.socialLinks.map((link, i) => (
+                  <li key={i}>
+                    <a
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-foreground hover:text-indigo-500 no-underline"
+                      style={{ textDecoration: "none" }}
+                    >
+                      {link.iconPublicId && (
+                        <img
+                          src={link.iconPublicId}
+                          alt={link.name}
+                          className="h-7 w-7"
+                        />
+                      )}
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           )}
         </div>
       ))}
-
-      <Modal
-        open={isOpen}
-        onClose={close}
-        title={selected ? selected.headline : t("sectionTitle")}
-        showCloseButton
-      >
-        {selected && (
-          <div className="space-y-3">
-            <p className="text-sm text-foreground/80">{selected.bio}</p>
-
-            {selected.education && (
-              <>
-                <h5 className="font-medium">{t("education")}</h5>
-                <ul>
-                  {selected.education.map((e, i) => (
-                    <li key={i}>
-                      <strong>{e.degree}</strong> — {e.institution}{" "}
-                      {e.duration ? `(${e.duration})` : ""}
-                    </li>
-                  ))}
-                </ul>
-              </>
-            )}
-
-            {/* {selected.certifications?.length > 0 && (
-              <>
-                <h5 className="font-medium">{t("certifications")}</h5>
-                <ul>
-                  {selected.certifications.map((c, i) => (
-                    <li key={i}>
-                      {c.title} — {c.issuer} {c.date ? `(${c.date})` : ""}
-                    </li>
-                  ))}
-                </ul>
-              </>
-            )} */}
-
-            <div className="mt-4 flex justify-end gap-2">
-              <button onClick={close} className="px-3 py-1 rounded bg-gray-100">
-                {t("modal.close")}
-              </button>
-            </div>
-          </div>
-        )}
-      </Modal>
     </div>
   );
 }
