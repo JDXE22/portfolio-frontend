@@ -9,6 +9,8 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
   if (items.length === 0) {
     return <p>{t("empty")}</p>;
   }
+  const skills = t.raw("skillsList") as string[];
+
   return (
     <div className="grid gap-6">
       {items.map((info) => (
@@ -29,13 +31,13 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
             />
           )}
 
-          {info.skills?.length > 0 && (
+          {skills.length > 0 && (
             <div className="mt-6">
               <h4 className="mb-1 font-semibold text-foreground/90">
                 {t("skills")}:
               </h4>
               <ul className="list-disc list-inside text-foreground/80">
-                {info.skills.map((skill, i) => (
+                {skills.map((skill, i) => (
                   <li key={i}>{skill}</li>
                 ))}
               </ul>
