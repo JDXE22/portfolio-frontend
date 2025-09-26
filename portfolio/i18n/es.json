@@ -12,7 +12,14 @@
     "sectionTitle": "Sobre Mí",
     "skills": "Habilidades",
     "techStack": "Stack Tecnológico",
-    "socialLinks": "Redes Sociales"
+    "socialLinks": "Redes Sociales",
+    "skillsList": [
+      "Trabajo en equipo",
+      "Resolución de problemas",
+      "Adaptable",
+      "Orientado al detalle",
+      "Pensamiento analítico"
+    ]
   },
   "projects": {
     "sectionTitle": "Proyectos",
