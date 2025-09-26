@@ -1,4 +1,3 @@
-import { SupportedLanguage } from "@/i18n/dictionaries";
 import React from "react";
 
 export type SectionProps = {
@@ -34,6 +33,7 @@ export interface EducationItem {
 }
 
 export interface AboutInfo {
+  id: string;
   headline: string;
   bio: string;
   avatarIconUrl: string;
@@ -87,7 +87,3 @@ export type ModalProps = {
 export type ClassValue = string | false | null | undefined;
 
 export type Props = { projects: ReadonlyArray<IProject> };
-
-export interface HeroProps {
-  lang?: SupportedLanguage;
-}

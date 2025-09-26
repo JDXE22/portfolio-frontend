@@ -1,14 +1,12 @@
 "use client";
 import React from "react";
+import { useTranslations } from "next-intl";
 import { Button } from "@/app/(components)/ui/Button";
 import Particles from "@/app/(components)/backgrounds/Background";
-import { getDictionary, SupportedLanguage } from "@/i18n/dictionaries";
-import { HeroProps } from "@/types/types";
 import { Section } from "@/app/(components)/layout/Section";
 
-export function HeroSection({ lang }: HeroProps) {
-  const dictionary = getDictionary((lang ?? "en") as SupportedLanguage).hero;
-
+export function HeroSection() {
+  const dictionary = useTranslations("hero");
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -40,10 +38,10 @@ export function HeroSection({ lang }: HeroProps) {
         />
         <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center text-center">
           <h1 className="text-balance text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-            {dictionary.title}
+            {dictionary("title")}
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-foreground/80 sm:text-xl">
-            {dictionary.subtitle}
+            {dictionary("subtitle")}
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <Button
@@ -52,7 +50,7 @@ export function HeroSection({ lang }: HeroProps) {
               onClick={() => scrollTo("about")}
               aria-label="Jump to About"
             >
-              {dictionary.buttons.about}
+              {dictionary("buttons.about")}
             </Button>
             <Button
               variant="secondary"
@@ -60,7 +58,7 @@ export function HeroSection({ lang }: HeroProps) {
               onClick={() => scrollTo("projects")}
               aria-label="Jump to Projects"
             >
-              {dictionary.buttons.projects}
+              {dictionary("buttons.projects")}
             </Button>
             <Button
               variant="secondary"
@@ -68,7 +66,7 @@ export function HeroSection({ lang }: HeroProps) {
               onClick={() => scrollTo("contact")}
               aria-label="Jump to Contact"
             >
-              {dictionary.buttons.contact}
+              {dictionary("buttons.contact")}
             </Button>
           </div>
         </div>

@@ -1,0 +1,50 @@
+{
+  "hero": {
+    "title": "Tras Cada Línea de Código Hay una Historia",
+    "subtitle": "Bienvenido al Portafolio de David",
+    "buttons": {
+      "projects": "Proyectos",
+      "contact": "Contacto",
+      "about": "Sobre Mí"
+    }
+  },
+  "about": {
+    "sectionTitle": "Sobre Mí",
+    "skills": "Habilidades",
+    "techStack": "Stack Tecnológico",
+    "socialLinks": "Redes Sociales"
+  },
+  "projects": {
+    "sectionTitle": "Proyectos",
+    "viewRepository": "Ver repositorio",
+    "liveSite": "Url en vivo",
+    "moreInfo": "Más información",
+    "empty": "[]",
+    "why": "¿Por qué construí este proyecto?",
+    "modal": {
+      "title": "Detalles del proyecto",
+      "difficulty": "Dificultad:",
+      "close": "Cerrar",
+      "reasoning": "Explicación",
+      "levels": {
+        "easy": "Fácil",
+        "medium": "Intermedio",
+        "hard": "Difícil"
+      }
+    }
+  },
+  "contact": {
+    "sectionTitle": "Contáctame",
+    "name": "Nombre",
+    "email": "Correo",
+    "message": "Mensaje",
+    "sendMessage": "Enviar Mensaje",
+    "sending": "Enviando...",
+    "addCc": "Agregar CC",
+    "addBcc": "Agregar BCC",
+    "chooseFiles": "Seleccionar archivos",
+    "filesSelected": "{{count}} archivos seleccionados",
+    "success": "¡Gracias! Te responderé pronto.",
+    "error": "Ocurrió un error inesperado. Intenta nuevamente."
+  }
+}

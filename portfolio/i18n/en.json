@@ -1,0 +1,50 @@
+{
+  "hero": {
+    "title": "Behind Every Code, There's a Story",
+    "subtitle": "Welcome to David's Portfolio",
+    "buttons": {
+      "projects": "Projects",
+      "contact": "Contact",
+      "about": "About Me"
+    }
+  },
+  "about": {
+    "sectionTitle": "About Me",
+    "bio": "David is a developer with a back-end focus. He builds REST APIs, integrates Stripe and OAuth, and delivers real-time features with WebSocket.io. He has shipped projects that connect users with services and streamline operations. Based in Colombia. Open to new opportunities",
+    "skills": "Skills",
+    "techStack": "Tech Stack",
+    "socialLinks": "Social Links",
+    "cerftifications": [
+      {
+        "title": "Full‑Stack Developer - Data Modeling and Storage / Database Management",
+        "issuer": "Soy Henry Bootcamp",
+        "date": "2024 - 2025"
+      }
+    ]
+  },
+  "projects": {
+    "sectionTitle": "Projects",
+    "viewRepository": "View repository",
+    "liveSite": "Live site",
+    "moreInfo": "More Info",
+    "empty": "[]",
+    "why": "Why did I build this project?",
+    "modal": {
+      "title": "Project details",
+      "difficulty": "Difficulty:",
+      "close": "Close"
+    }
+  },
+  "contact": {
+    "sectionTitle": "Contact Me",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "sendMessage": "Send Message",
+    "sending": "Sending...",
+    "addCc": "CC",
+    "addBcc": "BCC",
+    "chooseFiles": "Choose files",
+    "filesSelected": "{{count}} file(s) selected"
+  }
+}
