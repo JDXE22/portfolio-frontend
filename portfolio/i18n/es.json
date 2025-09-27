@@ -10,20 +10,26 @@
   },
   "about": {
     "sectionTitle": "Sobre Mí",
+    "headline": "Lo sé, lo sé, ya has escuchado esto antes, pero repasémoslo de nuevo...",
+    "bio": "Hola, soy David Esparza, un apasionado desarrollador Full-Stack con un fuerte enfoque en construir backends confiables y eficientes, pero no te dejes engañar: también disfruto creando experiencias front-end fluidas. Con habilidad para resolver problemas y amor por las buenas prácticas de código, disfruto convertir desafíos complejos en soluciones elegantes. Cuando no estoy programando, puedes encontrarme entrenando o mejorando mis habilidades técnicas para mantenerme a la vanguardia en este mundo tecnológico en constante evolución. ¡Conectemos y creemos algo increíble juntos!",
     "skills": "Habilidades",
-    "techStack": "Stack Tecnológico",
-    "socialLinks": "Redes Sociales",
     "skillsList": [
       "Trabajo en equipo",
       "Resolución de problemas",
       "Adaptable",
       "Orientado al detalle",
       "Pensamiento analítico"
-    ]
+    ],
+    "techStack": "Stack Tecnológico",
+    "socialLinks": "Redes Sociales"
   },
   "projects": {
     "sectionTitle": "Proyectos",
     "viewRepository": "Ver repositorio",
+    "description": {
+      "project1": "VetsForPets es una innovadora plataforma web diseñada para conectar a dueños de mascotas con veterinarios cercanos. La aplicación simplifica el cuidado de las mascotas permitiendo a los usuarios registrar a sus mascotas, encontrar servicios veterinarios usando un mapa interactivo, agendar citas y acceder a asistencia de emergencia. Los usuarios también pueden beneficiarse de un sistema de recompensas que ofrece descuentos en consultas médicas, vacunas y servicios de cuidado.",
+      "project2": "Commander es un generador de fragmentos de texto ligero y basado en comandos, construido con Node.js, Express y MongoDB. Permite mapear entradas de comandos específicas (como /hi1) a respuestas de texto predefinidas, lo que lo hace ideal para equipos de soporte, automatización o escenarios de respuesta rápida."
+    },
     "liveSite": "Url en vivo",
     "moreInfo": "Más información",
     "empty": "[]",
@@ -38,6 +44,10 @@
         "medium": "Intermedio",
         "hard": "Difícil"
       }
+    },
+    "reasoning": {
+      "project1": "Este proyecto se desarrolló como parte de un esfuerzo colaborativo en un entorno de equipo, utilizando metodologías ágiles para garantizar un flujo de trabajo eficiente y adaptabilidad. El objetivo principal fue crear una plataforma fácil de usar que atienda las necesidades tanto de los dueños de mascotas como de los veterinarios, mejorando el acceso a los servicios veterinarios a través de la tecnología.",
+      "project2": "Este proyecto fue creado para resolver el problema de responder rápidamente a consultas o comandos comunes en un contexto de soporte o automatización en mi trabajo. Al permitir que los usuarios y yo definamos comandos personalizados que desencadenan respuestas de texto específicas, agiliza la comunicación y mejora la eficiencia. Esta herramienta facilitó mi trabajo al reducir el tiempo dedicado a tareas repetitivas y garantizar mensajes consistentes."
     }
   },
   "contact": {
@@ -47,11 +57,12 @@
     "message": "Mensaje",
     "sendMessage": "Enviar Mensaje",
     "sending": "Enviando...",
+    "success": "¡Gracias! Te responderé pronto.",
+    "error": "Ocurrió un error inesperado. Intenta nuevamente.",
+    "label": "primario@ejemplo.com",
     "addCc": "Agregar CC",
     "addBcc": "Agregar BCC",
     "chooseFiles": "Seleccionar archivos",
-    "filesSelected": "{{count}} archivos seleccionados",
-    "success": "¡Gracias! Te responderé pronto.",
-    "error": "Ocurrió un error inesperado. Intenta nuevamente."
+    "filesSelected": "{{count}} archivos seleccionados"
   }
 }
