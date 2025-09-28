@@ -19,9 +19,9 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
           className="rounded-lg border border-foreground/10 bg-background p-6 shadow-sm transition-shadow hover:shadow-md"
         >
           <h3 className="mb-2 text-xl font-semibold text-foreground">
-            {info.headline}
+            {t("headline")}
           </h3>
-          <p className="text-foreground/80">{info.bio}</p>
+          <p className="text-foreground/80">{t("bio")}</p>
 
           {info.avatarIconUrl && (
             <img
