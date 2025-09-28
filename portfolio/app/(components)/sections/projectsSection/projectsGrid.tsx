@@ -18,7 +18,7 @@ export default function ProjectsGrid({ projects }: Props) {
     null
   );
 
-  const dictionary = useTranslations("projects");
+  const t = useTranslations("projects");
 
   const onMore = (project: IProject) => {
     setSelectedProject(project);
@@ -56,7 +56,6 @@ export default function ProjectsGrid({ projects }: Props) {
                   className="aspect-[16/9] w-full rounded-lg object-cover ring-1 ring-foreground/10 transition-transform duration-300 group-hover:scale-[1.01]"
                 />
               ) : (
-                // Placeholder preserves vertical space for alignment
                 <div
                   className="aspect-[16/9] w-full rounded-lg bg-foreground/5 ring-1 ring-foreground/5"
                   aria-hidden
@@ -81,7 +80,7 @@ export default function ProjectsGrid({ projects }: Props) {
                 )}
               </div>
               <p className="mb-4 line-clamp-5 text-sm text-foreground/70">
-                {project.description}
+                {t(`description.${project.id}`)}
               </p>
 
               <div className="mt-auto pt-2 flex justify-center">
@@ -91,7 +90,7 @@ export default function ProjectsGrid({ projects }: Props) {
                   data-testid="more-projectInfo-btn"
                   onClick={() => onMore(project)}
                 >
-                  {dictionary("moreInfo")}
+                  {t("moreInfo")}
                 </Button>
               </div>
             </div>
@@ -160,7 +159,7 @@ export default function ProjectsGrid({ projects }: Props) {
                   rel="noopener noreferrer"
                   className="text-sm text-foreground underline underline-offset-4 decoration-foreground/20 hover:decoration-foreground/40 hover:opacity-80"
                 >
-                  {dictionary("viewRepository")}
+                  {t("viewRepository")}
                 </a>
               )}
 
@@ -171,7 +170,7 @@ export default function ProjectsGrid({ projects }: Props) {
                   rel="noopener noreferrer"
                   className="text-sm text-foreground underline underline-offset-4 decoration-foreground/30 hover:decoration-foreground/50 hover:opacity-80"
                 >
-                  {dictionary("liveSite")}
+                  {t("liveSite")}
                 </a>
               )}
             </div>
