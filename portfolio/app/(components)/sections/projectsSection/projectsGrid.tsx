@@ -138,7 +138,7 @@ export default function ProjectsGrid({ projects }: Props) {
               <div>
                 <h5 className="font-medium">Why did I build this project?</h5>
                 <p className="text-sm leading-relaxed text-foreground/80">
-                  {selectedProject.reasoning}
+                  {t(`reasoning.${selectedProject.slug}`)}
                 </p>
               </div>
             )}
