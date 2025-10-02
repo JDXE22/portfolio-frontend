@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
 export type SectionProps = {
   id?: string;
   title?: string;
   subtitle?: string;
   className?: string;
-  align?: "left" | "center" | "right";
+  align?: 'left' | 'center' | 'right';
   children: React.ReactNode;
   noPadding?: boolean;
   noMinHeight?: boolean;
@@ -38,25 +38,20 @@ export interface AboutInfo {
   bio: string;
   avatarIconUrl: string;
   skills: string[];
-  techStack: TechStackItem[];
-  experience?: { title: string; company: string; duration: string }[];
-  education?: EducationItem[];
-  certifications?: { title: string; issuer: string; date: string }[];
-  cvUrl?: string;
-  certificateUrl?: string;
   socialLinks: SocialLink[];
 }
 
 export type LiveStatus =
-  | "Live"
-  | "Maintenance"
-  | "Down"
-  | "Development"
-  | "Planned";
-export type DifficultyLevel = "Easy" | "Medium" | "Hard";
+  | 'Live'
+  | 'Maintenance'
+  | 'Down'
+  | 'Development'
+  | 'Planned';
+export type DifficultyLevel = 'Easy' | 'Medium' | 'Hard';
 
-export interface IProject {
+export type IProject = {
   id: string;
+  slug: string;
   title: string;
   description: string;
   techStack: string[];
@@ -66,11 +61,11 @@ export interface IProject {
   liveStatus: LiveStatus;
   difficultyLevel: DifficultyLevel;
   reasoning: string;
-}
+};
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: "primary" | "secondary" | "ghost";
-  size?: "sm" | "md";
+  variant?: 'primary' | 'secondary' | 'ghost';
+  size?: 'sm' | 'md';
 };
 
 export type ModalProps = {

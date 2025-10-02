@@ -31,9 +31,10 @@ export default async function RootLayout(
 
   const messages = (await import(`../../i18n/${lang}.json`)).default;
   return (
-    <html lang={lang}>
+    <html lang={lang} suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased app-gradient`}
+        suppressHydrationWarning
       >
         <NextIntlClientProvider locale={lang} messages={messages}>
           {children}

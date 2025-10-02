@@ -10,21 +10,26 @@
   },
   "about": {
     "sectionTitle": "About Me",
-    "bio": "David is a developer with a back-end focus. He builds REST APIs, integrates Stripe and OAuth, and delivers real-time features with WebSocket.io. He has shipped projects that connect users with services and streamline operations. Based in Colombia. Open to new opportunities",
+    "headline": "I know, I know you have heard this before, but let's go over it again...",
+    "bio": "Hi there, I'm David Esparza, a passionate Full-Stack Developer with a strong focus on building reliable and efficient backends, but don't be fooled- I also enjoy crafting seamless front-end experiences. With a knack for problem-solving and a love for clean code practices, I enjoy turning complex challenges into elegant solutions. When I'm not coding, you can find me training or improving my technical skills to stay ahead in this ever-evolving tech world. Let's connect and create something amazing together!",
     "skills": "Skills",
+    "skillsList": [
+      "Team Player",
+      "Problem Solver",
+      "Adaptable",
+      "Detail-Oriented",
+      "Analytical Thinking"
+    ],
     "techStack": "Tech Stack",
-    "socialLinks": "Social Links",
-    "cerftifications": [
-      {
-        "title": "Full‑Stack Developer - Data Modeling and Storage / Database Management",
-        "issuer": "Soy Henry Bootcamp",
-        "date": "2024 - 2025"
-      }
-    ]
+    "socialLinks": "Social Links"
   },
   "projects": {
     "sectionTitle": "Projects",
     "viewRepository": "View repository",
+    "description": {
+      "vets4pets": "VetsForPets is an innovative web platform designed to connect pet owners with nearby veterinarians. The app simplifies pet care by allowing users to register their pets, find veterinary services using an interactive map, schedule appointments, and access emergency assistance. Users can also benefit from a rewards system that offers discounts on medical consultations, vaccines, and pet care services.",
+      "commander": "Commander is a lightweight, command-driven snippet generator built with Node.js, Express, and MongoDB. It lets you map specific command inputs (like /hi1) to predefined text responses, making it ideal for support teams, automation, or rapid response scenarios."
+    },
     "liveSite": "Live site",
     "moreInfo": "More Info",
     "empty": "[]",
@@ -33,6 +38,10 @@
       "title": "Project details",
       "difficulty": "Difficulty:",
       "close": "Close"
+    },
+    "reasoning": {
+      "vets4pets": "This project was developed as part of a collaborative effort in a team setting, utilizing Agile methodologies to ensure efficient workflow and adaptability. The primary objective was to create a user-friendly platform that addresses the needs of pet owners and veterinarians alike, enhancing accessibility to veterinary services through technology.",
+      "commander": "This project was created to solve the problem of quickly responding to common queries or commands in a support or automation context in my work. By allowing users and me to define custom commands that trigger specific text responses, it streamlines communication and enhances efficiency. This tool made my life easier by reducing the time spent on repetitive tasks and ensuring consistent messaging."
     }
   },
   "contact": {
@@ -42,6 +51,9 @@
     "message": "Message",
     "sendMessage": "Send Message",
     "sending": "Sending...",
+    "success": "Your message has been sent successfully!",
+    "error": "An error occurred while sending your message. Please try again later.",
+    "label": "primary@example.com",
     "addCc": "CC",
     "addBcc": "BCC",
     "chooseFiles": "Choose files",
