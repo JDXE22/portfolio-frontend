@@ -27,7 +27,7 @@
     "sectionTitle": "Proyectos",
     "viewRepository": "Ver repositorio",
     "description": {
-      "vetsforpets": "VetsForPets es una innovadora plataforma web diseñada para conectar a dueños de mascotas con veterinarios cercanos. La aplicación simplifica el cuidado de las mascotas permitiendo a los usuarios registrar a sus mascotas, encontrar servicios veterinarios usando un mapa interactivo, agendar citas y acceder a asistencia de emergencia. Los usuarios también pueden beneficiarse de un sistema de recompensas que ofrece descuentos en consultas médicas, vacunas y servicios de cuidado.",
+      "vets4pets": "VetsForPets es una innovadora plataforma web diseñada para conectar a dueños de mascotas con veterinarios cercanos. La aplicación simplifica el cuidado de las mascotas permitiendo a los usuarios registrar a sus mascotas, encontrar servicios veterinarios usando un mapa interactivo, agendar citas y acceder a asistencia de emergencia. Los usuarios también pueden beneficiarse de un sistema de recompensas que ofrece descuentos en consultas médicas, vacunas y servicios de cuidado.",
       "commander": "Commander es un generador de fragmentos de texto ligero y basado en comandos, construido con Node.js, Express y MongoDB. Permite mapear entradas de comandos específicas (como /hi1) a respuestas de texto predefinidas, lo que lo hace ideal para equipos de soporte, automatización o escenarios de respuesta rápida."
     },
     "liveSite": "Url en vivo",
@@ -46,7 +46,7 @@
       }
     },
     "reasoning": {
-      "vetsforpets": "Este proyecto se desarrolló como parte de un esfuerzo colaborativo en un entorno de equipo, utilizando metodologías ágiles para garantizar un flujo de trabajo eficiente y adaptabilidad. El objetivo principal fue crear una plataforma fácil de usar que atienda las necesidades tanto de los dueños de mascotas como de los veterinarios, mejorando el acceso a los servicios veterinarios a través de la tecnología.",
+      "vets4pets": "Este proyecto se desarrolló como parte de un esfuerzo colaborativo en un entorno de equipo, utilizando metodologías ágiles para garantizar un flujo de trabajo eficiente y adaptabilidad. El objetivo principal fue crear una plataforma fácil de usar que atienda las necesidades tanto de los dueños de mascotas como de los veterinarios, mejorando el acceso a los servicios veterinarios a través de la tecnología.",
       "commander": "Este proyecto fue creado para resolver el problema de responder rápidamente a consultas o comandos comunes en un contexto de soporte o automatización en mi trabajo. Al permitir que los usuarios y yo definamos comandos personalizados que desencadenan respuestas de texto específicas, agiliza la comunicación y mejora la eficiencia. Esta herramienta facilitó mi trabajo al reducir el tiempo dedicado a tareas repetitivas y garantizar mensajes consistentes."
     }
   },

@@ -80,7 +80,7 @@ export default function ProjectsGrid({ projects }: Props) {
                 )}
               </div>
               <p className="mb-4 line-clamp-5 text-sm text-foreground/70">
-                {t(`description.${project.id}`)}
+                {t(`description.${project.slug}`)}
               </p>
 
               <div className="mt-auto pt-2 flex justify-center">
