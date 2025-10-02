@@ -49,7 +49,7 @@ export type LiveStatus =
   | 'Planned';
 export type DifficultyLevel = 'Easy' | 'Medium' | 'Hard';
 
-export interface IProject {
+export type IProject = {
   id: string;
   slug: string;
   title: string;
@@ -61,7 +61,7 @@ export interface IProject {
   liveStatus: LiveStatus;
   difficultyLevel: DifficultyLevel;
   reasoning: string;
-}
+};
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: 'primary' | 'secondary' | 'ghost';
