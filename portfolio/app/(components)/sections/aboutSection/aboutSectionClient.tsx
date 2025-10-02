@@ -43,35 +43,6 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
               </ul>
             </div>
           )}
-
-          {info.techStack?.length > 0 && (
-            <div className="mt-6">
-              <h4 className="mb-2 font-semibold text-foreground/90">
-                {t("techStack")}:
-              </h4>
-              <ul className="flex flex-wrap items-center gap-3">
-                {info.techStack.map((tech, i) => (
-                  <li
-                    key={i}
-                    className="group relative flex h-10 w-10 items-center justify-center rounded-md border border-foreground/10 bg-foreground/[0.05] p-1 transition-colors hover:bg-foreground/[0.08] focus-within:bg-foreground/[0.08]"
-                  >
-                    {tech.iconPublicId && (
-                      <img
-                        src={tech.iconPublicId}
-                        alt={tech.name}
-                        aria-hidden="true"
-                        className="h-7 w-7 object-contain"
-                      />
-                    )}
-                    <span className="pointer-events-none absolute left-1/2 top-full z-10 mt-2 -translate-x-1/2 scale-0 rounded bg-black px-2 py-1 text-xs text-white opacity-0 shadow transition-all group-hover:scale-100 group-hover:opacity-100">
-                      {tech.name}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
           {/* Social Links */}
           {info.socialLinks?.length > 0 && (
             <div className="mt-6">
