@@ -37,17 +37,16 @@
     "modal": {
       "title": "Detalles del proyecto",
       "difficulty": "Dificultad:",
-      "close": "Cerrar",
-      "reasoning": "Explicación",
-      "levels": {
-        "easy": "Fácil",
-        "medium": "Intermedio",
-        "hard": "Difícil"
-      }
+      "close": "Cerrar"
     },
     "reasoning": {
       "vets4pets": "Este proyecto se desarrolló como parte de un esfuerzo colaborativo en un entorno de equipo, utilizando metodologías ágiles para garantizar un flujo de trabajo eficiente y adaptabilidad. El objetivo principal fue crear una plataforma fácil de usar que atienda las necesidades tanto de los dueños de mascotas como de los veterinarios, mejorando el acceso a los servicios veterinarios a través de la tecnología.",
       "commander": "Este proyecto fue creado para resolver el problema de responder rápidamente a consultas o comandos comunes en un contexto de soporte o automatización en mi trabajo. Al permitir que los usuarios y yo definamos comandos personalizados que desencadenan respuestas de texto específicas, agiliza la comunicación y mejora la eficiencia. Esta herramienta facilitó mi trabajo al reducir el tiempo dedicado a tareas repetitivas y garantizar mensajes consistentes."
+    },
+    "difficultyLevel": {
+      "Easy": "Fácil",
+      "Medium": "Intermedio",
+      "Hard": "Difícil"
     }
   },
   "contact": {
