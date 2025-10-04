@@ -20,17 +20,12 @@
       "Detail-Oriented",
       "Analytical Thinking"
     ],
-    "techStack": "Tech Stack",
     "socialLinks": "Social Links"
   },
   "projects": {
     "sectionTitle": "Projects",
-    "viewRepository": "View repository",
-    "description": {
-      "vets4pets": "VetsForPets is an innovative web platform designed to connect pet owners with nearby veterinarians. The app simplifies pet care by allowing users to register their pets, find veterinary services using an interactive map, schedule appointments, and access emergency assistance. Users can also benefit from a rewards system that offers discounts on medical consultations, vaccines, and pet care services.",
-      "commander": "Commander is a lightweight, command-driven snippet generator built with Node.js, Express, and MongoDB. It lets you map specific command inputs (like /hi1) to predefined text responses, making it ideal for support teams, automation, or rapid response scenarios."
-    },
-    "liveSite": "Live site",
+    "viewRepository": "View Repository",
+    "liveSite": "Live Site",
     "moreInfo": "More Info",
     "empty": "[]",
     "why": "Why did I build this project?",
@@ -39,9 +34,18 @@
       "difficulty": "Difficulty:",
       "close": "Close"
     },
+    "description": {
+      "vets4pets": "VetsForPets is an innovative web platform designed to connect pet owners with nearby veterinarians. The app simplifies pet care by allowing users to register their pets, find veterinary services using an interactive map, schedule appointments, and access emergency assistance. Users can also benefit from a rewards system that offers discounts on medical consultations, vaccines, and pet care services.",
+      "commander": "Commander is a lightweight, command-driven snippet generator built with Node.js, Express, and MongoDB. It lets you map specific command inputs (like /hi1) to predefined text responses, making it ideal for support teams, automation, or rapid response scenarios."
+    },
     "reasoning": {
       "vets4pets": "This project was developed as part of a collaborative effort in a team setting, utilizing Agile methodologies to ensure efficient workflow and adaptability. The primary objective was to create a user-friendly platform that addresses the needs of pet owners and veterinarians alike, enhancing accessibility to veterinary services through technology.",
       "commander": "This project was created to solve the problem of quickly responding to common queries or commands in a support or automation context in my work. By allowing users and me to define custom commands that trigger specific text responses, it streamlines communication and enhances efficiency. This tool made my life easier by reducing the time spent on repetitive tasks and ensuring consistent messaging."
+    },
+    "difficultyLevel": {
+      "Easy": "Easy",
+      "Medium": "Medium",
+      "Hard": "Hard"
     }
   },
   "contact": {

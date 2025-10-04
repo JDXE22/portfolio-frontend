@@ -117,7 +117,7 @@ export default function ProjectsGrid({ projects }: Props) {
                   selectedProject.difficultyLevel
                 )} rounded-full px-2 py-0.5 text-[11px]`}
               >
-                Difficulty: {selectedProject.difficultyLevel}
+                {t('modal.difficulty')} {t(`difficultyLevel.${selectedProject.difficultyLevel}`)}
               </span>
             )}
 
@@ -136,7 +136,7 @@ export default function ProjectsGrid({ projects }: Props) {
 
             {selectedProject.reasoning && (
               <div>
-                <h5 className="font-medium">Why did I build this project?</h5>
+                <h5 className="font-medium">{t(`why`)}</h5>
                 <p className="text-sm leading-relaxed text-foreground/80">
                   {t(`reasoning.${selectedProject.slug}`)}
                 </p>
