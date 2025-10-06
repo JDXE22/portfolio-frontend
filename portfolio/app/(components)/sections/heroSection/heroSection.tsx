@@ -18,8 +18,10 @@ export function HeroSection() {
   const params = useParams();
 
   const currentLang = params?.lang === 'es' ? 'es' : 'en';
-  const switchLang = () => {
-    const nextLang = currentLang === 'en' ? 'es' : 'en';
+  const switchLang = (target?: 'en' | 'es') => {
+    if (target && target === currentLang) return;
+
+    const nextLang = target ?? (currentLang === 'en' ? 'es' : 'en');
     router.push(`/${nextLang}`);
   };
 
@@ -35,28 +37,34 @@ export function HeroSection() {
           <div
             role='group'
             aria-label='Language switch'
-            className='inline-flex rounded-md bg-foreground/6 p-1'>
+            className='relative inline-flex items-center h-9 rounded-md bg-foreground/6 p-1 overflow-hidden gap-0'>
+            <span
+              aria-hidden
+              className={`absolute inset-1 w-[calc(50%-0.25rem)] rounded-md bg-background transition-transform duration-200 motion-safe:ease-out ${
+                currentLang === 'es' ? 'translate-x-full' : 'translate-x-0'
+              }`}
+            />
             <Button
               variant='ghost'
               size='sm'
-              onClick={switchLang}
+              onClick={() => switchLang('en')}
               aria-pressed={currentLang === 'en'}
-              className={`px-3 py-1 text-sm rounded ${
+              className={`relative z-10 h-full px-3 py-0 text-sm rounded focus:outline-none ${
                 currentLang === 'en'
-                  ? 'bg-background text-foreground shadow-sm'
-                  : 'text-foreground/70 hover:bg-transparent/20'
+                  ? 'text-foreground'
+                  : 'text-foreground/70 hover:text-foreground'
               }`}>
               EN
             </Button>
             <Button
               variant='ghost'
               size='sm'
-              onClick={switchLang}
+              onClick={() => switchLang('es')}
               aria-pressed={currentLang === 'es'}
-              className={`ml-1 px-3 py-1 text-sm rounded ${
+              className={`relative z-10 h-full px-3 py-0 text-sm rounded focus:outline-none ${
                 currentLang === 'es'
-                  ? 'bg-background text-foreground shadow-sm'
-                  : 'text-foreground/70 hover:bg-transparent/20'
+                  ? 'text-foreground'
+                  : 'text-foreground/70 hover:text-foreground'
               }`}>
               ES
             </Button>
