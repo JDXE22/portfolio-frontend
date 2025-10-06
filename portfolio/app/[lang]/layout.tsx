@@ -6,10 +6,8 @@ type Props = {
   params: { lang: 'en' | 'es' };
 };
 
-export default async function LangLayout({
-  children,
-  params: { lang },
-}: Props) {
+export default async function LangLayout({ children, params }: Props) {
+  const { lang } = await params;
   const messages = (await import(`../../i18n/${lang}.json`)).default;
   return (
     <NextIntlClientProvider locale={lang} messages={messages}>
