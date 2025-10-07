@@ -16,7 +16,7 @@ export function Button({
     primary:
       'bg-foreground text-background hover:opacity-90 focus-visible:ring-foreground/50',
     secondary:
-      'bg-background border border-foreground/15 text-foreground hover:bg-foreground/5 focus-visible:ring-foreground/20',
+      'border border-foreground/15 text-foreground focus-visible:ring-foreground/20',
     ghost:
       'text-foreground hover:bg-foreground/5 focus-visible:ring-foreground/20',
   } as const;

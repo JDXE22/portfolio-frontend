@@ -94,30 +94,46 @@ export function HeroSection() {
             {t('subtitle')}
           </p>
 
-          <div className='mt-10 flex flex-wrap items-center justify-center gap-4'>
+          <div className='mt-10 flex flex-wrap items-center justify-center gap-4 group'>
             <Button
               variant='secondary'
               size='sm'
               onClick={() => scrollTo('about')}
-              className='bg-malibu-600 hover:!bg-malibu-500 text-malibu-50 pointer-events-auto shadow-sm transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-malibu-400 active:!bg-malibu-500'
+              className='
+                relative overflow-hidden pointer-events-auto border border-malibu-500/40 text-malibu-100
+                before:absolute before:inset-0 before:-z-10 before:scale-x-0 before:bg-malibu-400 before:origin-left
+                before:transition-transform before:duration-300 before:ease-out
+                hover:before:scale-x-100 hover:text-malibu-50 hover:border-transparent
+                focus-visible:ring-malibu-300/60
+              '
               aria-label='Jump to About'>
               {t('buttons.about')}
             </Button>
-
             <Button
               variant='secondary'
               size='sm'
               onClick={() => scrollTo('projects')}
-              className='pointer-events-auto border border-foreground/6 text-malibu-100 transition-colors duration-150 hover:!bg-malibu-700 hover:!text-malibu-50 focus-visible:ring-2 focus-visible:ring-malibu-400 active:!bg-malibu-600'
+              className='
+                relative overflow-hidden pointer-events-auto border border-malibu-500/40 text-malibu-100
+                before:absolute before:inset-0 before:-z-10 before:scale-x-0 before:bg-malibu-600 before:origin-left
+                before:transition-transform before:duration-300 before:ease-out
+                hover:before:scale-x-100 hover:text-malibu-50 hover:border-transparent
+                focus-visible:ring-malibu-300/60
+              '
               aria-label='Jump to Projects'>
               {t('buttons.projects')}
             </Button>
-
             <Button
               variant='secondary'
               size='sm'
               onClick={() => scrollTo('contact')}
-              className='pointer-events-auto border border-foreground/6 text-malibu-100 transition-colors duration-150 hover:!bg-malibu-700 hover:!text-malibu-50 focus-visible:ring-2 focus-visible:ring-malibu-400 active:!bg-malibu-600'
+              className='
+                relative overflow-hidden pointer-events-auto border border-malibu-500/40 text-malibu-100
+                before:absolute before:inset-0 before:-z-10 before:scale-x-0 before:bg-malibu-600 before:origin-left
+                before:transition-transform before:duration-300 before:ease-out
+                hover:before:scale-x-100 hover:text-malibu-50 hover:border-transparent
+                focus-visible:ring-malibu-300/60
+              '
               aria-label='Jump to Contact'>
               {t('buttons.contact')}
             </Button>
