@@ -68,3 +68,68 @@ body {
   border-radius: 0.5rem;
   transition: border-color 0.3s, background 0.3s;
 }
+
+.group:hover .gradient-border,
+.group:active .gradient-border {
+  border: 2px solid transparent;
+  background: linear-gradient(var(--background), var(--background)) padding-box,
+    linear-gradient(
+        90deg,
+        var(--color-malibu-400),
+        var(--color-malibu-600),
+        var(--color-malibu-400)
+      )
+      border-box;
+  border-radius: 0.5rem;
+  transition: border-color 0.3s, background 0.3s;
+}
+
+/* Button fill animation */
+.animated-fill-btn {
+  position: relative;
+  overflow: hidden;
+  color: var(--color-malibu-100);
+  border-radius: 0.5rem;
+  transition: color 0.2s;
+  z-index: 1;
+}
+
+.animated-fill-btn .btn-content {
+  position: relative;
+  z-index: 2;
+}
+
+.animated-fill-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-malibu-600);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.animated-fill-btn:hover,
+.animated-fill-btn:focus-visible {
+  color: var(--color-malibu-50);
+}
+
+.animated-fill-btn:hover::before,
+.animated-fill-btn:focus-visible::before {
+  transform: scaleX(1);
+}
+
+.animated-fill-btn.gradient-border {
+  border: 2px solid transparent;
+  background: linear-gradient(var(--background), var(--background)) padding-box,
+    linear-gradient(
+        90deg,
+        var(--color-malibu-400),
+        var(--color-malibu-600),
+        var(--color-malibu-400)
+      )
+      border-box;
+  border-radius: 0.5rem;
+  transition: border-color 0.3s, background 0.3s;
+}

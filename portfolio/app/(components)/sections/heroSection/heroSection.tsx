@@ -100,42 +100,30 @@ export function HeroSection() {
               size='sm'
               onClick={() => scrollTo('about')}
               className='
-                relative overflow-hidden pointer-events-auto border border-malibu-500/40 text-malibu-100
-                before:absolute before:inset-0 before:-z-10 before:scale-x-0 before:bg-malibu-400 before:origin-left
-                before:transition-transform before:duration-300 before:ease-out
-                hover:before:scale-x-100 hover:text-malibu-50 hover:border-transparent
-                focus-visible:ring-malibu-300/60
-              '
+                animated-fill-btn gradient-border px-4 py-2'
               aria-label='Jump to About'>
-              {t('buttons.about')}
+              <span className='btn-content'>{t('buttons.about')}</span>
             </Button>
             <Button
               variant='secondary'
               size='sm'
               onClick={() => scrollTo('projects')}
               className='
-                relative overflow-hidden pointer-events-auto border border-malibu-500/40 text-malibu-100
-                before:absolute before:inset-0 before:-z-10 before:scale-x-0 before:bg-malibu-600 before:origin-left
-                before:transition-transform before:duration-300 before:ease-out
-                hover:before:scale-x-100 hover:text-malibu-50 hover:border-transparent
-                focus-visible:ring-malibu-300/60
+               animated-fill-btn gradient-border px-4 py-2
+
               '
               aria-label='Jump to Projects'>
-              {t('buttons.projects')}
+              <span className='btn-content'>{t('buttons.projects')}</span>
             </Button>
             <Button
               variant='secondary'
               size='sm'
               onClick={() => scrollTo('contact')}
               className='
-                relative overflow-hidden pointer-events-auto border border-malibu-500/40 text-malibu-100
-                before:absolute before:inset-0 before:-z-10 before:scale-x-0 before:bg-malibu-600 before:origin-left
-                before:transition-transform before:duration-300 before:ease-out
-                hover:before:scale-x-100 hover:text-malibu-50 hover:border-transparent
-                focus-visible:ring-malibu-300/60
+               animated-fill-btn gradient-border px-4 py-2
               '
               aria-label='Jump to Contact'>
-              {t('buttons.contact')}
+              <span className='btn-content'>{t('buttons.contact')}</span>
             </Button>
           </div>
         </div>
