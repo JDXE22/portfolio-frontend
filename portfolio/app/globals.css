@@ -1,21 +1,30 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
+/* Tailwind layers (use explicit directives) */
+@tailwind utilities;
+
+/* Color vars: prefer dark-first for a modern dark UI */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #e6eef8;
+
+  --color-malibu-50: #f2f9fd;
+  --color-malibu-100: #e4f0fa;
+  --color-malibu-200: #c2e2f5;
+  --color-malibu-300: #78c1ea;
+  --color-malibu-400: #4fafe1;
+  --color-malibu-500: #2895cf;
+  --color-malibu-600: #1977b0;
+  --color-malibu-700: #16608e;
+  --color-malibu-800: #165176;
+  --color-malibu-900: #184462;
+  --color-malibu-950: #102b41;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #171717;
   }
 }
 
@@ -28,28 +37,20 @@ body {
 .app-gradient {
   background: radial-gradient(
       circle at 15% 20%,
-      rgba(120, 119, 198, 0.18),
+      rgba(40, 149, 207, 0.12),
       transparent 60%
     ),
-    radial-gradient(circle at 80% 25%, rgba(0, 186, 255, 0.18), transparent 55%),
-    radial-gradient(circle at 55% 85%, rgba(255, 140, 0, 0.15), transparent 60%),
+    radial-gradient(
+      circle at 80% 25%,
+      rgba(79, 175, 225, 0.08),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 55% 85%,
+      rgba(120, 193, 234, 0.06),
+      transparent 60%
+    ),
     linear-gradient(125deg, #050507 0%, #070b12 45%, #0e1624 70%, #111a28 100%);
   background-attachment: fixed;
   background-size: cover;
-}
-
-@media (prefers-color-scheme: light) {
-  .app-gradient {
-    background: radial-gradient(
-        circle at 18% 25%,
-        rgba(120, 119, 198, 0.15),
-        transparent 60%
-      ),
-      radial-gradient(
-        circle at 82% 30%,
-        rgba(0, 124, 255, 0.15),
-        transparent 55%
-      ),
-      linear-gradient(120deg, #f9fafb 0%, #eef2f6 60%, #e9eef4 100%);
-  }
 }

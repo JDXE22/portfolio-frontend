@@ -31,6 +31,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@vitejs/plugin-react": "^5.0.2",
+    "autoprefixer": "10.4.21",
     "jsdom": "^26.1.0",
     "tailwindcss": "^4",
     "typescript": "^5",
