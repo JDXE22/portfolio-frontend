@@ -18,6 +18,12 @@
   --color-malibu-800: #165176;
   --color-malibu-900: #184462;
   --color-malibu-950: #102b41;
+  --header-offset: 4rem;
+}
+
+section[id] {
+  scroll-margin-top: var(--header-offset);
+  -webkit-scroll-margin-top: var(--header-offset);
 }
 
 @media (prefers-color-scheme: light) {
