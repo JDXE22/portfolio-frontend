@@ -21,6 +21,10 @@
   --header-offset: 4rem;
 }
 
+html {
+  scroll-behavior: unset;
+}
+
 section[id] {
   scroll-margin-top: var(--header-offset);
   -webkit-scroll-margin-top: var(--header-offset);
@@ -36,7 +40,6 @@ section[id] {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .app-gradient {

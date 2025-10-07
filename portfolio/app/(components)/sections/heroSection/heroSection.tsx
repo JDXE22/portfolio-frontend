@@ -6,13 +6,10 @@ import Particles from '@/app/(components)/backgrounds/Background';
 import { Section } from '@/app/(components)/layout/Section';
 import { useRouter } from 'next/navigation';
 import { useParams } from 'next/navigation';
+import { smoothScrollToId } from '@/lib/scroll';
 
 export function HeroSection() {
   const t = useTranslations('hero');
-  const scrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
 
   const router = useRouter();
   const params = useParams();
@@ -94,7 +91,7 @@ export function HeroSection() {
             <Button
               variant='secondary'
               size='sm'
-              onClick={() => scrollTo('about')}
+              onClick={() => smoothScrollToId('about')}
               className='
                 animated-fill-btn gradient-border px-4 py-2'
               aria-label='Jump to About'>
@@ -103,7 +100,7 @@ export function HeroSection() {
             <Button
               variant='secondary'
               size='sm'
-              onClick={() => scrollTo('projects')}
+              onClick={() => smoothScrollToId('projects')}
               className='
                animated-fill-btn gradient-border px-4 py-2
 
@@ -114,7 +111,7 @@ export function HeroSection() {
             <Button
               variant='secondary'
               size='sm'
-              onClick={() => scrollTo('contact')}
+              onClick={() => smoothScrollToId('contact')}
               className='
                animated-fill-btn gradient-border px-4 py-2
               '
