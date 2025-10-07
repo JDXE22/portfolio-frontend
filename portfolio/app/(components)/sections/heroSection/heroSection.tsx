@@ -99,7 +99,7 @@ export function HeroSection() {
               variant='secondary'
               size='sm'
               onClick={() => scrollTo('about')}
-              className='bg-malibu-600 hover:bg-malibu-500 text-malibu-50 pointer-events-auto shadow-sm transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-malibu-400 active:bg-malibu-500'
+              className='bg-malibu-600 hover:!bg-malibu-500 text-malibu-50 pointer-events-auto shadow-sm transition-colors duration-150 focus-visible:ring-2 focus-visible:ring-malibu-400 active:!bg-malibu-500'
               aria-label='Jump to About'>
               {t('buttons.about')}
             </Button>
@@ -108,7 +108,7 @@ export function HeroSection() {
               variant='secondary'
               size='sm'
               onClick={() => scrollTo('projects')}
-              className='pointer-events-auto border border-foreground/6 text-malibu-100 transition-colors duration-150 hover:bg-malibu-700 hover:text-malibu-50 focus-visible:ring-2 focus-visible:ring-malibu-400 active:bg-malibu-600'
+              className='pointer-events-auto border border-foreground/6 text-malibu-100 transition-colors duration-150 hover:!bg-malibu-700 hover:!text-malibu-50 focus-visible:ring-2 focus-visible:ring-malibu-400 active:!bg-malibu-600'
               aria-label='Jump to Projects'>
               {t('buttons.projects')}
             </Button>
@@ -117,7 +117,7 @@ export function HeroSection() {
               variant='secondary'
               size='sm'
               onClick={() => scrollTo('contact')}
-              className='pointer-events-auto border border-foreground/6 text-malibu-100 transition-colors duration-150 hover:bg-malibu-700 hover:text-malibu-50 focus-visible:ring-2 focus-visible:ring-malibu-400 active:bg-malibu-600'
+              className='pointer-events-auto border border-foreground/6 text-malibu-100 transition-colors duration-150 hover:!bg-malibu-700 hover:!text-malibu-50 focus-visible:ring-2 focus-visible:ring-malibu-400 active:!bg-malibu-600'
               aria-label='Jump to Contact'>
               {t('buttons.contact')}
             </Button>
