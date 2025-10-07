@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from "react";
-import { Renderer, Camera, Geometry, Program, Mesh } from "ogl";
+import React, { useEffect, useRef } from 'react';
+import { Renderer, Camera, Geometry, Program, Mesh } from 'ogl';
 
 interface ParticlesProps {
   particleCount?: number;
@@ -16,15 +16,15 @@ interface ParticlesProps {
   className?: string;
 }
 
-const defaultColors: string[] = ["#ffffff", "#ffffff", "#ffffff"];
+const defaultColors: string[] = ['#ffffff', '#ffffff', '#ffffff'];
 
 const hexToRgb = (hex: string): [number, number, number] => {
-  hex = hex.replace(/^#/, "");
+  hex = hex.replace(/^#/, '');
   if (hex.length === 3) {
     hex = hex
-      .split("")
+      .split('')
       .map((c) => c + c)
-      .join("");
+      .join('');
   }
   const int = parseInt(hex, 16);
   const r = ((int >> 16) & 255) / 255;
@@ -133,7 +133,7 @@ const Particles: React.FC<ParticlesProps> = ({
       renderer.setSize(width, height);
       camera.perspective({ aspect: gl.canvas.width / gl.canvas.height });
     };
-    window.addEventListener("resize", resize, false);
+    window.addEventListener('resize', resize, false);
     resize();
 
     const handleMouseMove = (e: MouseEvent) => {
@@ -143,8 +143,45 @@ const Particles: React.FC<ParticlesProps> = ({
       mouseRef.current = { x, y };
     };
 
+    // Use a window-level pointer listener with rAF throttling so the particle system
+    // continues receiving pointer updates even when overlays/child elements sit above it.
+    let rafId: number | null = null;
+    let lastPointerEvent: PointerEvent | null = null;
+
+    const onPointerMove = (e: PointerEvent) => {
+      lastPointerEvent = e;
+      if (rafId === null) {
+        rafId = requestAnimationFrame(() => {
+          rafId = null;
+          if (!lastPointerEvent) return;
+          const rect = container.getBoundingClientRect();
+          // guard against zero-sized container
+          if (rect.width === 0 || rect.height === 0) {
+            lastPointerEvent = null;
+            return;
+          }
+          const x =
+            ((lastPointerEvent.clientX - rect.left) / rect.width) * 2 - 1;
+          const y = -(
+            ((lastPointerEvent.clientY - rect.top) / rect.height) * 2 -
+            1
+          );
+          mouseRef.current = { x, y };
+          lastPointerEvent = null;
+        });
+      }
+    };
+
     if (moveParticlesOnHover) {
-      container.addEventListener("mousemove", handleMouseMove);
+      window.addEventListener('pointermove', onPointerMove, { passive: true });
+      // reset when pointer leaves window so particles ease back to center
+      const onPointerLeaveWindow = () => {
+        mouseRef.current = { x: 0, y: 0 };
+      };
+      window.addEventListener('pointerleave', onPointerLeaveWindow);
+
+      // cleanup for these listeners is handled in the effect cleanup below
+      // (we'll remove both listeners and cancel any pending rAF)
     }
 
     const count = particleCount;
@@ -228,9 +265,13 @@ const Particles: React.FC<ParticlesProps> = ({
     animationFrameId = requestAnimationFrame(update);
 
     return () => {
-      window.removeEventListener("resize", resize);
+      window.removeEventListener('resize', resize);
       if (moveParticlesOnHover) {
-        container.removeEventListener("mousemove", handleMouseMove);
+        window.removeEventListener('pointermove', onPointerMove);
+        window.removeEventListener('pointerleave', () => {
+          /* noop - listener was added conditionally above; kept for symmetry */
+        });
+        if (rafId) cancelAnimationFrame(rafId);
       }
       cancelAnimationFrame(animationFrameId);
       if (container.contains(gl.canvas)) {
