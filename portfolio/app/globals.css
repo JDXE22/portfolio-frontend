@@ -103,10 +103,12 @@ body {
   position: absolute;
   inset: 0;
   background: var(--color-malibu-600);
+  border-radius: inherit;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1;
+  pointer-events: none;
 }
 
 .animated-fill-btn:hover,
@@ -135,57 +137,53 @@ body {
 
 /* Language toggle pill animation */
 .lang-toggle {
-  position: relative;
   display: inline-flex;
   align-items: center;
-  background: var(--color-malibu-950);
-  border-radius: 0.5rem;
-  padding: 0.25rem;
-  min-width: 80px;
-  min-height: 32px;
+  gap: 4px;
+  padding: 4px;
+  height: 40px;
+  border-radius: 10px;
+  box-sizing: border-box;
   overflow: hidden;
+  background: rgba(30, 41, 59, 0.35);
 }
 
 .lang-toggle-pill {
   position: absolute;
   top: 4px;
   left: 4px;
-  width: calc(50% - 6px);
+  width: calc(50% - 8px);
   height: calc(100% - 8px);
-  border-radius: 0.375rem;
-  background: linear-gradient(
-    90deg,
-    var(--color-malibu-400),
-    var(--color-malibu-600)
-  );
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 1;
-}
-
-.lang-toggle-pill.es {
-  transform: translateX(100%);
+  border-radius: 8px;
+  transform-origin: left;
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
 }
 
 .lang-toggle-pill.en {
   transform: translateX(0%);
 }
+.lang-toggle-pill.es {
+  transform: translateX(100%);
+}
 
 .lang-toggle-btn {
   position: relative;
   z-index: 2;
-  flex: 1 1 0;
-  background: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0 10px;
+  background: transparent;
   border: none;
-  outline: none;
   color: var(--color-malibu-100);
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 0.25rem 0.75rem;
-  border-radius: 0.375rem;
   cursor: pointer;
-  transition: color 0.2s;
+  font-weight: 600;
+  box-sizing: border-box;
 }
 
+/* active text color when pill covers the button */
 .lang-toggle-btn.active {
-  color: var(--color-malibu-950);
+  color: var(--color-malibu-400);
 }

@@ -34,35 +34,31 @@ export function HeroSection() {
           <div
             role='group'
             aria-label='Language switch'
-            className='relative inline-flex items-center h-8 rounded-md bg-foreground/6 p-1 overflow-hidden'>
+            className='lang-toggle'>
             <span
               aria-hidden
-              className={`absolute inset-1 w-[calc(50%-0.375rem)] rounded-md bg-background transition-transform duration-250 ease-out ${
-                currentLang === 'es' ? 'translate-x-full' : 'translate-x-0'
+              className={`lang-toggle-pill ${
+                currentLang === 'es' ? 'es' : 'en'
               }`}
             />
             <Button
-              variant='ghost'
+              type='button'
               size='sm'
               onClick={() => switchLang('en')}
               aria-pressed={currentLang === 'en'}
-              className={`relative z-10 h-full px-3 py-0 text-sm rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-malibu-400 ${
-                currentLang === 'en'
-                  ? 'text-foreground'
-                  : 'text-foreground/70 hover:text-foreground'
-              }`}>
+              className={`lang-toggle-btn ${
+                currentLang === 'en' ? 'active' : ''
+              } h-full px-3 py-0`}>
               EN
             </Button>
             <Button
-              variant='ghost'
+              type='button'
               size='sm'
               onClick={() => switchLang('es')}
               aria-pressed={currentLang === 'es'}
-              className={`relative z-10 h-full px-3 py-0 text-sm rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-malibu-400 ${
-                currentLang === 'es'
-                  ? 'text-foreground'
-                  : 'text-foreground/70 hover:text-foreground'
-              }`}>
+              className={`lang-toggle-btn ${
+                currentLang === 'es' ? 'active' : ''
+              } h-full px-3 py-0`}>
               ES
             </Button>
           </div>
