@@ -54,3 +54,17 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
+
+.gradient-border {
+  border: 2px solid transparent;
+  background: linear-gradient(var(--background), var(--background)) padding-box,
+    linear-gradient(
+        90deg,
+        var(--color-malibu-400),
+        var(--color-malibu-600),
+        var(--color-malibu-400)
+      )
+      border-box;
+  border-radius: 0.5rem;
+  transition: border-color 0.3s, background 0.3s;
+}
