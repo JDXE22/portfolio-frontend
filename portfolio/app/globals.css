@@ -7,7 +7,6 @@
 :root {
   --background: #0a0a0a;
   --foreground: #e6eef8;
-
   --color-malibu-50: #f2f9fd;
   --color-malibu-100: #e4f0fa;
   --color-malibu-200: #c2e2f5;
@@ -132,4 +131,61 @@ body {
       border-box;
   border-radius: 0.5rem;
   transition: border-color 0.3s, background 0.3s;
+}
+
+/* Language toggle pill animation */
+.lang-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-malibu-950);
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+  min-width: 80px;
+  min-height: 32px;
+  overflow: hidden;
+}
+
+.lang-toggle-pill {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: calc(50% - 6px);
+  height: calc(100% - 8px);
+  border-radius: 0.375rem;
+  background: linear-gradient(
+    90deg,
+    var(--color-malibu-400),
+    var(--color-malibu-600)
+  );
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.lang-toggle-pill.es {
+  transform: translateX(100%);
+}
+
+.lang-toggle-pill.en {
+  transform: translateX(0%);
+}
+
+.lang-toggle-btn {
+  position: relative;
+  z-index: 2;
+  flex: 1 1 0;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--color-malibu-100);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.lang-toggle-btn.active {
+  color: var(--color-malibu-950);
 }
