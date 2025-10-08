@@ -65,6 +65,7 @@
     "filesSelected": "{{count}} archivos seleccionados"
   },
   "technologies": {
+    "sectionTitle": "Tecnologías",
     "categories": {
       "frontend": "Front-End",
       "backend": "Back-End",
