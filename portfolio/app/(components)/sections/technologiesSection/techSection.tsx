@@ -21,6 +21,14 @@ export default async function TechnologiesSection() {
     {} as Record<StackCategory, TechStack[]>
   );
 
+  const labelFor = (cat: StackCategory) => {
+    try {
+      const translated = t(`categories.${cat}`);
+      if (translated && typeof translated === 'string') return translated 
+    } catch {}
+    return cat.charAt(0).toUpperCase() + cat.slice(1);
+  }
+
   return (
     <Section>
       <div>
@@ -30,7 +38,7 @@ export default async function TechnologiesSection() {
             (category) => (
               <div key={category}>
                 <h3 className='text-xl font-semibold mb-4 text-malibu-400'>
-                  {category.charAt(0).toUpperCase() + category.slice(1)}
+                  {labelFor(category)}
                 </h3>
                 <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4'>
                   {grouped[category].map((tech) => (
