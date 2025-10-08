@@ -82,3 +82,8 @@ export type ModalProps = {
 export type ClassValue = string | false | null | undefined;
 
 export type Props = { projects: ReadonlyArray<IProject> };
+
+export type SmoothScrollOptions = {
+  duration?: number;
+  offset?: number;
+};

@@ -6,13 +6,10 @@ import Particles from '@/app/(components)/backgrounds/Background';
 import { Section } from '@/app/(components)/layout/Section';
 import { useRouter } from 'next/navigation';
 import { useParams } from 'next/navigation';
+import { smoothScrollToId } from '@/lib/scroll';
 
 export function HeroSection() {
   const t = useTranslations('hero');
-  const scrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  };
 
   const router = useRouter();
   const params = useParams();
@@ -26,46 +23,39 @@ export function HeroSection() {
   };
 
   return (
-    <Section
-      id='hero'
-      noPadding
-      noMinHeight
-      className='
-        relative isolate'>
-      <header className='absolute top-0 left-0 w-full z-50 px-6 py-4'>
-        <div className='flex justify-end'>
+    <Section id='hero' noPadding noMinHeight className='relative isolate'>
+      <header className='absolute top-4 right-4 z-50'>
+        <div
+          className='flex items-center rounded-lg bg-foreground/6 backdrop-blur-md px-2 py-1 shadow-md'
+          aria-label='Site header'>
           <div
             role='group'
             aria-label='Language switch'
-            className='relative inline-flex items-center h-9 rounded-md bg-foreground/6 p-1 overflow-hidden gap-0'>
+            className='lang-toggle'>
             <span
               aria-hidden
-              className={`absolute inset-1 w-[calc(50%-0.25rem)] rounded-md bg-background transition-transform duration-200 motion-safe:ease-out ${
-                currentLang === 'es' ? 'translate-x-full' : 'translate-x-0'
+              className={`lang-toggle-pill ${
+                currentLang === 'es' ? 'es' : 'en'
               }`}
             />
             <Button
-              variant='ghost'
+              type='button'
               size='sm'
               onClick={() => switchLang('en')}
               aria-pressed={currentLang === 'en'}
-              className={`relative z-10 h-full px-3 py-0 text-sm rounded focus:outline-none ${
-                currentLang === 'en'
-                  ? 'text-foreground'
-                  : 'text-foreground/70 hover:text-foreground'
-              }`}>
+              className={`lang-toggle-btn ${
+                currentLang === 'en' ? 'active' : ''
+              } h-full px-3 py-0`}>
               EN
             </Button>
             <Button
-              variant='ghost'
+              type='button'
               size='sm'
               onClick={() => switchLang('es')}
               aria-pressed={currentLang === 'es'}
-              className={`relative z-10 h-full px-3 py-0 text-sm rounded focus:outline-none ${
-                currentLang === 'es'
-                  ? 'text-foreground'
-                  : 'text-foreground/70 hover:text-foreground'
-              }`}>
+              className={`lang-toggle-btn ${
+                currentLang === 'es' ? 'active' : ''
+              } h-full px-3 py-0`}>
               ES
             </Button>
           </div>
@@ -88,34 +78,45 @@ export function HeroSection() {
           aria-hidden='true'
           className='pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_bottom,rgba(0,0,0,0)_0%,rgba(0,0,0,0.55)_70%)]'
         />
-        <div className='relative z-10 mx-auto flex max-w-5xl flex-col items-center text-center'>
-          <h1 className='text-balance text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl'>
+
+        <div className='relative z-10 mx-auto flex max-w-5xl flex-col items-center text-center group'>
+          <h1 className='text-balance text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-malibu-50 transition-colors duration-200'>
             {t('title')}
           </h1>
-          <p className='mt-6 max-w-2xl text-lg text-foreground/80 sm:text-xl'>
+          <p className='mt-6 max-w-2xl text-lg text-malibu-200 sm:text-xl transition-colors duration-200'>
             {t('subtitle')}
           </p>
-          <div className='mt-10 flex flex-wrap items-center justify-center gap-4'>
+
+          <div className='mt-10 flex flex-wrap items-center justify-center gap-4 group'>
             <Button
               variant='secondary'
               size='sm'
-              onClick={() => scrollTo('about')}
+              onClick={() => smoothScrollToId('about')}
+              className='
+                animated-fill-btn gradient-border px-4 py-2'
               aria-label='Jump to About'>
-              {t('buttons.about')}
+              <span className='btn-content'>{t('buttons.about')}</span>
             </Button>
             <Button
               variant='secondary'
               size='sm'
-              onClick={() => scrollTo('projects')}
+              onClick={() => smoothScrollToId('projects')}
+              className='
+               animated-fill-btn gradient-border px-4 py-2
+
+              '
               aria-label='Jump to Projects'>
-              {t('buttons.projects')}
+              <span className='btn-content'>{t('buttons.projects')}</span>
             </Button>
             <Button
               variant='secondary'
               size='sm'
-              onClick={() => scrollTo('contact')}
+              onClick={() => smoothScrollToId('contact')}
+              className='
+               animated-fill-btn gradient-border px-4 py-2
+              '
               aria-label='Jump to Contact'>
-              {t('buttons.contact')}
+              <span className='btn-content'>{t('buttons.contact')}</span>
             </Button>
           </div>
         </div>
