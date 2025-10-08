@@ -64,7 +64,7 @@
     "chooseFiles": "Seleccionar archivos",
     "filesSelected": "{{count}} archivos seleccionados"
   },
-  "tecnologies": {
+  "technologies": {
     "categories": {
       "frontend": "Front-End",
       "backend": "Back-End",
