@@ -38,23 +38,32 @@ export default function TechClientSection({
 
   return (
     <div>
-      <h2 className='text-3xl font-bold mb-6'>{t('sectionTitle')}</h2>
-
-      <div className='space-y-8'>
+      <h2 className='text-3xl font-bold mb-6 text-center'>{t('sectionTitle')}</h2>
+      <div className='space-y-8 text-center'>
         {visibleCategories.map((category) => (
           <div key={category}>
             <h3 className='text-xl font-semibold mb-4 text-malibu-400'>
               {labelFor(category)}
             </h3>
-            <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4'>
+            <div className='flex flex-wrap gap-8 justify-center'>
               {grouped[category].map((tech) => (
-                <div key={tech.name} className='flex flex-col items-center'>
-                  <img
-                    src={tech.iconPublicId}
-                    alt={tech.name}
-                    className='w-12 h-12 mb-2'
-                  />
-                  <span className='text-sm text-center'>{tech.name}</span>
+                <div
+                  key={tech.name}
+                  className='flex flex-col items-center group relative justify-center'
+                  style={{ minHeight: '100px' }} // ensures enough space for icon + tooltip
+                >
+                  <div
+                    className='transition-all duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-2'
+                  >
+                    <img
+                      src={tech.iconPublicId}
+                      alt={tech.name}
+                      className='w-12 h-12 cursor-pointer'
+                    />
+                  </div>
+                  <span className='pointer-events-none absolute left-1/2 -translate-x-1/2 top-15 mt-3 opacity-0 group-hover:opacity-100 bg-malibu-700 text-malibu-50 rounded px-3 py-1 transition-all duration-200 whitespace-nowrap z-10 text-sm text-center shadow-lg'>
+                    {tech.name}
+                  </span>
                 </div>
               ))}
             </div>
