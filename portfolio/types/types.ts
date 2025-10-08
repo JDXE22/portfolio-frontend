@@ -85,10 +85,9 @@ export type SmoothScrollOptions = {
 
 // TechStack Types
 
-type StackCategory =
+export type StackCategory =
   | 'frontend'
   | 'backend'
-  | 'fullstack'
   | 'tooling'
   | 'security'
   | 'language';
