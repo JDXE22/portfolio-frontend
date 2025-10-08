@@ -1,8 +1,8 @@
-import { AboutInfo, IProject } from "@/types/types";
-import { serverEnv, publicEnv } from "@/config/env";
+import { AboutInfo, IProject, TechStack } from '@/types/types';
+import { serverEnv, publicEnv } from '@/config/env';
 
 const API_BASE_URL =
-  typeof window === "undefined"
+  typeof window === 'undefined'
     ? serverEnv.PUBLIC_DB_CONNECTION
     : publicEnv.NEXT_PUBLIC_DB_CONNECTION;
 
@@ -11,7 +11,7 @@ async function jsonOrThrow<T>(response: Response): Promise<T> {
     const errorText = await response.text().catch(() => ``);
     throw new Error(
       `Request failed (${response.status}): ${response.statusText}${
-        errorText ? ` - ${errorText}` : ""
+        errorText ? ` - ${errorText}` : ''
       }`
     );
   }
@@ -23,7 +23,7 @@ export async function getAboutMeInfo(): Promise<AboutInfo[]> {
 
   try {
     const aboutMe = await fetch(`${API_BASE_URL}/about`, {
-      cache: "no-store",
+      cache: 'no-store',
     });
     return await jsonOrThrow<AboutInfo[]>(aboutMe);
   } catch {
@@ -36,7 +36,7 @@ export async function getProjects(): Promise<IProject[]> {
 
   try {
     const projects = await fetch(`${API_BASE_URL}/projects`, {
-      cache: "no-store",
+      cache: 'no-store',
     });
     return await jsonOrThrow<IProject[]>(projects);
   } catch {
@@ -47,13 +47,24 @@ export async function getProjects(): Promise<IProject[]> {
 export async function sendContactForm(
   formData: FormData
 ): Promise<{ message?: string }> {
-
   if (!API_BASE_URL) {
-    throw new Error("Missing API base URL");
+    throw new Error('Missing API base URL');
   }
   const response = await fetch(`${API_BASE_URL}/contact`, {
-    method: "POST",
+    method: 'POST',
     body: formData,
   });
   return jsonOrThrow<{ message?: string }>(response);
+}
+
+export async function getTechStack(): Promise<TechStack[]> {
+  if (!API_BASE_URL) {
+    throw new Error('Missing API base URL');
+  }
+  const response = await fetch(`${API_BASE_URL}/stack`, {
+    method: 'GET',
+    cache:'no-store'
+  });
+
+  return jsonOrThrow(response);
 }
