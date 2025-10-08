@@ -62,5 +62,14 @@
     "addBcc": "BCC",
     "chooseFiles": "Choose files",
     "filesSelected": "{{count}} file(s) selected"
+  },
+  "tecnologies":{
+    "categories": {
+      "frontend": "Front-End",
+      "backend": "Back-End",
+      "tooling": "Tooling",
+      "security": "Security",
+      "language": "Language"
+    }
   }
 }
