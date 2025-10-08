@@ -20,11 +20,6 @@ export interface SocialLink {
   iconPublicId?: string;
 }
 
-export interface TechStackItem {
-  name: string;
-  iconPublicId?: string;
-}
-
 export interface EducationItem {
   degree: string;
   institution: string;
@@ -86,4 +81,20 @@ export type Props = { projects: ReadonlyArray<IProject> };
 export type SmoothScrollOptions = {
   duration?: number;
   offset?: number;
+};
+
+// TechStack Types
+
+type StackCategory =
+  | 'frontend'
+  | 'backend'
+  | 'fullstack'
+  | 'tooling'
+  | 'security'
+  | 'language';
+
+export type TechStack = {
+  name: string;
+  iconPublicId: string;
+  category: StackCategory;
 };
