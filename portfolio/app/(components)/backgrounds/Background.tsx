@@ -268,9 +268,6 @@ const Particles: React.FC<ParticlesProps> = ({
       window.removeEventListener('resize', resize);
       if (moveParticlesOnHover) {
         window.removeEventListener('pointermove', onPointerMove);
-        window.removeEventListener('pointerleave', () => {
-          /* noop - listener was added conditionally above; kept for symmetry */
-        });
         if (rafId) cancelAnimationFrame(rafId);
       }
       cancelAnimationFrame(animationFrameId);
