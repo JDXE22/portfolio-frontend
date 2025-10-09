@@ -12,12 +12,12 @@ export const CATEGORY_ORDER: StackCategory[] = [
 ];
 
 export default async function TechnologiesSection() {
-  const tecnologies = await getTechStack();
+  const technologies = await getTechStack();
 
   return (
     <Section id='technologies' equalHeight align='center'>
       <TechClientSection
-        technologies={tecnologies}
+        technologies={technologies}
         categoryOrder={CATEGORY_ORDER}
       />
     </Section>
