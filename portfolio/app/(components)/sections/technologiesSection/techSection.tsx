@@ -4,7 +4,7 @@ import { StackCategory } from '@/types/types';
 import TechClientSection from './techClientSection';
 
 export const CATEGORY_ORDER: StackCategory[] = [
-  'language',
+  'languages',
   'frontend',
   'backend',
   'tooling',

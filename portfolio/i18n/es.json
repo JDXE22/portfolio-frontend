@@ -71,7 +71,7 @@
       "backend": "Back-End",
       "tooling": "Herramientas",
       "security": "Seguridad",
-      "language": "Lenguaje"
+      "languages": "Lenguajes"
     }
   }
 }

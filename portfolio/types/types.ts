@@ -90,7 +90,7 @@ export type StackCategory =
   | 'backend'
   | 'tooling'
   | 'security'
-  | 'language';
+  | 'languages';
 
 export type TechStack = {
   name: string;
