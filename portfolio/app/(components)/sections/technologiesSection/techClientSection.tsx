@@ -38,7 +38,9 @@ export default function TechClientSection({
 
   return (
     <div>
-      <h2 className='text-3xl font-bold mb-6 text-center'>{t('sectionTitle')}</h2>
+      <h2 className='text-3xl font-bold mb-6 text-center'>
+        {t('sectionTitle')}
+      </h2>
       <div className='space-y-8 text-center'>
         {visibleCategories.map((category) => (
           <div key={category}>
@@ -49,27 +51,27 @@ export default function TechClientSection({
               {grouped[category].map((tech) => (
                 <div
                   key={tech.name}
-                  className='flex flex-col items-center group relative justify-center'
-                  style={{ minHeight: '100px' }} // ensures enough space for icon + tooltip
+                  className='flex flex-col items-center relative justify-center'
+                  style={{ minHeight: '130px' }}
                 >
-                  <div
-                    className='transition-all duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-2'
-                  >
+                  <div className='group transition-all duration-300 ease-out hover:scale-110 hover:-translate-y-2'>
                     <img
                       src={tech.iconPublicId}
                       alt={tech.name}
-                      className='w-12 h-12 cursor-pointer'
+                      className='w-18 h-18 cursor-pointer'
                     />
+                    <span
+                      className='pointer-events-none mt-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-2 transition-all duration-200 bg-malibu-700 text-malibu-50 rounded px-3 py-1 whitespace-nowrap z-10 text-sm text-center shadow-lg translate-y-0 block'
+                    >
+                      {tech.name}
+                    </span>
                   </div>
-                  <span className='pointer-events-none absolute left-1/2 -translate-x-1/2 top-15 mt-3 opacity-0 group-hover:opacity-100 bg-malibu-700 text-malibu-50 rounded px-3 py-1 transition-all duration-200 whitespace-nowrap z-10 text-sm text-center shadow-lg'>
-                    {tech.name}
-                  </span>
                 </div>
               ))}
             </div>
           </div>
         ))}
       </div>
-    </div>
+    </div>  
   );
 }
