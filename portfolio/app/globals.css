@@ -42,6 +42,13 @@ body {
   color: var(--foreground);
 }
 
+.section-border {
+  border-style: solid;
+  border-color: var(--color-malibu-400, #4fafe1);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 32px 0 rgba(40, 149, 207, 0.08);
+}
+
 .app-gradient {
   background: radial-gradient(
       circle at 15% 20%,
