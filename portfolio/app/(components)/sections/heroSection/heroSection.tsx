@@ -23,7 +23,10 @@ export function HeroSection() {
   };
 
   return (
-    <Section id='hero' noPadding noMinHeight className='relative isolate'>
+    <Section
+      id='hero'
+      noPadding
+      className='relative isolate min-h-[calc(100vh-3rem)]'>
       <header className='absolute top-4 right-4 z-50'>
         <div
           className='flex items-center rounded-lg bg-foreground/6 backdrop-blur-md px-2 py-1 shadow-md'
