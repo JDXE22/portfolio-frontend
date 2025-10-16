@@ -6,8 +6,8 @@ type SitePanelProps = {
 
 export default function SitePanel({ children }: SitePanelProps) {
   return (
-    <div className='w-full bg-background/90'>
-      <div className='mx-auto w-full max-w-6xl sm:py-12 bg-background/60 backdrop-blur-sm rounded-2xl border-foreground/12 shadow-2xl overflow-hidden'>
+    <div className='w-full bg-background/90 h-full'>
+      <div className='mx-auto w-full max-w-[170vh] sm:py-12 bg-background/60 backdrop-blur-sm rounded-2xl border-foreground/12 shadow-2xl overflow-visible'>
         {children}
       </div>
     </div>
