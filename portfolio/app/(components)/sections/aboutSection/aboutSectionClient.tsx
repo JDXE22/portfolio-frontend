@@ -16,7 +16,7 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
       {items.map((info) => (
         <div
           key={info.headline}
-          className='bg-background/80 shadow-lg p-8 md:p-14 flex flex-col md:flex-row items-center gap-10 max-w-6xl min-h-[480px] mx-auto'>
+          className='bg-background/80 p-8 md:p-14 flex flex-col md:flex-row items-center gap-10 max-w-6xl min-h-[480px] mx-auto'>
           {/* Avatar */}
           {info.avatarIconUrl && (
             <div className='flex-shrink-0 mb-6 md:mb-0 md:w-1/3 flex flex-col justify-center'>
