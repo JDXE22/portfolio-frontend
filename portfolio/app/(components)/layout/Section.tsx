@@ -31,8 +31,7 @@ export function Section({
       <section
         id={id}
         className={`w-full ${paddingClasses} ${className || ''}`}>
-        <div
-          className={`mx-auto max-w-full flex flex-col ${flexClass} ${heightClass}`}>
+        <div className={`mx-auto flex flex-col ${flexClass} ${heightClass}`}>
           {title && (
             <header className={`mb-10`}>
               <h2
@@ -42,7 +41,7 @@ export function Section({
             </header>
           )}
 
-          <div className='flex-1'>{children}</div>
+          <div>{children}</div>
         </div>
       </section>
     </>

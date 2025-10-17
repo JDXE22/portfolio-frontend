@@ -20,7 +20,8 @@
       "Detail-Oriented",
       "Analytical Thinking"
     ],
-    "socialLinks": "Social Links"
+    "socialLinks": "Social Links",
+    "downloadCV": "Download CV"
   },
   "projects": {
     "sectionTitle": "Projects",
@@ -63,7 +64,7 @@
     "chooseFiles": "Choose files",
     "filesSelected": "{{count}} file(s) selected"
   },
-  "technologies":{
+  "technologies": {
     "sectionTitle": "Technologies",
     "categories": {
       "frontend": "Front-End",
