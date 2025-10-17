@@ -55,7 +55,7 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
                 <h4 className='mb-3 font-semibold text-foreground/90 text-center'>
                   {t('socialLinks')}:
                 </h4>
-                <ul className='flex flex-wrap items-center gap-6 mt-3 justify-between'>
+                <ul className='flex flex-wrap items-center gap-6 mt-3 justify-around'>
                   {info.socialLinks.map((link, i) => (
                     <li key={i}>
                       <a
