@@ -41,7 +41,7 @@ export function Section({
             </header>
           )}
 
-          <div className='flex-1'>{children}</div>
+          <div>{children}</div>
         </div>
       </section>
     </>
