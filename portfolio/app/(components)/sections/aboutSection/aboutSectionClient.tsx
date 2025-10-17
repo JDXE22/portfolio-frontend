@@ -2,6 +2,7 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import { AboutInfo } from '@/types/types';
+import { Button } from '@/app/(components)/ui/Button';
 
 export default function AboutClient({ items }: { items: AboutInfo[] }) {
   const t = useTranslations('about');
@@ -76,6 +77,16 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
                 </ul>
               </div>
             )}
+            <div className='mt-10 flex justify-center'>
+              <Button variant='secondary' size='sm'>
+                <a
+                  href='/cv.pdf'
+                  download='David_Esparza_CV.pdf'
+                  className='flex items-center gap-2'>
+                  {t('downloadCV')}
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       ))}
