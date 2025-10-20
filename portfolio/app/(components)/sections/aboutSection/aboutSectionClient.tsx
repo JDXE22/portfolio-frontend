@@ -6,6 +6,13 @@ import { Button } from '@/app/(components)/ui/Button';
 
 export default function AboutClient({ items }: { items: AboutInfo[] }) {
   const t = useTranslations('about');
+  const [copied, setCopied] = React.useState<number | null>(null);
+
+  const copyUserName = (username: string, id: number) => {
+    navigator.clipboard.writeText(username);
+    setCopied(id);
+    setTimeout(() => setCopied(null), 1500);
+  };
 
   if (items.length === 0) {
     return <p>{t('empty')}</p>;
@@ -57,7 +64,7 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
                 </h4>
                 <ul className='flex flex-wrap items-center gap-6 mt-3 justify-around'>
                   {info.socialLinks.map((link, i) => (
-                    <li key={i}>
+                    <li key={i} className='relative group'>
                       <a
                         href={link.url}
                         target='_blank'
@@ -67,11 +74,24 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
                           <img
                             src={link.iconPublicId}
                             alt={link.name}
-                            className='h-7 w-7'
+                            className='h-10 w-10 object-contain'
                           />
-                        )}
-                        <span className='hidden sm:inline'>{link.name}</span>
+                        )}{' '}
                       </a>
+                      {link.name?.toLowerCase() === 'discord' &&
+                        link.username && (
+                          <span
+                            className={`absolute left-1/2 -translate-x-1/2 top-full mt-2 px-3 py-1 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 group-hover:translate-y-2 transition-all duration-200 z-10 shadow-lg pointer-events-auto cursor-pointer ${
+                              copied === i
+                                ? 'bg-green-700 text-white'
+                                : 'bg-malibu-700 text-malibu-50'
+                            }
+                            `}
+                            onClick={() => copyUserName(link.username!, i)}
+                            title='Click to copy'>
+                            {copied === i ? 'Copied' : link.username}
+                          </span>
+                        )}
                     </li>
                   ))}
                 </ul>
