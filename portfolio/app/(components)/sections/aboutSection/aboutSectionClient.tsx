@@ -82,7 +82,8 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
                 <a
                   href='/cv.pdf'
                   download='David_Esparza_CV.pdf'
-                  className='flex items-center gap-2'>
+                  className='flex items-center gap-2'
+                  aria-label='Download David Esparza CV as PDF'>
                   {t('downloadCV')}
                 </a>
               </Button>
