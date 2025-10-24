@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@vitest/browser": "3.2.4",
+    "framer-motion": "^12.23.24",
     "next": "15.5.2",
     "next-intl": "4.3.9",
     "ogl": "1.0.11",
