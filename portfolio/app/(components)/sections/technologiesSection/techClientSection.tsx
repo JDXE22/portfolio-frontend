@@ -37,7 +37,7 @@ export default function TechClientSection({
   };
 
   return (
-    <div>
+    <div className='py-12 px-4 sm:px-6 lg:px-8'>
       <h2 className='text-3xl font-bold mb-6 text-center'>
         {t('sectionTitle')}
       </h2>
