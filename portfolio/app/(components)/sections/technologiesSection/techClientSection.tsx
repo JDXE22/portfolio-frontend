@@ -2,6 +2,7 @@
 import { StackCategory, TechStack } from '@/types/types';
 import { useTranslations } from 'next-intl';
 import { useMemo } from 'react';
+import { motion } from 'framer-motion';
 
 type Props = {
   technologies: TechStack[];
@@ -48,11 +49,19 @@ export default function TechClientSection({
               {labelFor(category)}
             </h3>
             <div className='flex flex-wrap gap-8 justify-center'>
-              {grouped[category].map((tech) => (
-                <div
+              {grouped[category].map((tech, idx) => (
+                <motion.div
                   key={tech.name}
                   className='group flex flex-col items-center justify-center relative'
-                  style={{ minHeight: '150px' }}>
+                  style={{ minHeight: '150px' }}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: idx * 0.08,
+                    ease: 'easeOut',
+                  }}>
                   <div className='transition-all duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-2 flex flex-col items-center'>
                     <img
                       src={tech.iconPublicId}
@@ -63,7 +72,7 @@ export default function TechClientSection({
                   <span className='pointer-events-none mt-4 opacity-0 group-hover:opacity-100 group-hover:translate-y-2 transition-all duration-200 bg-malibu-700 text-malibu-50 rounded px-3 py-1 whitespace-nowrap z-10 text-sm text-center shadow-lg'>
                     {tech.name}
                   </span>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
