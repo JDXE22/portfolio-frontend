@@ -1,9 +1,7 @@
 @import 'tailwindcss';
 
-/* Tailwind layers (use explicit directives) */
 @tailwind utilities;
 
-/* Color vars: prefer dark-first for a modern dark UI */
 :root {
   --background: #0a0a0a;
   --foreground: #e6eef8;
@@ -49,8 +47,47 @@ body {
   box-shadow: 0 4px 32px 0 rgba(40, 149, 207, 0.08);
 }
 
+.text-display {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.text-headline {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.text-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.text-body-lg {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  letter-spacing: 0.005em;
+  max-width: 70ch;
+}
+
+.text-body {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.text-caption {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
 .app-gradient {
-  background: radial-gradient(
+  background:
+    radial-gradient(
       circle at 15% 20%,
       rgba(40, 149, 207, 0.12),
       transparent 60%
@@ -72,7 +109,8 @@ body {
 
 .gradient-border {
   border: 2px solid transparent;
-  background: linear-gradient(var(--background), var(--background)) padding-box,
+  background:
+    linear-gradient(var(--background), var(--background)) padding-box,
     linear-gradient(
         90deg,
         var(--color-malibu-400),
@@ -81,13 +119,16 @@ body {
       )
       border-box;
   border-radius: 0.5rem;
-  transition: border-color 0.3s, background 0.3s;
+  transition:
+    border-color 0.3s,
+    background 0.3s;
 }
 
 .group:hover .gradient-border,
 .group:active .gradient-border {
   border: 2px solid transparent;
-  background: linear-gradient(var(--background), var(--background)) padding-box,
+  background:
+    linear-gradient(var(--background), var(--background)) padding-box,
     linear-gradient(
         90deg,
         var(--color-malibu-400),
@@ -96,10 +137,11 @@ body {
       )
       border-box;
   border-radius: 0.5rem;
-  transition: border-color 0.3s, background 0.3s;
+  transition:
+    border-color 0.3s,
+    background 0.3s;
 }
 
-/* Button fill animation */
 .animated-fill-btn {
   position: relative;
   overflow: hidden;
@@ -139,7 +181,8 @@ body {
 
 .animated-fill-btn.gradient-border {
   border: 2px solid transparent;
-  background: linear-gradient(var(--background), var(--background)) padding-box,
+  background:
+    linear-gradient(var(--background), var(--background)) padding-box,
     linear-gradient(
         90deg,
         var(--color-malibu-400),
@@ -148,10 +191,11 @@ body {
       )
       border-box;
   border-radius: 0.5rem;
-  transition: border-color 0.3s, background 0.3s;
+  transition:
+    border-color 0.3s,
+    background 0.3s;
 }
 
-/* Language toggle pill animation */
 .lang-toggle {
   display: inline-flex;
   align-items: center;
@@ -199,7 +243,6 @@ body {
   box-sizing: border-box;
 }
 
-/* active text color when pill covers the button */
 .lang-toggle-btn.active {
   color: var(--color-malibu-400);
 }
