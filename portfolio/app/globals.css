@@ -85,6 +85,28 @@ body {
   letter-spacing: 0.01em;
 }
 
+.section-accent {
+  position: relative;
+  padding-top: 4rem;
+}
+
+.section-accent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-malibu-400),
+    transparent
+  );
+  border-radius: 2px;
+}
+
 .app-gradient {
   background:
     radial-gradient(
