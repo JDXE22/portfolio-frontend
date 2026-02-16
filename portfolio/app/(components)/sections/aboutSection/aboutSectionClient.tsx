@@ -36,36 +36,37 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
                   className='relative w-full max-w-80 md:max-w-[28rem] h-auto shadow-xl rounded-lg mx-auto'
                 />
               </div>
-
-              {skills.length > 0 && (
-                <div className='mb-8'>
-                  <h4 className='mb-4 font-semibold text-foreground/90 mt-6 text-center'>
-                    {t('skills')}:
-                  </h4>
-                  <div className='grid grid-cols-1 sm:grid-cols-2 gap-2 max-w-md mx-auto'>
-                    {skills.map((skill, i) => (
-                      <div
-                        key={i}
-                        className='bg-malibu-700/20 text-malibu-100 px-3 py-2 rounded-lg text-sm text-center border border-malibu-500/30'>
-                        {skill}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
             </div>
           )}
 
           {/* Content */}
           <div className='flex-1 md:w-2/3 w-full space-y-8'>
-            <div>
-              <h3 className='mb-6 text-3xl md:text-4xl font-bold text-foreground'>
+            <div className='relative'>
+              <div className='absolute -left-4 top-0 w-1 h-full bg-gradient-to-b from-malibu-400 via-malibu-600 to-transparent rounded-full' />
+              <h3 className='text-display mb-6 bg-gradient-to-br from-foreground to-foreground/60 bg-clip-text text-transparent '>
                 {t('headline')}
               </h3>
-              <p className='text-foreground/80 text-lg leading-relaxed max-w-[65ch]'>
+              <p className='text-body-lg text-foreground/80 leading-relaxed'>
                 {t('bio')}
               </p>
             </div>
+
+            {skills.length > 0 && (
+              <div className='section-card p-6'>
+                <h4 className='text-title mb-6 text-foreground/90'>
+                  {t('skills')}:
+                </h4>
+                <div className='space-y-4'>
+                  {skills.map((skill, i) => (
+                    <div key={i} className='group'>
+                      <div className='flex items-center justify-between mb-2'>
+                        {skill}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Social Links */}
             {info.socialLinks?.length > 0 && (
@@ -113,7 +114,7 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
             <div className='flex justify-center'>
               <Button
                 variant='secondary'
-                size='lg'
+                size='md'
                 className='animated-fill-btn gradient-border'>
                 <a
                   href='/cv.pdf'
