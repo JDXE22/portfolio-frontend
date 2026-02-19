@@ -60,7 +60,15 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
                   {skills.map((skill, i) => (
                     <div key={i} className='group'>
                       <div className='flex items-center justify-between mb-2'>
-                        {skill}
+                        <span className='text-malibu-100 font-medium'>
+                          {skill.name}
+                        </span>
+                        <span className='text-caption text-foreground/60'>
+                          {skill.level}%
+                        </span>
+                        <div
+                          className='h-full bg-gradient-to-r from-malibu-600 to-malibu-400 rounded-full transition-all duration-700 ease-out group-hover:shadow-lg group-hover:shadow-malibu-400/50'
+                          style={{ width: `${skill.level}%` }}></div>
                       </div>
                     </div>
                   ))}
