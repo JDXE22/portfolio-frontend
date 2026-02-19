@@ -17,7 +17,7 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
   if (items.length === 0) {
     return <p>{t('empty')}</p>;
   }
-  const skills = t.raw('skillsList') as string[];
+  const skills = t.raw('skillsList') as AboutInfo['skills'];
 
   return (
     <div className='grid gap-6'>
