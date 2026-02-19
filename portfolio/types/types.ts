@@ -32,7 +32,10 @@ export interface AboutInfo {
   headline: string;
   bio: string;
   avatarIconUrl: string;
-  skills: string[];
+  skills: Array<{
+    name: string;
+    level: number;
+  }>;
   socialLinks: SocialLink[];
 }
 
