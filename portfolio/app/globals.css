@@ -107,6 +107,20 @@ body {
   border-radius: 2px;
 }
 
+.section-card {
+  background: linear-gradient(
+    135deg,
+    rgba(10, 10, 10, 0.8) 0%,
+    rgba(16, 43, 65, 0.15) 100%
+  );
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(79, 175, 225, 0.12);
+  border-radius: 1rem;
+  box-shadow:
+    0 4px 24px rgba(40, 149, 207, 0.06),
+    inset 0 1px 0 rgba(79, 175, 225, 0.1);
+}
+
 .app-gradient {
   background:
     radial-gradient(
@@ -267,4 +281,10 @@ body {
 
 .lang-toggle-btn.active {
   color: var(--color-malibu-400);
+}
+
+@keyframes shimmer {
+  to {
+    transform: translateX(100%);
+  }
 }
