@@ -280,7 +280,7 @@ export default function ContactSection() {
 
       <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mb-12'>
         <a
-          href='mailto:youremail@example.com'
+          href='mailto:davidesparzaj22@gmail.com'
           className='section-card p-6 group hover:border-malibu-400/40 transition-all duration-300 hover:-translate-y-1'>
           <div className='flex items-center gap-4'>
             <div className='w-14 h-14 rounded-full bg-malibu-700/30 flex items-center justify-center group-hover:bg-malibu-600/40 transition-colors'>
@@ -305,7 +305,7 @@ export default function ContactSection() {
         </a>
 
         <a
-          href='https://linkedin.com/in/yourprofile'
+          href='https://www.linkedin.com/in/juan-david-esparza-castillo/'
           target='_blank'
           rel='noopener noreferrer'
           className='section-card p-6 group hover:border-malibu-400/40 transition-all duration-300 hover:-translate-y-1'>
@@ -326,7 +326,7 @@ export default function ContactSection() {
         </a>
 
         <a
-          href='https://github.com/yourusername'
+          href='https://github.com/JDXE22'
           target='_blank'
           rel='noopener noreferrer'
           className='section-card p-6 group hover:border-malibu-400/40 transition-all duration-300 hover:-translate-y-1'>
