@@ -63,11 +63,7 @@ export default function ContactSection() {
   };
 
   return (
-    <Section
-      id='contact'
-      title={dictionary('sectionTitle')}
-      equalHeight
-      align='center'>
+    <Section id='contact' title={dictionary('sectionTitle')} align='center'>
       <div className='group relative mx-auto max-w-xl'>
         <div
           className='

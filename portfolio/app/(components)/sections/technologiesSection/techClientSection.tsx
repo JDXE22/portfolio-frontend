@@ -16,15 +16,18 @@ export default function TechClientSection({
   const t = useTranslations('technologies');
 
   const grouped: Record<StackCategory, TechStack[]> = useMemo(() => {
-    return items.reduce((acc, tech) => {
-      (acc[tech.category] ||= []).push(tech);
-      return acc;
-    }, {} as Record<StackCategory, TechStack[]>);
+    return items.reduce(
+      (acc, tech) => {
+        (acc[tech.category] ||= []).push(tech);
+        return acc;
+      },
+      {} as Record<StackCategory, TechStack[]>,
+    );
   }, [items]);
 
   const visibleCategories = useMemo(
     () => categoryOrder.filter((cat) => (grouped[cat] || []).length > 0),
-    [categoryOrder, grouped]
+    [categoryOrder, grouped],
   );
 
   const labelFor = (cat: StackCategory) => {
@@ -38,7 +41,7 @@ export default function TechClientSection({
   };
 
   return (
-    <div className='py-12 px-4 sm:px-6 lg:px-8'>
+    <div>
       <h2 className='text-3xl font-bold mb-6 text-center'>
         {t('sectionTitle')}
       </h2>

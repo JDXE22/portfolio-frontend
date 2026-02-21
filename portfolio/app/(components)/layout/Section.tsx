@@ -8,7 +8,6 @@ export function Section({
   align = 'left',
   noPadding,
   noMinHeight,
-  equalHeight,
   customMinHeight,
 }: SectionProps) {
   const alignmentClasses = {
@@ -24,11 +23,9 @@ export function Section({
       ? customMinHeight
       : 'min-h-[560px]';
 
-  const flexClass = equalHeight ? 'flex-1' : '';
-
   return (
     <section id={id} className={`w-full ${paddingClasses} ${className || ''}`}>
-      <div className={`mx-auto flex flex-col ${flexClass} ${heightClass}`}>
+      <div className={`mx-auto flex flex-col ${heightClass}`}>
         {title && (
           <header className={`mb-10`}>
             <h2
