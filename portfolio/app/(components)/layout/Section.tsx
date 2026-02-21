@@ -21,29 +21,25 @@ export function Section({
   const heightClass = noMinHeight
     ? ''
     : customMinHeight
-    ? customMinHeight
-    : 'min-h-[560px]';
+      ? customMinHeight
+      : 'min-h-[560px]';
 
   const flexClass = equalHeight ? 'flex-1' : '';
 
   return (
-    <>
-      <section
-        id={id}
-        className={`w-full ${paddingClasses} ${className || ''}`}>
-        <div className={`mx-auto flex flex-col ${flexClass} ${heightClass}`}>
-          {title && (
-            <header className={`mb-10`}>
-              <h2
-                className={`${alignmentClasses} text-2xl sm:text-3xl font-semibold tracking-tight`}>
-                {title}
-              </h2>
-            </header>
-          )}
+    <section id={id} className={`w-full ${paddingClasses} ${className || ''}`}>
+      <div className={`mx-auto flex flex-col ${flexClass} ${heightClass}`}>
+        {title && (
+          <header className={`mb-10`}>
+            <h2
+              className={`${alignmentClasses} text-2xl sm:text-3xl font-semibold tracking-tight`}>
+              {title}
+            </h2>
+          </header>
+        )}
 
-          <div>{children}</div>
-        </div>
-      </section>
-    </>
+        <div>{children}</div>
+      </div>
+    </section>
   );
 }

@@ -13,7 +13,6 @@ export default async function LangLayout({ children, params }: Props) {
   return (
     <NextIntlClientProvider locale={lang} messages={messages}>
       <ScrollProgress />
-
       {children}
     </NextIntlClientProvider>
   );

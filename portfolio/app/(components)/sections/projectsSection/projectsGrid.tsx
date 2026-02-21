@@ -38,7 +38,7 @@ export default function ProjectsGrid({ projects }: Props) {
           </h2>
         </header>
 
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-fr'>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
           {projects.map((project, index) => (
             <FeaturedProjectCard
               key={project.id}

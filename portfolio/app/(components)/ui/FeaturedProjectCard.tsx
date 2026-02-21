@@ -18,15 +18,30 @@ export const FeaturedProjectCard = ({
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1, duration: 0.5 }}
       viewport={{ once: true, margin: '-50px' }}
       className={classNameGenerator(
         'group relative rounded-2xl overflow-hidden transition-all duration-500',
-        featured ? 'md:col-span-2 md:row-span-2 h-[600px]' : 'h-[400px]',
-      )}>
-      {/* Gradient Overlay */}
-      <div className='absolute bottom-0 left-0 right-0 z-20 p-8 space-y-4 transform group-hover: translate-y-0 transition-transform duration-500'>
+        featured ? 'md:col-span-2 h-[500px]' : 'h-[400px]',
+      )}
+      style={
+        project.imgUrl
+          ? {
+              backgroundImage: `url(${project.imgUrl})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }
+          : undefined
+      }>
+      {/* Dark base fill shown when no image */}
+      {!project.imgUrl && <div className='absolute inset-0 bg-malibu-950' />}
+
+      {/* Gradient scrim so text is always readable */}
+      <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent z-10' />
+
+      {/* Content */}
+      <div className='absolute bottom-0 left-0 right-0 z-20 p-8 space-y-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500'>
         <div className='flex flex-wrap gap-2 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100'>
           {project.techStack?.slice(0, featured ? 5 : 3).map((tech, i) => (
             <span
@@ -36,27 +51,27 @@ export const FeaturedProjectCard = ({
             </span>
           ))}
         </div>
-        {/* Title & Description */}
+
         <h3
           className={classNameGenerator(
-            'font-bold tex-white',
+            'font-bold text-white',
             featured ? 'text-3xl' : 'text-2xl',
           )}>
           {project.title}
         </h3>
 
-        <p className='text-foreground/90 text-base line-clamp-2 group-hover:opacity-100 transition-opacity duration-500 delay-200'>
+        <p className='text-white/80 text-base line-clamp-2 group-hover:opacity-100 transition-opacity duration-500 delay-200'>
           {project.description}
         </p>
 
         {/* CTAs */}
-        <div className='flex gap-4 pt-4 group-hover: opacity-100 transition-opacity duration-500 delay-200'>
+        <div className='flex gap-4 pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200'>
           {project.liveUrl && (
             <a
               href={project.liveUrl}
               target='_blank'
               rel='noopener noreferrer'
-              className='px-6 py-2.5 rounded-lg bg-malibu-600 hover: bg-malibu-500 text-white font-medium transition-colors hover: shadow-xl'>
+              className='px-6 py-2.5 rounded-lg bg-malibu-600 hover:bg-malibu-500 text-white font-medium transition-colors hover:shadow-xl'>
               View Live →
             </a>
           )}
@@ -69,10 +84,12 @@ export const FeaturedProjectCard = ({
               View Code →
             </a>
           )}
-          <div className='absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none'>
-            <div className='absolute inset-0 bg-gradient-to-t from-malibu-600/20 via-transparent to-transparent' />
-          </div>
         </div>
+      </div>
+
+      {/* Hover glow */}
+      <div className='absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10'>
+        <div className='absolute inset-0 bg-gradient-to-t from-malibu-600/20 via-transparent to-transparent' />
       </div>
     </motion.div>
   );
