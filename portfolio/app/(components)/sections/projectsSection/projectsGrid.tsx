@@ -1,10 +1,8 @@
 'use client';
 import React from 'react';
 import { useTranslations } from 'next-intl';
-import { Button } from '@/app/(components)/ui/Button';
 import { Modal } from '@/app/(components)/ui/Modal';
 import type { IProject, Props } from '@/types/types';
-import { statusClass } from '@/lib/statusClass';
 import { difficultyLevelClass } from '@/lib/difficultyClass';
 import { FeaturedProjectCard } from '../../ui/FeaturedProjectCard';
 
