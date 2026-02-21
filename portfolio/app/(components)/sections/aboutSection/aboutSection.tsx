@@ -9,7 +9,7 @@ export default async function AboutSection() {
     Array.isArray(aboutInfo) && aboutInfo.length > 0 ? aboutInfo : [];
 
   return (
-    <Section id='about' align='center'>
+    <Section id='about' align='center' noMinHeight>
       <AboutClient items={items} />
     </Section>
   );

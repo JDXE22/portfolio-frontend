@@ -16,12 +16,12 @@ export function Section({
     right: 'text-right',
   }[align];
 
-  const paddingClasses = noPadding ? 'px-0 py-0' : 'px-6 py-20 sm:py-28';
+  const paddingClasses = noPadding ? 'px-0 py-0' : 'px-6 py-12 sm:py-16';
   const heightClass = noMinHeight
     ? ''
     : customMinHeight
       ? customMinHeight
-      : 'min-h-[560px]';
+      : 'min-h-[400px]';
 
   return (
     <section id={id} className={`w-full ${paddingClasses} ${className || ''}`}>
