@@ -1,5 +1,6 @@
 import { NextIntlClientProvider } from 'next-intl';
 import React from 'react';
+import { ScrollProgress } from '../(components)/ui/ScrollProgress';
 
 type Props = {
   children: React.ReactNode;
@@ -11,6 +12,8 @@ export default async function LangLayout({ children, params }: Props) {
   const messages = (await import(`../../i18n/${lang}.json`)).default;
   return (
     <NextIntlClientProvider locale={lang} messages={messages}>
+      <ScrollProgress />
+
       {children}
     </NextIntlClientProvider>
   );
