@@ -24,7 +24,6 @@ function DownloadIcon() {
   );
 }
 
-// Soft skill accent markers — one per position, cycling if list grows
 const MARKERS = ['◆', '▸', '◉', '◈', '◇'];
 
 export default function AboutClient({ items }: { items: AboutInfo[] }) {
@@ -41,9 +40,8 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
     <div className='mx-auto max-w-6xl space-y-8 px-0'>
       {items.map((info) => (
         <React.Fragment key={info.headline}>
-          {/* ── Bio + Portrait ──────────────────────────── */}
+          {/* Bio*/}
           <div className='grid grid-cols-1 items-start gap-10 md:grid-cols-5'>
-            {/* Bio column */}
             <div className='flex flex-col gap-8 md:col-span-3'>
               <div className='relative pl-5'>
                 <div className='absolute left-0 top-0 h-full w-[3px] rounded-full bg-gradient-to-b from-malibu-400 via-malibu-600 to-transparent' />
@@ -76,7 +74,7 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
               </div>
             </div>
 
-            {/* Portrait — leads on mobile, trails on desktop */}
+            {/* Portrait */}
             {info.avatarIconUrl && (
               <div className='order-first md:col-span-2 md:order-last'>
                 <div className='relative mx-auto aspect-[3/4] w-full max-w-[260px] md:max-w-none'>
@@ -92,7 +90,7 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
             )}
           </div>
 
-          {/* ── Skills row ───────────────────────────────── */}
+          {/* ── Skills row  */}
           <div className='grid grid-cols-1 gap-6 md:grid-cols-2'>
             {/* Technical skills — API progress bars */}
             {info.skills?.length > 0 && (
@@ -123,7 +121,7 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
               </div>
             )}
 
-            {/* Soft skills — i18n pill tags */}
+            {/* Soft skills */}
             {softSkills.length > 0 && (
               <div className='section-card p-6'>
                 <h4 className='text-title mb-6 text-foreground/90'>
