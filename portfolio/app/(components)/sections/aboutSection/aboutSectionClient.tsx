@@ -32,7 +32,9 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
   const softSkills = t.raw('skillsList') as string[];
 
   if (items.length === 0) {
-    return <p className='text-center text-foreground/50'>{t('sectionTitle')}</p>;
+    return (
+      <p className='text-center text-foreground/50'>{t('sectionTitle')}</p>
+    );
   }
 
   return (
