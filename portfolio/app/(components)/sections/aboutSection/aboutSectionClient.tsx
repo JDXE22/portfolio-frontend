@@ -1,131 +1,157 @@
 'use client';
 import React from 'react';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { AboutInfo } from '@/types/types';
-import { Button } from '@/app/(components)/ui/Button';
+
+function DownloadIcon() {
+  return (
+    <svg
+      width='15'
+      height='15'
+      viewBox='0 0 15 15'
+      fill='none'
+      className='shrink-0'
+      aria-hidden='true'>
+      <path
+        d='M7.5 1v8.5M4 6.5l3.5 4 3.5-4M2 12.5h11'
+        stroke='currentColor'
+        strokeWidth='1.4'
+        strokeLinecap='round'
+        strokeLinejoin='round'
+      />
+    </svg>
+  );
+}
+
+const MARKERS = ['◆', '▸', '◉', '◈', '◇'];
 
 export default function AboutClient({ items }: { items: AboutInfo[] }) {
   const t = useTranslations('about');
-  const [copied, setCopied] = React.useState<number | null>(null);
-
-  const copyUserName = (username: string, id: number) => {
-    navigator.clipboard.writeText(username);
-    setCopied(id);
-    setTimeout(() => setCopied(null), 1500);
-  };
+  const softSkills = t.raw('skillsList') as string[];
 
   if (items.length === 0) {
-    return <p>{t('empty')}</p>;
+    return (
+      <p className='text-center text-foreground/50'>{t('sectionTitle')}</p>
+    );
   }
-  const skills = t.raw('skillsList') as string[];
 
   return (
-    <div className='grid gap-6'>
+    <div className='mx-auto max-w-6xl space-y-8 px-0'>
       {items.map((info) => (
-        <div
-          key={info.headline}
-          className='bg-background/80 p-8 md:p-14 flex flex-col md:flex-row items-center gap-10 max-w-6xl min-h-[480px] mx-auto'>
-          {/* Avatar */}
-          {info.avatarIconUrl && (
-            <div className='flex-shrink-0 mb-6 md:mb-0 md:w-1/3 flex flex-col justify-center'>
-              <div className='relative'>
-                <div className='absolute inset-0 bg-gradient-to-br from-malibu-900/30 via-transparent to-malibu-400/20 rounded-lg'></div>
-                <img
-                  src={info.avatarIconUrl}
-                  alt={`${info.headline} avatar`}
-                  className='relative w-full max-w-80 md:max-w-[28rem] h-auto shadow-xl rounded-lg mx-auto'
-                />
+        <React.Fragment key={info.headline}>
+          {/* Bio*/}
+          <div className='grid grid-cols-1 items-start gap-10 md:grid-cols-5'>
+            <div className='flex flex-col gap-8 md:col-span-3'>
+              <div className='relative pl-5'>
+                <div className='absolute left-0 top-0 h-full w-[3px] rounded-full bg-gradient-to-b from-malibu-400 via-malibu-600 to-transparent' />
+                <h3 className='text-display mb-5 text-foreground'>
+                  {t('headline')}
+                </h3>
+                <p className='text-body-lg leading-relaxed text-foreground/75'>
+                  {t('bio')}
+                </p>
               </div>
 
-              {skills.length > 0 && (
-                <div className='mb-8'>
-                  <h4 className='mb-4 font-semibold text-foreground/90 mt-6 text-center'>
-                    {t('skills')}:
-                  </h4>
-                  <div className='grid grid-cols-1 sm:grid-cols-2 gap-2 max-w-md mx-auto'>
-                    {skills.map((skill, i) => (
-                      <div
-                        key={i}
-                        className='bg-malibu-700/20 text-malibu-100 px-3 py-2 rounded-lg text-sm text-center border border-malibu-500/30'>
-                        {skill}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          )}
-
-          {/* Content */}
-          <div className='flex-1 md:w-2/3 w-full space-y-8'>
-            <div>
-              <h3 className='mb-6 text-3xl md:text-4xl font-bold text-foreground'>
-                {t('headline')}
-              </h3>
-              <p className='text-foreground/80 text-lg leading-relaxed max-w-[65ch]'>
-                {t('bio')}
-              </p>
-            </div>
-
-            {/* Social Links */}
-            {info.socialLinks?.length > 0 && (
-              <div className='bg-foreground/5 rounded-lg p-6'>
-                <h4 className='mb-4 font-semibold text-foreground/90 text-center'>
-                  {t('socialLinks')}:
-                </h4>
-                <ul className='flex flex-wrap items-center gap-8 justify-center'>
-                  {info.socialLinks.map((link, i) => (
-                    <li key={i} className='relative group'>
-                      <a
-                        href={link.url}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        className='flex items-center gap-2 text-foreground hover:text-malibu-400 transition-colors'>
-                        {link.iconPublicId && (
-                          <img
-                            src={link.iconPublicId}
-                            alt={link.name}
-                            className='h-10 w-10 object-contain'
-                          />
-                        )}{' '}
-                      </a>
-                      {link.name?.toLowerCase() === 'discord' &&
-                        link.username && (
-                          <span
-                            className={`absolute left-1/2 -translate-x-1/2 top-full mt-2 px-3 py-1 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 group-hover:translate-y-2 transition-all duration-200 z-10 shadow-lg pointer-events-auto cursor-pointer ${
-                              copied === i
-                                ? 'bg-green-700 text-white'
-                                : 'bg-malibu-700 text-malibu-50'
-                            }
-                            `}
-                            onClick={() => copyUserName(link.username!, i)}
-                            title='Click to copy'>
-                            {copied === i ? 'Copied' : link.username}
-                          </span>
-                        )}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-
-            {/* Download CV Button */}
-            <div className='flex justify-center'>
-              <Button
-                variant='secondary'
-                size='lg'
-                className='animated-fill-btn gradient-border'>
+              {/* Download CV */}
+              <div className='flex justify-center'>
                 <a
                   href='/cv.pdf'
                   download='David_Esparza_CV.pdf'
-                  className='flex items-center gap-3 m-2'
-                  aria-label='Download David Esparza CV as PDF'>
-                  <span className='btn-content'> {t('downloadCV')}</span>
+                  aria-label='Download David Esparza CV as PDF'
+                  className='
+                    inline-flex items-center gap-2.5
+                    rounded-lg border border-malibu-400/30
+                    bg-malibu-950/20 px-5 py-2.5
+                    text-sm font-medium text-malibu-300
+                    shadow-sm transition-all duration-200
+                    hover:border-malibu-400/55 hover:bg-malibu-900/30 hover:text-malibu-200
+                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-malibu-500/50
+                  '>
+                  <DownloadIcon />
+                  {t('downloadCV')}
                 </a>
-              </Button>
+              </div>
             </div>
+
+            {/* Portrait */}
+            {info.avatarIconUrl && (
+              <div className='order-first md:col-span-2 md:order-last'>
+                <div className='relative mx-auto aspect-[3/4] w-full max-w-[260px] md:max-w-none'>
+                  <Image
+                    src={info.avatarIconUrl}
+                    alt='David Esparza'
+                    fill
+                    sizes='(max-width: 768px) 260px, 40vw'
+                    className='rounded-2xl object-cover object-top shadow-xl ring-1 ring-white/[0.08]'
+                  />
+                </div>
+              </div>
+            )}
           </div>
-        </div>
+
+          {/* ── Skills row  */}
+          <div className='grid grid-cols-1 gap-6 md:grid-cols-2'>
+            {/* Technical skills — API progress bars */}
+            {info.skills?.length > 0 && (
+              <div className='section-card p-6'>
+                <h4 className='text-title mb-6 text-foreground/90'>
+                  {t('techSkills')}
+                </h4>
+                <div className='space-y-4'>
+                  {info.skills.map((skill, i) => (
+                    <div key={i} className='group'>
+                      <div className='mb-1.5 flex items-center justify-between'>
+                        <span className='text-sm font-medium text-malibu-100'>
+                          {skill.name}
+                        </span>
+                        <span className='text-xs text-foreground/55'>
+                          {skill.level}%
+                        </span>
+                      </div>
+                      <div className='h-1.5 overflow-hidden rounded-full bg-foreground/10'>
+                        <div
+                          className='h-full rounded-full bg-gradient-to-r from-malibu-600 to-malibu-400 transition-all duration-700 ease-out group-hover:shadow-[0_0_8px_rgba(79,175,225,0.45)]'
+                          style={{ width: `${skill.level}%` }}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Soft skills */}
+            {softSkills.length > 0 && (
+              <div className='section-card p-6'>
+                <h4 className='text-title mb-6 text-foreground/90'>
+                  {t('softSkills')}
+                </h4>
+                <div className='flex flex-wrap gap-2.5'>
+                  {softSkills.map((skill, i) => (
+                    <span
+                      key={i}
+                      className='
+                        inline-flex items-center gap-1.5
+                        rounded-full border border-malibu-400/25
+                        bg-malibu-950/30 px-3.5 py-1.5
+                        text-sm font-medium text-malibu-200/90
+                        transition-colors duration-200
+                        hover:border-malibu-400/50 hover:bg-malibu-900/30 hover:text-malibu-100
+                      '>
+                      <span
+                        className='text-[9px] leading-none text-malibu-400/80'
+                        aria-hidden='true'>
+                        {MARKERS[i % MARKERS.length]}
+                      </span>
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </React.Fragment>
       ))}
     </div>
   );

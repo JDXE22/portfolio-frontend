@@ -12,7 +12,7 @@ async function jsonOrThrow<T>(response: Response): Promise<T> {
     throw new Error(
       `Request failed (${response.status}): ${response.statusText}${
         errorText ? ` - ${errorText}` : ''
-      }`
+      }`,
     );
   }
   return (await response.json()) as T;
@@ -23,7 +23,7 @@ export async function getAboutMeInfo(): Promise<AboutInfo[]> {
 
   try {
     const aboutMe = await fetch(`${API_BASE_URL}/about`, {
-      cache: 'no-store',
+      next: { revalidate: 300 },
     });
     return await jsonOrThrow<AboutInfo[]>(aboutMe);
   } catch {
@@ -36,7 +36,7 @@ export async function getProjects(): Promise<IProject[]> {
 
   try {
     const projects = await fetch(`${API_BASE_URL}/projects`, {
-      cache: 'no-store',
+      next: { revalidate: 300 },
     });
     return await jsonOrThrow<IProject[]>(projects);
   } catch {
@@ -45,7 +45,7 @@ export async function getProjects(): Promise<IProject[]> {
 }
 
 export async function sendContactForm(
-  formData: FormData
+  formData: FormData,
 ): Promise<{ message?: string }> {
   if (!API_BASE_URL) {
     throw new Error('Missing API base URL');
@@ -58,13 +58,14 @@ export async function sendContactForm(
 }
 
 export async function getTechStack(): Promise<TechStack[]> {
-  if (!API_BASE_URL) {
-    throw new Error('Missing API base URL');
-  }
-  const response = await fetch(`${API_BASE_URL}/stack`, {
-    method: 'GET',
-    cache:'no-store'
-  });
+  if (!API_BASE_URL) return [];
 
-  return jsonOrThrow(response);
+  try {
+    const response = await fetch(`${API_BASE_URL}/stack`, {
+      next: { revalidate: 300 },
+    });
+    return await jsonOrThrow<TechStack[]>(response);
+  } catch {
+    return [];
+  }
 }

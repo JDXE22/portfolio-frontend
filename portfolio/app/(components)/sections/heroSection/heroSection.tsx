@@ -2,10 +2,8 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import { Button } from '@/app/(components)/ui/Button';
-import Particles from '@/app/(components)/backgrounds/Background';
 import { Section } from '@/app/(components)/layout/Section';
-import { useRouter } from 'next/navigation';
-import { useParams } from 'next/navigation';
+import { useRouter, useParams } from 'next/navigation';
 import { smoothScrollToId } from '@/lib/scroll';
 
 export function HeroSection() {
@@ -66,17 +64,6 @@ export function HeroSection() {
       </header>
 
       <div className='flex min-h-[100dvh] w-full flex-col items-center justify-center px-6 pt-12 pb-12 text-center'>
-        <Particles
-          className='-z-10'
-          particleColors={['#ffffff', '#a5b4fc', '#f0abfc']}
-          particleCount={300}
-          particleSpread={14}
-          speed={0.25}
-          particleBaseSize={110}
-          moveParticlesOnHover
-          alphaParticles
-          disableRotation={false}
-        />
         <div
           aria-hidden='true'
           className='pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_bottom,rgba(0,0,0,0)_0%,rgba(0,0,0,0.55)_70%)]'

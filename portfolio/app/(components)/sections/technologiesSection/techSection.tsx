@@ -15,7 +15,7 @@ export default async function TechnologiesSection() {
   const technologies = await getTechStack();
 
   return (
-    <Section id='technologies' equalHeight align='center'>
+    <Section id='technologies' align='center'>
       <TechClientSection
         technologies={technologies}
         categoryOrder={CATEGORY_ORDER}
