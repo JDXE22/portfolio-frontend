@@ -16,7 +16,7 @@ export default function CtaButton({
   children,
   ...rest
 }: CTAButtonProps) {
-  const base = `group relative inline-flex items-center justify-center gap-3 font-semibold rounded-xl transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-malibu-400/50 disabled: opacity-50 disabled: cursor-not-allowed overflow-hidden`;
+  const base = `group relative inline-flex items-center justify-center gap-3 font-semibold rounded-xl transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-malibu-400/50 disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden`;
 
   const variants = {
     primary: `bg-gradient-to-r from-malibu-600 to-malibu-500 text-white shadow-lg shadow-malibu-600/30 hover:shadow-xl hover:shadow-malibu-500/40 hover:-translate-y-0.5 active:translate-y-0`,
@@ -38,20 +38,21 @@ export default function CtaButton({
       )}
       {...rest}>
       <span
-        className='absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500'
+        aria-hidden='true'
+        className='absolute inset-0 -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none'
         style={{
           background:
             'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)',
           transform: 'translateX(-100%)',
           animation: 'shimmer 2s infinite',
-        }}>
-        {icon && (
-          <span className='group-hover:rotate-6 transition-transform duration-300'>
-            {icon}
-          </span>
-        )}
-        <span className='relative z-10'>{children}</span>
-      </span>
+        }}
+      />
+      {icon && (
+        <span className='group-hover:rotate-6 transition-transform duration-300'>
+          {icon}
+        </span>
+      )}
+      <span className='relative z-10'>{children}</span>
     </button>
   );
 }

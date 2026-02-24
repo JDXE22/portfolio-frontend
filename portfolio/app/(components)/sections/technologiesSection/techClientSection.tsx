@@ -42,7 +42,7 @@ export default function TechClientSection({
 
   return (
     <div>
-      <h2 className='text-3xl font-bold mb-6 text-center'>
+      <h2 className='text-2xl sm:text-3xl font-semibold tracking-tight mb-6 text-center'>
         {t('sectionTitle')}
       </h2>
       <div className='space-y-8 text-center'>
@@ -69,6 +69,8 @@ export default function TechClientSection({
                     <img
                       src={tech.iconPublicId}
                       alt={tech.name}
+                      loading='lazy'
+                      decoding='async'
                       className='w-16 h-16 cursor-pointer'
                     />
                   </div>

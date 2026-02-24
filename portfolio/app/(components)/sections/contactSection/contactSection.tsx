@@ -49,7 +49,7 @@ export default function ContactSection() {
 
     try {
       const res = await sendContactForm(data);
-      setSuccess(res?.message ?? 'Thanks! I’ll get back to you soon.');
+      setSuccess(res?.message ?? dictionary('success'));
       formEl.reset();
       setFiles([]);
       setShowCc(false);
@@ -294,8 +294,12 @@ export default function ContactSection() {
               </svg>
             </div>
             <div>
-              <h4 className='font-semibold text-foreground mb-1'>Email Me</h4>
-              <p className='text-sm text-foreground/60'>Quick response</p>
+              <h4 className='font-semibold text-foreground mb-1'>
+                {dictionary('links.email.label')}
+              </h4>
+              <p className='text-sm text-foreground/60'>
+                {dictionary('links.email.sublabel')}
+              </p>
             </div>
           </div>
         </a>
@@ -315,8 +319,12 @@ export default function ContactSection() {
               </svg>
             </div>
             <div>
-              <h4 className='font-semibold text-foreground mb-1'> LinkedIn </h4>
-              <p className='text-sm text-foreground/60'>Let's connect</p>
+              <h4 className='font-semibold text-foreground mb-1'>
+                {dictionary('links.linkedin.label')}
+              </h4>
+              <p className='text-sm text-foreground/60'>
+                {dictionary('links.linkedin.sublabel')}
+              </p>
             </div>
           </div>
         </a>
@@ -336,8 +344,12 @@ export default function ContactSection() {
               </svg>
             </div>
             <div>
-              <h4 className='font-semibold text-foreground mb-1'>GitHub</h4>
-              <p className='text-sm text-foreground/60'>View code</p>
+              <h4 className='font-semibold text-foreground mb-1'>
+                {dictionary('links.github.label')}
+              </h4>
+              <p className='text-sm text-foreground/60'>
+                {dictionary('links.github.sublabel')}
+              </p>
             </div>
           </div>
         </a>

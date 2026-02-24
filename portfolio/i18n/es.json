@@ -2,6 +2,7 @@
   "hero": {
     "title": "La Historia Detrás De Cada Código",
     "subtitle": "Bienvenido al Portafolio de David",
+    "nav": "Inicio",
     "buttons": {
       "projects": "Proyectos",
       "contact": "Contacto",
@@ -21,6 +22,8 @@
       "Pensamiento analítico"
     ],
     "techStack": "Stack Tecnológico",
+    "techSkills": "Habilidades Técnicas",
+    "softSkills": "Habilidades Blandas",
     "socialLinks": "Redes Sociales",
     "downloadCV": "Descargar CV"
   },
@@ -63,7 +66,12 @@
     "addCc": "Agregar CC",
     "addBcc": "Agregar BCC",
     "chooseFiles": "Seleccionar archivos",
-    "filesSelected": "{{count}} archivos seleccionados"
+    "filesSelected": "{{count}} archivos seleccionados",
+    "links": {
+      "email": { "label": "Escríbeme", "sublabel": "Respuesta rápida" },
+      "linkedin": { "label": "LinkedIn", "sublabel": "Conectemos" },
+      "github": { "label": "GitHub", "sublabel": "Ver código" }
+    }
   },
   "technologies": {
     "sectionTitle": "Tecnologías",

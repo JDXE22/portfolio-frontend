@@ -97,6 +97,8 @@ export default function ProjectsGrid({ projects }: Props) {
               <img
                 src={selectedProject.imgUrl}
                 alt={`${selectedProject.title} image`}
+                loading='lazy'
+                decoding='async'
                 className='mt-3 w-full object-cover rounded-md'
               />
             )}

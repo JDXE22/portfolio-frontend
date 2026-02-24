@@ -35,7 +35,7 @@ export function Section({
           </header>
         )}
 
-        <div>{children}</div>
+        {children}
       </div>
     </section>
   );

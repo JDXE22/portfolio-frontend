@@ -2,6 +2,7 @@
   "hero": {
     "title": "Behind Every Code, There's a Story",
     "subtitle": "Welcome to David's Portfolio",
+    "nav": "Home",
     "buttons": {
       "projects": "Projects",
       "contact": "Contact",
@@ -20,6 +21,8 @@
       "Detail-Oriented",
       "Analytical Thinking"
     ],
+    "techSkills": "Technical Skills",
+    "softSkills": "Soft Skills",
     "socialLinks": "Social Links",
     "downloadCV": "Download CV"
   },
@@ -62,7 +65,12 @@
     "addCc": "CC",
     "addBcc": "BCC",
     "chooseFiles": "Choose files",
-    "filesSelected": "{{count}} file(s) selected"
+    "filesSelected": "{{count}} file(s) selected",
+    "links": {
+      "email": { "label": "Email Me", "sublabel": "Quick response" },
+      "linkedin": { "label": "LinkedIn", "sublabel": "Let's connect" },
+      "github": { "label": "GitHub", "sublabel": "View code" }
+    }
   },
   "technologies": {
     "sectionTitle": "Technologies",

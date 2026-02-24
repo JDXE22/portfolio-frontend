@@ -3,8 +3,7 @@ import React from 'react';
 import { useTranslations } from 'next-intl';
 import { Button } from '@/app/(components)/ui/Button';
 import { Section } from '@/app/(components)/layout/Section';
-import { useRouter } from 'next/navigation';
-import { useParams } from 'next/navigation';
+import { useRouter, useParams } from 'next/navigation';
 import { smoothScrollToId } from '@/lib/scroll';
 
 export function HeroSection() {
