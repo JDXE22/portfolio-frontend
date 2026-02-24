@@ -19,11 +19,6 @@ export default function ProjectsGrid({ projects }: Props) {
     null,
   );
 
-  const onMore = (project: IProject) => {
-    setSelectedProject(project);
-    setIsOpen(true);
-  };
-
   const onClose = () => {
     setIsOpen(false);
     setSelectedProject(null);
