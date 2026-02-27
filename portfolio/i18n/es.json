@@ -55,22 +55,12 @@
   },
   "contact": {
     "sectionTitle": "Contáctame",
-    "name": "Nombre",
-    "email": "Correo",
-    "message": "Mensaje",
-    "sendMessage": "Enviar Mensaje",
-    "sending": "Enviando...",
-    "success": "¡Gracias! Te responderé pronto.",
-    "error": "Ocurrió un error inesperado. Intenta nuevamente.",
-    "label": "primario@ejemplo.com",
-    "addCc": "Agregar CC",
-    "addBcc": "Agregar BCC",
-    "chooseFiles": "Seleccionar archivos",
-    "filesSelected": "{{count}} archivos seleccionados",
+    "subtitle": "No dudes en contactarme por cualquiera de estos canales — siempre estoy abierto a nuevas oportunidades y conversaciones.",
     "links": {
       "email": { "label": "Escríbeme", "sublabel": "Respuesta rápida" },
       "linkedin": { "label": "LinkedIn", "sublabel": "Conectemos" },
-      "github": { "label": "GitHub", "sublabel": "Ver código" }
+      "github": { "label": "GitHub", "sublabel": "Ver mi código" },
+      "discord": { "label": "Discord", "sublabel": "Chatea conmigo" }
     }
   },
   "technologies": {

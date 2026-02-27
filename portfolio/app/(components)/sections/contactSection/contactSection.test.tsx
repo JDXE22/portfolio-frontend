@@ -1,41 +1,40 @@
-import { vi } from "vitest";
-import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { render, screen } from '@testing-library/react';
+import ContactSection from './contactSection';
 
-vi.mock("@/data/projects", () => ({
-  __esModule: true,
-  sendContactForm: vi
-    .fn()
-    .mockResolvedValue({ message: "Message sent successfully" }),
-}));
-
-import ContactSection from "./contactSection";
-import { sendContactForm } from "@/data/dataApi";
-
-afterEach(() => vi.clearAllMocks());
-
-describe("ContactSection", () => {
-  test("renders contact form elements", () => {
+describe('ContactSection', () => {
+  test('renders all four contact cards', () => {
     render(<ContactSection />);
-    expect(screen.getByLabelText(/name/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/message/i)).toBeInTheDocument();
-    expect(
-      screen.getByRole("button", { name: /Send Message/i })
-    ).toBeInTheDocument();
+    expect(screen.getByText(/Email Me/i)).toBeInTheDocument();
+    expect(screen.getByText(/LinkedIn/i)).toBeInTheDocument();
+    expect(screen.getByText(/GitHub/i)).toBeInTheDocument();
+    expect(screen.getByText(/Discord/i)).toBeInTheDocument();
   });
-  test("form gets submitted correctly", async () => {
+
+  test('email card links to mailto', () => {
     render(<ContactSection />);
-    await userEvent.type(screen.getByLabelText(/name/i), "John Doe");
-    await userEvent.type(screen.getByLabelText(/email/i), "john@example.com");
-    await userEvent.type(
-      screen.getByLabelText(/message/i),
-      "Hello there! this is a test message"
+    const emailLink = screen.getByRole('link', { name: /Email Me/i });
+    expect(emailLink).toHaveAttribute(
+      'href',
+      'mailto:davidesparzaj22@gmail.com',
     );
-    await userEvent.click(
-      screen.getByRole("button", { name: /Send Message/i })
-    );
-    expect(sendContactForm).toHaveBeenCalledTimes(1);
-    expect(await screen.findByTestId("contact-success")).toBeInTheDocument();
+  });
+
+  test('linkedin card opens in new tab', () => {
+    render(<ContactSection />);
+    const linkedinLink = screen.getByRole('link', { name: /LinkedIn/i });
+    expect(linkedinLink).toHaveAttribute('target', '_blank');
+    expect(linkedinLink).toHaveAttribute('rel', 'noopener noreferrer');
+  });
+
+  test('github card opens in new tab', () => {
+    render(<ContactSection />);
+    const githubLink = screen.getByRole('link', { name: /GitHub/i });
+    expect(githubLink).toHaveAttribute('target', '_blank');
+    expect(githubLink).toHaveAttribute('rel', 'noopener noreferrer');
+  });
+
+  test('discord card displays username', () => {
+    render(<ContactSection />);
+    expect(screen.getByText('juandavid_35956')).toBeInTheDocument();
   });
 });
