@@ -54,22 +54,12 @@
   },
   "contact": {
     "sectionTitle": "Contact Me",
-    "name": "Name",
-    "email": "Email",
-    "message": "Message",
-    "sendMessage": "Send Message",
-    "sending": "Sending...",
-    "success": "Your message has been sent successfully!",
-    "error": "An error occurred while sending your message. Please try again later.",
-    "label": "primary@example.com",
-    "addCc": "CC",
-    "addBcc": "BCC",
-    "chooseFiles": "Choose files",
-    "filesSelected": "{{count}} file(s) selected",
+    "subtitle": "Feel free to reach out through any of these channels — I'm always open to new opportunities and conversations.",
     "links": {
       "email": { "label": "Email Me", "sublabel": "Quick response" },
       "linkedin": { "label": "LinkedIn", "sublabel": "Let's connect" },
-      "github": { "label": "GitHub", "sublabel": "View code" }
+      "github": { "label": "GitHub", "sublabel": "View my code" },
+      "discord": { "label": "Discord", "sublabel": "Chat with me" }
     }
   },
   "technologies": {
