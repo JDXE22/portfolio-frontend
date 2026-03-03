@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import type { IProject } from '@/types/types';
 import { classNameGenerator } from '@/lib/className';
 
@@ -15,6 +16,8 @@ export const FeaturedProjectCard = ({
   featured = false,
   index,
 }: FeaturedProjectCardProps) => {
+  const t = useTranslations('projects');
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -61,7 +64,7 @@ export const FeaturedProjectCard = ({
         </h3>
 
         <p className='text-white/80 text-base line-clamp-2 group-hover:opacity-100 transition-opacity duration-500 delay-200'>
-          {project.description}
+          {t(`description.${project.slug}`)}
         </p>
 
         {/* CTAs */}
@@ -72,7 +75,7 @@ export const FeaturedProjectCard = ({
               target='_blank'
               rel='noopener noreferrer'
               className='px-6 py-2.5 rounded-lg bg-malibu-600 hover:bg-malibu-500 text-white font-medium transition-colors hover:shadow-xl'>
-              View Live →
+              {t('liveSite')} →
             </a>
           )}
           {project.repoUrl && (
@@ -81,7 +84,7 @@ export const FeaturedProjectCard = ({
               target='_blank'
               rel='noopener noreferrer'
               className='px-6 py-2.5 rounded-lg border border-malibu-400/60 hover:border-malibu-400 text-malibu-100 font-medium transition-colors backdrop-blur-sm'>
-              View Code →
+              {t('viewRepository')} →
             </a>
           )}
         </div>

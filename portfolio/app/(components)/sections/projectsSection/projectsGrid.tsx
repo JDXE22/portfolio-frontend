@@ -26,14 +26,8 @@ export default function ProjectsGrid({ projects }: Props) {
 
   return (
     <>
-      <section data-testid='projects-grid' className='max-w-6xl mx-auto px-4'>
-        <header className='mb-8 text-center'>
-          <h2 className='text-2xl sm:text-3xl font-semibold tracking-tight'>
-            {t('sectionTitle')}
-          </h2>
-        </header>
-
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+      <div data-testid='projects-grid' className='mx-auto max-w-6xl px-0'>
+        <div className='grid grid-cols-1 gap-6 md:grid-cols-3'>
           {projects.map((project, index) => (
             <FeaturedProjectCard
               key={project.id}
@@ -43,7 +37,7 @@ export default function ProjectsGrid({ projects }: Props) {
             />
           ))}
         </div>
-      </section>
+      </div>
 
       <Modal
         open={isOpen}
