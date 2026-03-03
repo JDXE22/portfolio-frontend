@@ -73,7 +73,7 @@
     }
   },
   "footer": {
-    "rights": "© {year} David Esparza",
+    "rights": "© {year} Juan David Esparza",
     "builtWith": "Built with Next.js & Tailwind"
   }
 }
