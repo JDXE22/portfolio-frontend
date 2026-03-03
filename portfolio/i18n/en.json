@@ -58,7 +58,7 @@
     "links": {
       "email": { "label": "Email Me", "sublabel": "Quick response" },
       "linkedin": { "label": "LinkedIn", "sublabel": "Let's connect" },
-      "github": { "label": "GitHub", "sublabel": "View my code" },
+      "github": { "label": "GitHub", "sublabel": "View my Github profile" },
       "discord": { "label": "Discord", "sublabel": "Chat with me" }
     }
   },
@@ -71,5 +71,9 @@
       "security": "Security",
       "languages": "Languages"
     }
+  },
+  "footer": {
+    "rights": "© {year} David Esparza",
+    "builtWith": "Built with Next.js & Tailwind"
   }
 }
