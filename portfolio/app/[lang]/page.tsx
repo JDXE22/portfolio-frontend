@@ -5,6 +5,7 @@ import ContactSection from '@/app/(components)/sections/contactSection/contactSe
 import { HeroSection } from '@/app/(components)/sections/heroSection/heroSection';
 import TechnologiesSection from '@/app/(components)/sections/technologiesSection/techSection';
 import SitePanel from '@/app/(components)/layout/SitePanel';
+import Footer from '@/app/(components)/layout/Footer';
 
 function SectionSkeleton() {
   return (
@@ -29,6 +30,7 @@ export default async function Home() {
           <ProjectsSection />
         </Suspense>
         <ContactSection />
+        <Footer />
       </SitePanel>
     </main>
   );
