@@ -32,7 +32,7 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
 
   if (items.length === 0) {
     return (
-      <p className='text-center text-foreground/50'>{t('sectionTitle')}</p>
+      <p className='text-center text-foreground/50'>{t('noData')}</p>
     );
   }
 
@@ -93,13 +93,13 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
           {/* ── Skills row  */}
           <div className='grid grid-cols-1 gap-6 md:grid-cols-2'>
             {/* Technical skills — API progress bars */}
-            {info.skills?.length > 0 && (
+            {info.techSkills?.length > 0 && (
               <div className='section-card p-6'>
                 <h4 className='text-title mb-6 text-foreground/90'>
                   {t('techSkills')}
                 </h4>
                 <div className='space-y-4'>
-                  {info.skills.map((skill, i) => (
+                  {info.techSkills.map((skill, i) => (
                     <div key={i} className='group'>
                       <div className='mb-1.5 flex items-center justify-between'>
                         <span className='text-sm font-medium text-malibu-100'>

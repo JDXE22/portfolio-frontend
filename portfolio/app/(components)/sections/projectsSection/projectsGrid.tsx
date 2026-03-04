@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Modal } from '@/app/(components)/ui/Modal';
 import type { IProject, Props } from '@/types/types';
@@ -83,13 +84,15 @@ export default function ProjectsGrid({ projects }: Props) {
             )}
 
             {selectedProject.imgUrl && (
-              <img
-                src={selectedProject.imgUrl}
-                alt={`${selectedProject.title} image`}
-                loading='lazy'
-                decoding='async'
-                className='mt-3 w-full object-cover rounded-md'
-              />
+              <div className='relative mt-3 w-full aspect-video rounded-md overflow-hidden'>
+                <Image
+                  src={selectedProject.imgUrl}
+                  alt={`${selectedProject.title} image`}
+                  fill
+                  className='object-cover'
+                  sizes='(max-width: 768px) 100vw, 600px'
+                />
+              </div>
             )}
 
             <div className='flex gap-3'>

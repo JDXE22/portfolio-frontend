@@ -11,6 +11,7 @@
   },
   "about": {
     "sectionTitle": "Sobre Mí",
+    "noData": "Información no disponible.",
     "headline": "Lo sé, lo sé, ya has escuchado esto antes, pero repasémoslo de nuevo...",
     "bio": "Hola, soy David Esparza, un apasionado desarrollador Full-Stack con un fuerte enfoque en construir backends confiables y eficientes, pero no te dejes engañar: también disfruto creando experiencias front-end fluidas. Con habilidad para resolver problemas y amor por las buenas prácticas de código, disfruto convertir desafíos complejos en soluciones elegantes. Cuando no estoy programando, puedes encontrarme entrenando o mejorando mis habilidades técnicas para mantenerme a la vanguardia en este mundo tecnológico en constante evolución. ¡Conectemos y creemos algo increíble juntos!",
     "skills": "Habilidades",
