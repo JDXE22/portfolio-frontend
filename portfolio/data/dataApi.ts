@@ -1,4 +1,4 @@
-import { AboutInfo, IProject, TechStack } from '@/types/types';
+import { AboutInfo, ContactInfo, IProject, TechStack } from '@/types/types';
 import { serverEnv, publicEnv } from '@/config/env';
 
 const API_BASE_URL =
@@ -67,5 +67,18 @@ export async function getTechStack(): Promise<TechStack[]> {
     return await jsonOrThrow<TechStack[]>(response);
   } catch {
     return [];
+  }
+}
+
+export async function getContactInfo(): Promise<ContactInfo | null> {
+  if (!API_BASE_URL) return null;
+
+  try {
+    const response = await fetch(`${API_BASE_URL}/contact`, {
+      next: { revalidate: 300 },
+    });
+    return await jsonOrThrow<ContactInfo>(response);
+  } catch {
+    return null;
   }
 }

@@ -27,14 +27,19 @@ export interface EducationItem {
 }
 
 export interface AboutInfo {
-  id: string;
+  id?: string;
   headline: string;
   bio: string;
   avatarIconUrl: string;
-  skills: Array<{
+  techSkills: Array<{
     name: string;
     level: number;
   }>;
+  softSkills?: string[];
+  socialLinks?: SocialLink[];
+}
+
+export interface ContactInfo {
   socialLinks: SocialLink[];
 }
 

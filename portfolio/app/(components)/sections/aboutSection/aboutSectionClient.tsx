@@ -31,9 +31,7 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
   const softSkills = t.raw('skillsList') as string[];
 
   if (items.length === 0) {
-    return (
-      <p className='text-center text-foreground/50'>{t('sectionTitle')}</p>
-    );
+    return <p className='text-center text-foreground/50'>{t('noData')}</p>;
   }
 
   return (
@@ -92,35 +90,6 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
 
           {/* ── Skills row  */}
           <div className='grid grid-cols-1 gap-6 md:grid-cols-2'>
-            {/* Technical skills — API progress bars */}
-            {info.skills?.length > 0 && (
-              <div className='section-card p-6'>
-                <h4 className='text-title mb-6 text-foreground/90'>
-                  {t('techSkills')}
-                </h4>
-                <div className='space-y-4'>
-                  {info.skills.map((skill, i) => (
-                    <div key={i} className='group'>
-                      <div className='mb-1.5 flex items-center justify-between'>
-                        <span className='text-sm font-medium text-malibu-100'>
-                          {skill.name}
-                        </span>
-                        <span className='text-xs text-foreground/55'>
-                          {skill.level}%
-                        </span>
-                      </div>
-                      <div className='h-1.5 overflow-hidden rounded-full bg-foreground/10'>
-                        <div
-                          className='h-full rounded-full bg-gradient-to-r from-malibu-600 to-malibu-400 transition-all duration-700 ease-out group-hover:shadow-[0_0_8px_rgba(79,175,225,0.45)]'
-                          style={{ width: `${skill.level}%` }}
-                        />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
             {/* Soft skills */}
             {softSkills.length > 0 && (
               <div className='section-card p-6'>
@@ -146,6 +115,35 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
                       </span>
                       {skill}
                     </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Technical skills — API progress bars */}
+            {info.techSkills?.length > 0 && (
+              <div className='section-card p-6'>
+                <h4 className='text-title mb-6 text-foreground/90'>
+                  {t('techSkills')}
+                </h4>
+                <div className='space-y-4'>
+                  {info.techSkills.map((skill, i) => (
+                    <div key={i} className='group'>
+                      <div className='mb-1.5 flex items-center justify-between'>
+                        <span className='text-sm font-medium text-malibu-100'>
+                          {skill.name}
+                        </span>
+                        <span className='text-xs text-foreground/55'>
+                          {skill.level}%
+                        </span>
+                      </div>
+                      <div className='h-1.5 overflow-hidden rounded-full bg-foreground/10'>
+                        <div
+                          className='h-full rounded-full bg-gradient-to-r from-malibu-600 to-malibu-400 transition-all duration-700 ease-out group-hover:shadow-[0_0_8px_rgba(79,175,225,0.45)]'
+                          style={{ width: `${skill.level}%` }}
+                        />
+                      </div>
+                    </div>
                   ))}
                 </div>
               </div>
