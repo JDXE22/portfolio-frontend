@@ -59,7 +59,7 @@
     "links": {
       "email": { "label": "Escríbeme", "sublabel": "Respuesta rápida" },
       "linkedin": { "label": "LinkedIn", "sublabel": "Conectemos" },
-      "github": { "label": "GitHub", "sublabel": "Ver mi perfil en Github" },
+      "github": { "label": "GitHub", "sublabel": "Ver mi perfil en GitHub" },
       "discord": { "label": "Discord", "sublabel": "Chatea conmigo" }
     }
   },
