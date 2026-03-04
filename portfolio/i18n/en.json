@@ -58,7 +58,7 @@
     "links": {
       "email": { "label": "Email Me", "sublabel": "Quick response" },
       "linkedin": { "label": "LinkedIn", "sublabel": "Let's connect" },
-      "github": { "label": "GitHub", "sublabel": "View my Github profile" },
+      "github": { "label": "GitHub", "sublabel": "View my GitHub profile" },
       "discord": { "label": "Discord", "sublabel": "Chat with me" }
     }
   },
