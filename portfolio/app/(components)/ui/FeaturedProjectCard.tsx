@@ -64,7 +64,9 @@ export const FeaturedProjectCard = ({
         </h3>
 
         <p className='text-white/80 text-base line-clamp-2 group-hover:opacity-100 transition-opacity duration-500 delay-200'>
-          {t(`description.${project.slug}`)}
+          {t.has(`description.${project.slug}`)
+            ? t(`description.${project.slug}`)
+            : project.description}
         </p>
 
         {/* CTAs */}
