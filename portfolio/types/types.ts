@@ -33,7 +33,7 @@ export interface AboutInfo {
   avatarIconUrl: string;
   techSkills: Array<{
     name: string;
-    level: number;
+    level: KnowledgeLevel;
   }>;
   softSkills?: string[];
   socialLinks?: SocialLink[];
@@ -42,6 +42,12 @@ export interface AboutInfo {
 export interface ContactInfo {
   socialLinks: SocialLink[];
 }
+
+export type KnowledgeLevel =
+  | 'Foundational'
+  | 'Intermediate'
+  | 'Advanced'
+  | 'Expert';
 
 export type LiveStatus =
   | 'Live'

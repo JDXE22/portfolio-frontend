@@ -2,7 +2,12 @@
 import React from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import { AboutInfo } from '@/types/types';
+import { AboutInfo, KnowledgeLevel } from '@/types/types';
+import {
+  knowledgeLevelColor,
+  knowledgeLevelSegments,
+  knowledgeLevelTextColor,
+} from '@/lib/knowledgeLevelClass';
 
 function DownloadIcon() {
   return (
@@ -31,7 +36,11 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
   const softSkills = t.raw('skillsList') as string[];
 
   if (items.length === 0) {
-    return <p className='text-center text-foreground/50'>{t('noData')}</p>;
+    return (
+      <p className='text-center text-foreground/50'>
+        {t('noData') ?? 'No data'}
+      </p>
+    );
   }
 
   return (
@@ -120,31 +129,44 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
               </div>
             )}
 
-            {/* Technical skills — API progress bars */}
-            {info.techSkills?.length > 0 && (
+            {/* Technical skills — qualitative level indicators */}
+            {info.techSkills?.length && (
               <div className='section-card p-6'>
                 <h4 className='text-title mb-6 text-foreground/90'>
                   {t('techSkills')}
                 </h4>
                 <div className='space-y-4'>
-                  {info.techSkills.map((skill, i) => (
-                    <div key={i} className='group'>
-                      <div className='mb-1.5 flex items-center justify-between'>
+                  {info.techSkills.map((skill, i) => {
+                    const level = skill.level as KnowledgeLevel;
+                    const filled = knowledgeLevelSegments(level);
+                    return (
+                      <div
+                        key={i}
+                        className='flex items-center justify-between gap-3'>
                         <span className='text-sm font-medium text-malibu-100'>
                           {skill.name}
                         </span>
-                        <span className='text-xs text-foreground/55'>
-                          {skill.level}%
-                        </span>
+                        <div className='flex items-center gap-2.5'>
+                          <div className='flex gap-1'>
+                            {[1, 2, 3, 4].map((seg) => (
+                              <div
+                                key={seg}
+                                className={`h-2 w-5 rounded-sm transition-colors duration-300 ${
+                                  seg <= filled
+                                    ? knowledgeLevelColor(level)
+                                    : 'bg-transparent ring-1 ring-inset ring-malibu-300/40'
+                                }`}
+                              />
+                            ))}
+                          </div>
+                          <span
+                            className={`min-w-[5.5rem] text-right text-xs font-medium ${knowledgeLevelTextColor(level)}`}>
+                            {skill.level}
+                          </span>
+                        </div>
                       </div>
-                      <div className='h-1.5 overflow-hidden rounded-full bg-foreground/10'>
-                        <div
-                          className='h-full rounded-full bg-gradient-to-r from-malibu-600 to-malibu-400 transition-all duration-700 ease-out group-hover:shadow-[0_0_8px_rgba(79,175,225,0.45)]'
-                          style={{ width: `${skill.level}%` }}
-                        />
-                      </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             )}
