@@ -139,6 +139,7 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
                   {info.techSkills.map((skill, i) => {
                     const level = skill.level;
                     const filled = knowledgeLevelSegments(level);
+                    const SEGMENTS = [1, 2, 3, 4];
                     return (
                       <div
                         key={i}
@@ -148,7 +149,7 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
                         </span>
                         <div className='flex items-center gap-2.5'>
                           <div className='flex gap-1'>
-                            {[1, 2, 3, 4].map((seg) => (
+                            {SEGMENTS.map((seg) => (
                               <div
                                 key={seg}
                                 className={`h-2 w-5 rounded-sm transition-colors duration-300 ${
