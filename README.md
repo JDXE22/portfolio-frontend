@@ -1,18 +1,20 @@
 # Hello! Welcome to my portfolio
 
-A modern, fast, and animated developer portfolio built with Next.js, TypeScript, and Tailwind CSS. It showcases projects, tells your story, and lets visitors contact you — with a little sparkle from a lightweight WebGL particle background.
+A modern, fast, and accessible developer portfolio built with Next.js, TypeScript, and Tailwind CSS. It showcases projects, tells your story, and lets visitors contact you — with smooth Framer Motion animations and full EN/ES internationalization.
 
-- App directory (Next.js 13/14 style)
+- App Router (Next.js) with `[lang]` dynamic routing for i18n
 - Strong typing across components and data
 - Fetches content from a simple REST API
-- Interactive UI (modals, hover details, focus states)
+- Interactive UI (modals, floating nav pill, scroll progress bar, focus states)
+- SEO-optimised: Open Graph, Twitter cards, JSON-LD structured data
+- Accessible: skip-to-content link, ARIA labels, keyboard-navigable
 - Tests with Vitest + React Testing Library
 
 ## Table of Contents
 
 - [Overview](#overview)
 - [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
+- [Architecture & Structure](#architecture--structure)
 - [Getting Started](#getting-started)
 - [Environment](#environment)
 - [Running, Testing, Building](#running-testing-building)
@@ -20,61 +22,28 @@ A modern, fast, and animated developer portfolio built with Next.js, TypeScript,
 
 ## Overview
 
-This app renders four main sections:
+The root `/` redirects to `/en` (or `/es`). Each locale renders five main sections:
 
-- Hero: animated intro with smooth scroll CTAs (EN/ES copy)
-- About: bio, skills, tech stack, social links
-- Projects: responsive grid + details modal, badges, links
-- Contact: polished form with CC/BCC, attachments, and async submit
+- **Hero**: animated intro with smooth scroll CTAs
+- **About**: bio, soft skills, technical skill indicators, CV download
+- **Technologies**: tech-stack grid with knowledge-level badges
+- **Projects**: responsive grid + details modal, difficulty/status badges, links
+- **Contact**: polished form with async submit
 
-Page entry: [portfolio/app/page.tsx](portfolio/app/page.tsx)
+Page entry: [portfolio/app/[lang]/page.tsx](portfolio/app/%5Blang%5D/page.tsx)
 
 ## Tech Stack
 
-- Next.js + React (App Router)
+- Next.js 16 + React 19 (App Router)
 - TypeScript
-- Tailwind CSS (via PostCSS plugin)
-- OGL (WebGL particles)
-- Vitest + React Testing Library
-- JSDOM for component tests
+- Tailwind CSS v4 (via PostCSS plugin)
+- next-intl 4 — EN/ES internationalisation
+- Framer Motion 12 — animations & scroll progress
+- Vitest 3 + React Testing Library + JSDOM
 
-## Project Structure
+## Architecture & Project Structure
 
-```
-portfolio/
-  app/
-    (components)/
-      backgrounds/Background.tsx
-      layout/Section.tsx
-      sections/
-        aboutSection/
-        contactSection/
-        heroSection/
-        projectsSection/
-      ui/
-        Button.tsx
-        Modal.tsx
-    globals.css
-    layout.tsx
-    page.tsx
-  config/
-    env.ts
-  data/
-    dataApi.ts
-  i18n/
-    dictionaries.ts
-  lib/
-    className.ts
-    difficultyClass.ts
-    errors.ts
-    statusClass.ts
-  tests/
-  types/
-  next.config.ts
-  postcss.config.mjs
-  tsconfig.json
-  vitest.config.mts
-```
+For a detailed look at the application's high-level design, data flow, and directory structure, please refer to the [Architecture Documentation](architecture.md).
 
 ## Getting Started
 
@@ -87,34 +56,34 @@ portfolio/
 
 ## Environment
 
-The app expects a base URL for the backend API. In the folder /data there's a file with the api operations there you will see the API_BASE_URL variable which contains either or the PUBLIC_DB | NEXT_PUBLIC_DB_CONNECTION variable that is set in the /config folder
+The app uses two environment variables. In `portfolio/config/env.ts` you can see how `API_BASE_URL` is resolved from `PUBLIC_DB_CONNECTION` (server-side) or `NEXT_PUBLIC_DB_CONNECTION` (client-side). A second variable controls the canonical site URL used for SEO metadata.
 
 Example `.env` (in the `portfolio/` directory):
 
 ```
-
 PUBLIC_DB_CONNECTION=https://your-api.example.com
 # or (client-side only)
 # NEXT_PUBLIC_DB_CONNECTION=https://your-api.example.com
+
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
 ```
 
-If `API_BASE_URL` is missing, project fetching returns empty arrays and contact submit throws a friendly error.
+If `API_BASE_URL` is missing, project fetching returns empty arrays and contact submit throws a friendly error. If `NEXT_PUBLIC_SITE_URL` is missing, metadata falls back to `https://davidesparza.dev`.
 
 ## Running, Testing, Building
 
 From the `portfolio/` directory:
 
-- Development: run the dev script in [portfolio/package.json](portfolio/package.json)
-  - npm run dev
-- Tests (Vitest):
-  - npm test
-  - or: npx vitest
-- Build:
-  - npm run build
-- Start production server:
-  - npm start
+- Development: `npm run dev`
+- Tests (Vitest): `npm test` or `npx vitest`
+- Watch mode: `npm run test:watch`
+- Build: `npm run build`
+- Start production server: `npm start`
 
-Note: Commands depend on your package.json scripts; use the equivalents for your package manager.
+Individual test suites:
+
+- `npm run testProjects` — projects section integration tests
+- `npm run testContactForm` — contact form tests
 
 ## License
 
