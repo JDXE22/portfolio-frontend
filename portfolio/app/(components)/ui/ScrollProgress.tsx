@@ -11,6 +11,8 @@ export function ScrollProgress() {
 
   return (
     <div
+      role='presentation'
+      aria-hidden='true'
       style={{
         position: 'fixed',
         top: 0,

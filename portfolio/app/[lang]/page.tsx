@@ -17,7 +17,7 @@ function SectionSkeleton() {
 
 export default async function Home() {
   return (
-    <main className='flex min-h-screen flex-col items-stretch w-full h-full'>
+    <main id='main-content' tabIndex={-1} className='flex min-h-screen flex-col items-stretch w-full h-full'>
       <SitePanel>
         <HeroSection />
         <Suspense fallback={<SectionSkeleton />}>

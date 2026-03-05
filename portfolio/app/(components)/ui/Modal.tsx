@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { ModalProps } from '@/types/types';
 import { classNameGenerator } from '@/lib/className';
 
@@ -13,11 +13,25 @@ export function Modal({
   header,
   showCloseButton = true,
 }: ModalProps) {
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const previousFocusRef = useRef<HTMLElement | null>(null);
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose();
     if (open) {
       document.addEventListener('keydown', onKey);
       document.body.style.overflow = 'hidden';
+      // Save the element that was focused before opening
+      previousFocusRef.current = document.activeElement as HTMLElement;
+      // Move focus to the first focusable element inside the dialog
+      const focusable = dialogRef.current?.querySelector<HTMLElement>(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      focusable?.focus();
+    } else {
+      // Restore focus to the trigger element
+      previousFocusRef.current?.focus();
+      previousFocusRef.current = null;
     }
     return () => {
       document.removeEventListener('keydown', onKey);
@@ -29,6 +43,7 @@ export function Modal({
     <div className='fixed inset-0 z-50 flex items-center justify-center'>
       <div className='absolute inset-0 bg-black/50' onClick={onClose} />
       <div
+        ref={dialogRef}
         role='dialog'
         aria-modal='true'
         aria-label={title}
