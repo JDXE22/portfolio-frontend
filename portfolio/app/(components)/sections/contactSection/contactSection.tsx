@@ -15,10 +15,12 @@ export default function ContactSection() {
         {/* Email */}
         <a
           href='mailto:davidesparzaj22@gmail.com'
+          aria-label='Email David Esparza'
           className='section-card group p-6 transition-all duration-300 hover:-translate-y-1 hover:border-malibu-400/40'>
           <div className='flex flex-col items-center gap-3 text-center'>
             <div className='flex h-14 w-14 items-center justify-center rounded-full bg-malibu-700/30 transition-colors group-hover:bg-malibu-600/40'>
               <svg
+                aria-hidden='true'
                 className='h-7 w-7 text-malibu-400'
                 fill='none'
                 viewBox='0 0 24 24'
@@ -47,10 +49,12 @@ export default function ContactSection() {
           href='https://www.linkedin.com/in/juan-david-esparza-castillo/'
           target='_blank'
           rel='noopener noreferrer'
+          aria-label='LinkedIn profile (opens in new tab)'
           className='section-card group p-6 transition-all duration-300 hover:-translate-y-1 hover:border-malibu-400/40'>
           <div className='flex flex-col items-center gap-3 text-center'>
             <div className='flex h-14 w-14 items-center justify-center rounded-full bg-malibu-700/30 transition-colors group-hover:bg-malibu-600/40'>
               <svg
+                aria-hidden='true'
                 className='h-7 w-7 text-malibu-400'
                 fill='currentColor'
                 viewBox='0 0 24 24'>
@@ -73,10 +77,12 @@ export default function ContactSection() {
           href='https://github.com/JDXE22'
           target='_blank'
           rel='noopener noreferrer'
+          aria-label='GitHub profile (opens in new tab)'
           className='section-card group p-6 transition-all duration-300 hover:-translate-y-1 hover:border-malibu-400/40'>
           <div className='flex flex-col items-center gap-3 text-center'>
             <div className='flex h-14 w-14 items-center justify-center rounded-full bg-malibu-700/30 transition-colors group-hover:bg-malibu-600/40'>
               <svg
+                aria-hidden='true'
                 className='h-7 w-7 text-malibu-400'
                 fill='currentColor'
                 viewBox='0 0 24 24'>
@@ -99,6 +105,7 @@ export default function ContactSection() {
           <div className='flex flex-col items-center gap-3 text-center'>
             <div className='flex h-14 w-14 items-center justify-center rounded-full bg-malibu-700/30 transition-colors group-hover:bg-malibu-600/40'>
               <svg
+                aria-hidden='true'
                 className='h-7 w-7 text-malibu-400'
                 fill='currentColor'
                 viewBox='0 0 24 24'>

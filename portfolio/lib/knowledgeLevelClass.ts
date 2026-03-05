@@ -25,7 +25,7 @@ export const knowledgeLevelSegments = (level: KnowledgeLevel): number =>
   LEVEL_SEGMENTS[level] ?? 1;
 
 export const knowledgeLevelColor = (level: KnowledgeLevel): string =>
-  LEVEL_COLORS[level] ?? 'bg-slate-400';
+  LEVEL_COLORS[level];
 
 export const knowledgeLevelTextColor = (level: KnowledgeLevel): string =>
-  LEVEL_TEXT_COLORS[level] ?? 'text-slate-400';
+  LEVEL_TEXT_COLORS[level];

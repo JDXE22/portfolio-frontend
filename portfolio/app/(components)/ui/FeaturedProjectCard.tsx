@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import type { IProject } from '@/types/types';
@@ -27,18 +28,20 @@ export const FeaturedProjectCard = ({
       className={classNameGenerator(
         'group relative rounded-2xl overflow-hidden transition-all duration-500',
         featured ? 'md:col-span-2 h-[500px]' : 'h-[400px]',
+      )}>
+      {/* Background image via Next.js Image for lazy-loading and optimisation */}
+      {project.imgUrl ? (
+        <Image
+          src={project.imgUrl}
+          alt={`${project.title} preview`}
+          fill
+          className='object-cover object-center'
+          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 66vw, 800px'
+          loading='lazy'
+        />
+      ) : (
+        <div className='absolute inset-0 bg-malibu-950' />
       )}
-      style={
-        project.imgUrl
-          ? {
-              backgroundImage: `url(${project.imgUrl})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }
-          : undefined
-      }>
-      {/* Dark base fill shown when no image */}
-      {!project.imgUrl && <div className='absolute inset-0 bg-malibu-950' />}
 
       {/* Gradient scrim so text is always readable */}
       <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent z-10' />
@@ -76,6 +79,7 @@ export const FeaturedProjectCard = ({
               href={project.liveUrl}
               target='_blank'
               rel='noopener noreferrer'
+              aria-label={`${t('liveSite')} – ${project.title} (opens in new tab)`}
               className='px-6 py-2.5 rounded-lg bg-malibu-600 hover:bg-malibu-500 text-white font-medium transition-colors hover:shadow-xl'>
               {t('liveSite')} →
             </a>
@@ -85,6 +89,7 @@ export const FeaturedProjectCard = ({
               href={project.repoUrl}
               target='_blank'
               rel='noopener noreferrer'
+              aria-label={`${t('viewRepository')} – ${project.title} (opens in new tab)`}
               className='px-6 py-2.5 rounded-lg border border-malibu-400/60 hover:border-malibu-400 text-malibu-100 font-medium transition-colors backdrop-blur-sm'>
               {t('viewRepository')} →
             </a>

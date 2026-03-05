@@ -38,7 +38,7 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
   if (items.length === 0) {
     return (
       <p className='text-center text-foreground/50'>
-        {t('noData') ?? 'No data'}
+        {t.has('noData') ? t('noData') : 'No data.'}
       </p>
     );
   }
@@ -130,15 +130,16 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
             )}
 
             {/* Technical skills — qualitative level indicators */}
-            {info.techSkills?.length && (
+            {info.techSkills && info.techSkills.length > 0 && (
               <div className='section-card p-6'>
                 <h4 className='text-title mb-6 text-foreground/90'>
                   {t('techSkills')}
                 </h4>
                 <div className='space-y-4'>
                   {info.techSkills.map((skill, i) => {
-                    const level = skill.level as KnowledgeLevel;
+                    const level = skill.level;
                     const filled = knowledgeLevelSegments(level);
+                    const SEGMENTS = [1, 2, 3, 4];
                     return (
                       <div
                         key={i}
@@ -148,7 +149,7 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
                         </span>
                         <div className='flex items-center gap-2.5'>
                           <div className='flex gap-1'>
-                            {[1, 2, 3, 4].map((seg) => (
+                            {SEGMENTS.map((seg) => (
                               <div
                                 key={seg}
                                 className={`h-2 w-5 rounded-sm transition-colors duration-300 ${

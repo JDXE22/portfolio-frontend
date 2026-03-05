@@ -1,18 +1,11 @@
 import './globals.css';
-import { Geist, Geist_Mono } from 'next/font/google';
 import { Metadata, Viewport } from 'next';
+import React from 'react';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://davidesparza.dev';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(BASE_URL),
   title: {
     default: 'David Esparza | Full-Stack Developer',
     template: '%s | David Esparza',
@@ -33,6 +26,12 @@ export const metadata: Metadata = {
       'Full-Stack Developer specialising in reliable backends and seamless front-end experiences.',
   },
   robots: { index: true, follow: true },
+  alternates: {
+    languages: {
+      en: '/en',
+      es: '/es',
+    },
+  },
 };
 
 export const viewport: Viewport = {
@@ -40,17 +39,12 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+// The html/body shell is provided by app/[lang]/layout.tsx so that the
+// lang attribute can be set dynamically per locale.
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <html lang='en'>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased app-gradient`}>
-        {children}
-      </body>
-    </html>
-  );
+  return children as React.ReactElement;
 }
