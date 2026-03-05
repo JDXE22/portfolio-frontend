@@ -130,7 +130,7 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
             )}
 
             {/* Technical skills — qualitative level indicators */}
-            {info.techSkills?.length && (
+            {info.techSkills && info.techSkills.length > 0 && (
               <div className='section-card p-6'>
                 <h4 className='text-title mb-6 text-foreground/90'>
                   {t('techSkills')}
