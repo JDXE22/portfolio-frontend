@@ -36,7 +36,11 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
   const softSkills = t.raw('skillsList') as string[];
 
   if (items.length === 0) {
-    return <p className='text-center text-foreground/50'>{t('noData')}</p>;
+    return (
+      <p className='text-center text-foreground/50'>
+        {t('noData') ?? 'No data'}
+      </p>
+    );
   }
 
   return (
@@ -126,7 +130,7 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
             )}
 
             {/* Technical skills — qualitative level indicators */}
-            {info.techSkills?.length > 0 && (
+            {info.techSkills?.length && (
               <div className='section-card p-6'>
                 <h4 className='text-title mb-6 text-foreground/90'>
                   {t('techSkills')}
