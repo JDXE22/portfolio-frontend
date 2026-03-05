@@ -136,7 +136,9 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
                     const level = skill.level as KnowledgeLevel;
                     const filled = knowledgeLevelSegments(level);
                     return (
-                      <div key={i} className='flex items-center justify-between gap-3'>
+                      <div
+                        key={i}
+                        className='flex items-center justify-between gap-3'>
                         <span className='text-sm font-medium text-malibu-100'>
                           {skill.name}
                         </span>
@@ -148,7 +150,7 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
                                 className={`h-2 w-5 rounded-sm transition-colors duration-300 ${
                                   seg <= filled
                                     ? knowledgeLevelColor(level)
-                                    : 'bg-foreground/10'
+                                    : 'bg-transparent ring-1 ring-inset ring-malibu-300/40'
                                 }`}
                               />
                             ))}
