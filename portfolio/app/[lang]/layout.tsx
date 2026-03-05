@@ -5,7 +5,10 @@ import { ScrollProgress } from '../(components)/ui/ScrollProgress';
 import { NavPill } from '../(components)/ui/NavPill';
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
-const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] });
+const geistMono = Geist_Mono({
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
+});
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://davidesparza.dev';
 
@@ -21,12 +24,12 @@ export default async function LangLayout({ children, params }: Props) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: 'David Esparza',
-    jobTitle: 'Full-Stack Developer',
-    url: `${BASE_URL}/${lang}`,
-    description:
+    'name': 'David Esparza',
+    'jobTitle': 'Full-Stack Developer',
+    'url': `${BASE_URL}/${lang}`,
+    'description':
       'Full-Stack Developer specialising in reliable backends and seamless front-end experiences.',
-    sameAs: [
+    'sameAs': [
       'https://www.linkedin.com/in/juan-david-esparza-castillo/',
       'https://github.com/JDXE22',
     ],

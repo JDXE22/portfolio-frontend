@@ -21,15 +21,12 @@ export function Modal({
     if (open) {
       document.addEventListener('keydown', onKey);
       document.body.style.overflow = 'hidden';
-      // Save the element that was focused before opening
       previousFocusRef.current = document.activeElement as HTMLElement;
-      // Move focus to the first focusable element inside the dialog
       const focusable = dialogRef.current?.querySelector<HTMLElement>(
-        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
       );
       focusable?.focus();
     } else {
-      // Restore focus to the trigger element
       previousFocusRef.current?.focus();
       previousFocusRef.current = null;
     }

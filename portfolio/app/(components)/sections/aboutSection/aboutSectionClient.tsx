@@ -38,7 +38,7 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
   if (items.length === 0) {
     return (
       <p className='text-center text-foreground/50'>
-        {t('noData') ?? 'No data'}
+        {t.has('noData') ? t('noData') : 'No data.'}
       </p>
     );
   }
@@ -137,7 +137,7 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
                 </h4>
                 <div className='space-y-4'>
                   {info.techSkills.map((skill, i) => {
-                    const level = skill.level as KnowledgeLevel;
+                    const level = skill.level;
                     const filled = knowledgeLevelSegments(level);
                     return (
                       <div
