@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { AboutInfo, KnowledgeLevel } from '@/types/types';
 import {
   knowledgeLevelColor,
@@ -33,7 +33,11 @@ const MARKERS = ['◆', '▸', '◉', '◈', '◇'];
 
 export default function AboutClient({ items }: { items: AboutInfo[] }) {
   const t = useTranslations('about');
+  const locale = useLocale();
   const softSkills = t.raw('skillsList') as string[];
+
+  const cvFileName = `David_Esparza_CV_${locale.toUpperCase()}.pdf`;
+  const cvPath = `/cv.${locale}.pdf`;
 
   if (items.length === 0) {
     return (
@@ -63,9 +67,9 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
               {/* Download CV */}
               <div className='flex justify-center'>
                 <a
-                  href='/cv.pdf'
-                  download='David_Esparza_CV.pdf'
-                  aria-label='Download David Esparza CV as PDF'
+                  href={cvPath}
+                  download={cvFileName}
+                  aria-label={t('downloadCV')}
                   className='
                     inline-flex items-center gap-2.5
                     rounded-lg border border-malibu-400/30
