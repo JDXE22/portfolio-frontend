@@ -37,7 +37,10 @@ export default function AboutClient({ items }: { items: AboutInfo[] }) {
   const softSkills = t.raw('skillsList') as string[];
 
   const cvFileName = `David_Esparza_CV_${locale.toUpperCase()}.pdf`;
-  const cvPath = `/cv.${locale}.pdf`;
+  const defaultCvPath = '/cv.pdf';
+  const cvPath = locale.toLowerCase().startsWith('en')
+    ? defaultCvPath
+    : `/cv_${locale}.pdf`;
 
   if (items.length === 0) {
     return (
