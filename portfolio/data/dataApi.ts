@@ -1,4 +1,7 @@
-import { AboutInfo, ContactInfo, IProject, TechStack } from '@/types/types';
+import { AboutInfo } from '@/types/about.types';
+import { ContactInfo } from '@/types/contact.types';
+import { IProject } from '@/types/projects.types';
+import { TechStack } from '@/types/tech.types';
 import { serverEnv, publicEnv } from '@/config/env';
 
 const API_BASE_URL =

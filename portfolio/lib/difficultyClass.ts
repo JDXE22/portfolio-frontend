@@ -1,4 +1,4 @@
-import { DifficultyLevel } from "@/types/types";
+import { DifficultyLevel } from "@/types/projects.types";
 
 export const difficultyColorClass = (difficultyLevel?: DifficultyLevel) => {
   switch (difficultyLevel) {

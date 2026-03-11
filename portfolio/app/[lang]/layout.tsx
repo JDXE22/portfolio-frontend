@@ -1,8 +1,8 @@
 import { NextIntlClientProvider } from 'next-intl';
 import React from 'react';
 import { Geist, Geist_Mono } from 'next/font/google';
-import { ScrollProgress } from '../(components)/ui/ScrollProgress';
-import { NavPill } from '../(components)/ui/NavPill';
+import { ScrollProgress } from '@/components/ui/ScrollProgress';
+import { NavPill } from '@/components/ui/NavPill';
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
 const geistMono = Geist_Mono({

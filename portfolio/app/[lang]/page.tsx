@@ -1,11 +1,11 @@
 import { Suspense } from 'react';
-import AboutSection from '@/app/(components)/sections/aboutSection/aboutSection';
-import ProjectsSection from '@/app/(components)/sections/projectsSection/projectsSection';
-import ContactSection from '@/app/(components)/sections/contactSection/contactSection';
-import { HeroSection } from '@/app/(components)/sections/heroSection/heroSection';
-import TechnologiesSection from '@/app/(components)/sections/technologiesSection/techSection';
-import SitePanel from '@/app/(components)/layout/SitePanel';
-import Footer from '@/app/(components)/layout/Footer';
+import AboutSection from '@/components/sections/aboutSection/AboutSection';
+import ProjectsSection from '@/components/sections/projectsSection/ProjectsSection';
+import ContactSection from '@/components/sections/contactSection/ContactSection';
+import { HeroSection } from '@/components/sections/heroSection/HeroSection';
+import TechnologiesSection from '@/components/sections/technologiesSection/TechnologiesSection';
+import SitePanel from '@/components/layout/SitePanel';
+import Footer from '@/components/layout/Footer';
 
 function SectionSkeleton() {
   return (
@@ -21,8 +21,8 @@ export default async function Home() {
       id='main-content'
       tabIndex={-1}
       className='flex min-h-screen flex-col items-stretch w-full h-full'>
+      <HeroSection />
       <SitePanel>
-        <HeroSection />
         <Suspense fallback={<SectionSkeleton />}>
           <AboutSection />
         </Suspense>
