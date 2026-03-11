@@ -14,7 +14,6 @@
     "noData": "Información no disponible.",
     "headline": "Lo sé, lo sé, ya has escuchado esto antes, pero repasémoslo de nuevo...",
     "bio": "Hola, soy David Esparza, un apasionado desarrollador Full-Stack con un fuerte enfoque en construir backends confiables y eficientes, pero no te dejes engañar: también disfruto creando experiencias front-end fluidas. Con habilidad para resolver problemas y amor por las buenas prácticas de código, disfruto convertir desafíos complejos en soluciones elegantes. Cuando no estoy programando, puedes encontrarme entrenando o mejorando mis habilidades técnicas para mantenerme a la vanguardia en este mundo tecnológico en constante evolución. ¡Conectemos y creemos algo increíble juntos!",
-    "skills": "Habilidades",
     "skillsList": [
       "Trabajo en equipo",
       "Resolución de problemas",
@@ -26,7 +25,17 @@
     "techSkills": "Habilidades Técnicas",
     "softSkills": "Habilidades Blandas",
     "socialLinks": "Redes Sociales",
-    "downloadCV": "Descargar CV"
+    "downloadCV": "Descargar CV",
+    "Frontend": "Frontend",
+    "Backend": "Backend",
+    "Databases": "Bases de Datos",
+    "DevOps": "DevOps",
+    "Security": "Seguridad",
+    "Testing": "Pruebas (TDD, e2e)",
+    "Foundational": "Fundacional",
+    "Intermediate": "Intermedio",
+    "Advanced": "Avanzado",
+    "Expert": "Experto"
   },
   "projects": {
     "sectionTitle": "Proyectos",
@@ -36,6 +45,8 @@
       "commander": "Commander es un generador de fragmentos de texto ligero y basado en comandos, construido con Node.js, Express y MongoDB. Permite mapear entradas de comandos específicas (como /hi1) a respuestas de texto predefinidas, lo que lo hace ideal para equipos de soporte, automatización o escenarios de respuesta rápida."
     },
     "liveSite": "Url en vivo",
+    "descriptionTitle": "Descripción del Proyecto",
+    "techStackTitle": "Tecnologías",
     "moreInfo": "Más información",
     "empty": "[]",
     "carousel": {
@@ -84,5 +95,15 @@
   "footer": {
     "rights": "© {year} Juan David Esparza",
     "builtWith": "Creado con Next.js y Tailwind"
+  },
+  "error": {
+    "title": "Algo salió mal",
+    "description": "Ocurrió un error inesperado. Por favor, inténtalo de nuevo.",
+    "retry": "Reintentar"
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "description": "Lo sentimos, no pudimos encontrar la página que buscas.",
+    "backHome": "Volver al inicio"
   }
 }

@@ -1,4 +1,4 @@
-import { KnowledgeLevel } from '@/types/types';
+import { KnowledgeLevel } from '@/types/about.types';
 
 const LEVEL_SEGMENTS: Record<KnowledgeLevel, number> = {
   Foundational: 1,

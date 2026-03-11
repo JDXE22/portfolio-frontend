@@ -1,4 +1,4 @@
-import type { CarouselSlide, IProject } from '@/types/types';
+import type { CarouselSlide, IProject } from '@/types/projects.types';
 
 export function getProjectsWithEndingSlide(
   projects: IProject[],

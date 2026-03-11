@@ -25,12 +25,24 @@
     "techSkills": "Technical Skills",
     "softSkills": "Soft Skills",
     "socialLinks": "Social Links",
-    "downloadCV": "Download CV"
+    "downloadCV": "Download CV",
+    "Frontend": "Frontend",
+    "Backend": "Backend",
+    "Databases": "Databases",
+    "DevOps": "DevOps",
+    "Security": "Security",
+    "Testing": "Testing",
+    "Foundational": "Foundational",
+    "Intermediate": "Intermediate",
+    "Advanced": "Advanced",
+    "Expert": "Expert"
   },
   "projects": {
     "sectionTitle": "Projects",
     "viewRepository": "View Repository",
     "liveSite": "Live Site",
+    "descriptionTitle": "Project Description",
+    "techStackTitle": "Tech Stack",
     "moreInfo": "More Info",
     "empty": "[]",
     "carousel": {
@@ -83,5 +95,15 @@
   "footer": {
     "rights": "© {year} Juan David Esparza",
     "builtWith": "Built with Next.js & Tailwind"
+  },
+  "error": {
+    "title": "Something went wrong",
+    "description": "An unexpected error occurred. Please try again.",
+    "retry": "Try again"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "Sorry, we couldn't find the page you were looking for.",
+    "backHome": "Back to Home"
   }
 }

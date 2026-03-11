@@ -1,4 +1,4 @@
-import { LiveStatus } from "@/types/types";
+import { LiveStatus } from "@/types/projects.types";
 export const statusClass = (status?: LiveStatus) => {
   switch (status) {
     case "Live":
