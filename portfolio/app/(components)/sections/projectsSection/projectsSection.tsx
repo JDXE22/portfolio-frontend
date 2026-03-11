@@ -1,7 +1,8 @@
 import { getProjects } from '@/data/dataApi';
 import { Section } from '@/app/(components)/layout/Section';
 import { IProject } from '@/types/types';
-import ProjectsGrid from '@/app/(components)/sections/projectsSection/projectsGrid';
+import { ProjectCarousel } from '@/app/(components)/sections/projectsSection/ProjectCarousel';
+import { getProjectsWithEndingSlide } from '@/lib/getProjectsWithEndingSlide';
 import { getTranslations } from 'next-intl/server';
 
 export default async function ProjectsSection() {
@@ -10,7 +11,6 @@ export default async function ProjectsSection() {
 
   return (
     <Section id='projects' title={dictionary('sectionTitle')} align='center'>
-
       <div className='w-full'>
         {projects.length === 0 ? (
           <p
@@ -19,7 +19,7 @@ export default async function ProjectsSection() {
             []
           </p>
         ) : (
-          <ProjectsGrid projects={projects} />
+          <ProjectCarousel slides={getProjectsWithEndingSlide(projects)} />
         )}
       </div>
     </Section>

@@ -33,6 +33,13 @@
     "liveSite": "Live Site",
     "moreInfo": "More Info",
     "empty": "[]",
+    "carousel": {
+      "previous": "Previous project",
+      "next": "Next project",
+      "slideIndicator": "{current} / {total}",
+      "moreProjectsTitle": "More on the way",
+      "moreProjectsMessage": "I'm currently working on additional projects that will be added here. Stay tuned."
+    },
     "why": "Why did I build this project?",
     "modal": {
       "title": "Project details",

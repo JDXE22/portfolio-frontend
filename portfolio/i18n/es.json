@@ -38,6 +38,13 @@
     "liveSite": "Url en vivo",
     "moreInfo": "Más información",
     "empty": "[]",
+    "carousel": {
+      "previous": "Proyecto anterior",
+      "next": "Siguiente proyecto",
+      "slideIndicator": "{current} / {total}",
+      "moreProjectsTitle": "Más proyectos en camino",
+      "moreProjectsMessage": "Actualmente estoy trabajando en proyectos adicionales que se añadirán aquí. Mantente atento."
+    },
     "why": "¿Por qué construí este proyecto?",
     "modal": {
       "title": "Detalles del proyecto",

@@ -26,18 +26,42 @@ export const FeaturedProjectCard = ({
       transition={{ delay: index * 0.1, duration: 0.5 }}
       viewport={{ once: true, margin: '-50px' }}
       className={classNameGenerator(
-        'group relative rounded-2xl overflow-hidden transition-all duration-500',
-        featured ? 'md:col-span-2 h-[500px]' : 'h-[400px]',
+        'group relative rounded-2xl overflow-hidden transition-all duration-500 h-full',
+        featured ? 'md:col-span-2' : '',
       )}>
       {/* Background image via Next.js Image for lazy-loading and optimisation */}
       {project.imgUrl ? (
         <Image
           src={project.imgUrl}
-          alt={`${project.title} preview`}
+          alt={`${project.title} screenshot showing the project interface`}
           fill
           className='object-cover object-center'
-          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 66vw, 800px'
-          loading='lazy'
+          /**
+           * `sizes` tells Next.js / the browser how wide this image renders.
+           *
+           * In the carousel each slide is 72% of the viewport (SLIDE_W_PCT).
+           * Getting this wrong is the #1 cause of blurry Next.js images:
+           *   - Too small → Next serves a sub-resolution variant that gets upscaled
+           *   - Too large → wastes bandwidth
+           *
+           * Breakpoints match the Section component's px-6 padding context:
+           *   < 640px  → full-width (carousel takes 100vw, no horizontal room for peek)
+           *   640–1024 → 90vw (peek visible but still nearly full-width on small tablets)
+           *   > 1024   → 72vw (peek carousel at full desktop: 72% of viewport)
+           */
+          sizes='(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 72vw'
+          /**
+           * quality=90: Next.js defaults to 75 which loses detail at large sizes.
+           * Project screenshots contain text/UI which compress poorly at low quality.
+           * Per vercel-react-native-skills (ui-expo-image) and web-quality-audit:
+           * use high quality for content-rich images.
+           */
+          quality={90}
+          /* Carousel: first project is always mounted & visible on page load
+             (index=0). Use eager loading so it is not a lazy-loaded LCP hit. */
+          loading={index === 0 ? 'eager' : 'lazy'}
+          priority={index === 0}
+          decoding={index === 0 ? 'sync' : 'async'}
         />
       ) : (
         <div className='absolute inset-0 bg-malibu-950' />

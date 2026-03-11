@@ -71,6 +71,10 @@ export type IProject = {
   reasoning: string;
 };
 
+export type ProjectSlide = { type: 'project'; data: IProject };
+export type MoreProjectsSlide = { type: 'more-projects' };
+export type CarouselSlide = ProjectSlide | MoreProjectsSlide;
+
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: 'primary' | 'secondary' | 'ghost';
   size?: 'sm' | 'md';
@@ -95,8 +99,6 @@ export type SmoothScrollOptions = {
   duration?: number;
   offset?: number;
 };
-
-// TechStack Types
 
 export type StackCategory =
   | 'frontend'
