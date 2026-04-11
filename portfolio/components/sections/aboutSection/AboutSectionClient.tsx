@@ -58,7 +58,7 @@ export default function AboutSectionClient({ items }: { items: AboutInfo[] }) {
           <div className='grid grid-cols-1 items-start gap-10 md:grid-cols-5'>
             <div className='flex flex-col gap-8 md:col-span-3'>
               <div className='relative pl-5'>
-                <div className='absolute left-0 top-0 h-full w-[3px] rounded-full bg-gradient-to-b from-malibu-400 via-malibu-600 to-transparent' />
+                <div className='absolute left-0 top-0 h-full w-[3px] rounded-full bg-gradient-to-b from-deep-500 via-deep-700 to-transparent' />
                 <h3 className='text-display mb-5 text-foreground'>
                   {t('headline')}
                 </h3>
@@ -75,12 +75,12 @@ export default function AboutSectionClient({ items }: { items: AboutInfo[] }) {
                   aria-label={t('downloadCV')}
                   className='
                     inline-flex items-center gap-2.5
-                    rounded-lg border border-malibu-400/30
-                    bg-malibu-950/20 px-5 py-2.5
-                    text-sm font-medium text-malibu-300
+                    rounded-lg border border-deep-500/30
+                    bg-deep-950/40 px-5 py-2.5
+                    text-sm font-medium text-deep-300
                     shadow-sm transition-all duration-200
-                    hover:border-malibu-400/55 hover:bg-malibu-900/30 hover:text-malibu-200
-                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-malibu-500/50
+                    hover:border-deep-500/55 hover:bg-deep-900/50 hover:text-deep-200
+                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-deep-500/50
                   '>
                   <DownloadIcon />
                   {t('downloadCV')}
@@ -119,14 +119,14 @@ export default function AboutSectionClient({ items }: { items: AboutInfo[] }) {
                       key={i}
                       className='
                         inline-flex items-center gap-1.5
-                        rounded-full border border-malibu-400/25
-                        bg-malibu-950/30 px-3.5 py-1.5
-                        text-sm font-medium text-malibu-200/90
+                        rounded-full border border-deep-500/25
+                        bg-deep-950/50 px-3.5 py-1.5
+                        text-sm font-medium text-deep-200/90
                         transition-colors duration-200
-                        hover:border-malibu-400/50 hover:bg-malibu-900/30 hover:text-malibu-100
+                        hover:border-deep-500/50 hover:bg-deep-900/40 hover:text-deep-100
                       '>
                       <span
-                        className='text-[9px] leading-none text-malibu-400/80'
+                        className='text-[9px] leading-none text-deep-400/80'
                         aria-hidden='true'>
                         {MARKERS[i % MARKERS.length]}
                       </span>
@@ -152,7 +152,7 @@ export default function AboutSectionClient({ items }: { items: AboutInfo[] }) {
                       <div
                         key={i}
                         className='flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-3'>
-                        <span className='text-sm font-medium text-malibu-100 sm:max-w-[45%]'>
+                        <span className='text-sm font-medium text-deep-100 sm:max-w-[45%]'>
                           {t(skill.name)}
                         </span>
                         <div className='flex items-center justify-between gap-2.5 sm:justify-end'>
@@ -163,7 +163,7 @@ export default function AboutSectionClient({ items }: { items: AboutInfo[] }) {
                                 className={`h-2 w-4 rounded-sm transition-colors duration-300 sm:w-5 ${
                                   seg <= filled
                                     ? knowledgeLevelColor(level)
-                                    : 'bg-transparent ring-1 ring-inset ring-malibu-300/40'
+                                    : 'bg-transparent ring-1 ring-inset ring-deep-400/40'
                                 }`}
                               />
                             ))}

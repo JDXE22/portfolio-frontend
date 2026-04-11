@@ -25,7 +25,8 @@ export function ScrollProgress() {
       <motion.div
         style={{
           height: '100%',
-          background: '#296e85',
+          background: 'linear-gradient(to right, #1977b0, #4fafe1, #1977b0)',
+          boxShadow: '0 0 8px rgba(79, 175, 225, 0.6)',
           transformOrigin: 'left center',
           scaleX,
         }}
