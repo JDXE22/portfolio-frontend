@@ -25,7 +25,6 @@ export const FeaturedProjectCard = ({
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
 
-  // Softer, semi-transparent colors to avoid "shine"
   const difficultyColor = {
     Easy: 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20',
     Medium: 'bg-amber-500/10 text-amber-400 border border-amber-500/20',
@@ -43,7 +42,7 @@ export const FeaturedProjectCard = ({
         featured ? 'md:col-span-2' : '',
       )}
       onClick={handleOpenModal}>
-      
+
       {project.imgUrl ? (
         <Image
           src={project.imgUrl}
@@ -56,7 +55,7 @@ export const FeaturedProjectCard = ({
           priority={index === 0}
         />
       ) : (
-        <div className='absolute inset-0 bg-malibu-950' />
+        <div className='absolute inset-0 bg-deep-950' />
       )}
 
       <div className='absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-10' />
@@ -84,7 +83,7 @@ export const FeaturedProjectCard = ({
           {project.techStack?.slice(0, featured ? 5 : 3).map((tech, i) => (
             <span
               key={i}
-              className='px-3 py-1 rounded-full bg-malibu-800/60 backdrop-blur-md border border-malibu-600/40 text-malibu-100 text-[10px] sm:text-xs font-semibold'>
+              className='px-3 py-1 rounded-full bg-deep-800/80 border border-deep-600/40 text-deep-100 text-[10px] sm:text-xs font-semibold'>
               {tech}
             </span>
           ))}
@@ -101,7 +100,7 @@ export const FeaturedProjectCard = ({
               target='_blank'
               rel='noopener noreferrer'
               onClick={(e) => e.stopPropagation()}
-              className='px-6 py-2.5 rounded-xl bg-malibu-600 hover:bg-malibu-500 text-white text-xs sm:text-sm font-black transition-all hover:shadow-lg active:scale-95'>
+              className='px-6 py-2.5 rounded-xl bg-deep-600 hover:bg-deep-500 text-white text-xs sm:text-sm font-black transition-all active:scale-95'>
               {t('liveSite')} →
             </a>
           )}
@@ -111,7 +110,7 @@ export const FeaturedProjectCard = ({
               target='_blank'
               rel='noopener noreferrer'
               onClick={(e) => e.stopPropagation()}
-              className='px-6 py-2.5 rounded-xl border border-malibu-400/60 hover:bg-white/10 text-malibu-50 text-xs sm:text-sm font-black transition-all backdrop-blur-sm active:scale-95'>
+              className='px-6 py-2.5 rounded-xl border border-deep-500/60 hover:bg-white/10 text-deep-50 text-xs sm:text-sm font-black transition-all active:scale-95'>
               {t('viewRepository')} →
             </a>
           )}
@@ -120,13 +119,13 @@ export const FeaturedProjectCard = ({
 
       <Modal open={isModalOpen} onClose={handleCloseModal} title={project.title} className='max-w-4xl'>
         <div className='flex flex-col items-center text-center gap-12 w-full max-w-3xl mx-auto'>
-          {/* Hero Image Section - Conditional */}
+          {/* Hero Image Section */}
           {project.imgUrl && (
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1, duration: 0.6 }}
-              className='relative aspect-[16/9] w-full rounded-3xl overflow-hidden shadow-2xl ring-1 ring-white/10'>
+              className='relative aspect-[16/9] w-full rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10'>
               <Image
                 src={project.imgUrl}
                 alt={project.title}
@@ -134,18 +133,17 @@ export const FeaturedProjectCard = ({
                 className='object-cover'
                 priority
               />
-              <div className='absolute inset-0 bg-gradient-to-t from-malibu-950/40 via-transparent to-transparent' />
             </motion.div>
           )}
 
-          {/* Difficulty Badge - Centered and Soft */}
+          {/* Difficulty Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15, duration: 0.6 }}
           >
             <div className='flex flex-col items-center gap-3'>
-              <span className='text-malibu-400 text-[10px] font-black uppercase tracking-[0.3em]'>
+              <span className='text-deep-400 text-[10px] font-black uppercase tracking-[0.3em]'>
                 {t('modal.difficulty')}
               </span>
               <span className={classNameGenerator(
@@ -157,9 +155,9 @@ export const FeaturedProjectCard = ({
             </div>
           </motion.div>
 
-          {/* Content Block: Tech Stack & Description combined in one flow */}
+          {/* Content Block */}
           <div className='flex flex-col items-center gap-10 w-full'>
-            
+
             {/* Tech Stack */}
             <section className='flex flex-col items-center gap-4'>
               <h4 className='text-white/40 text-[10px] font-black uppercase tracking-[0.2em]'>
@@ -169,7 +167,7 @@ export const FeaturedProjectCard = ({
                 {project.techStack?.map((tech, i) => (
                   <span
                     key={i}
-                    className='px-4 py-2 rounded-2xl bg-white/[0.03] text-malibu-100 text-[11px] font-bold border border-white/5 hover:border-malibu-500/30 hover:bg-white/[0.05] transition-all cursor-default'
+                    className='px-4 py-2 rounded-2xl bg-white/[0.03] text-deep-200 text-[11px] font-bold border border-white/5 hover:border-deep-500/30 hover:bg-white/[0.05] transition-all cursor-default'
                   >
                     {tech}
                   </span>
@@ -180,37 +178,37 @@ export const FeaturedProjectCard = ({
             {/* Main Description */}
             <section className='space-y-4 max-w-2xl'>
               <div className='flex items-center justify-center gap-3 mb-2 opacity-50'>
-                <div className='h-px w-8 bg-malibu-500' />
+                <div className='h-px w-8 bg-deep-500' />
                 <h4 className='text-white text-xs font-black uppercase tracking-widest'>
                   {t('descriptionTitle') || 'Details'}
                 </h4>
-                <div className='h-px w-8 bg-malibu-500' />
+                <div className='h-px w-8 bg-deep-500' />
               </div>
-              <p className='text-malibu-50/90 text-base sm:text-lg leading-relaxed font-normal'>
+              <p className='text-deep-100/90 text-base sm:text-lg leading-relaxed font-normal'>
                 {t.has(`description.${project.slug}`) ? t(`description.${project.slug}`) : project.description}
               </p>
             </section>
 
-            {/* Why Reasoning (Centered Block) */}
+            {/* Why Reasoning */}
             {t.has(`reasoning.${project.slug}`) && (
-              <section className='w-full p-8 rounded-[2.5rem] bg-white/[0.02] border border-white/5 relative overflow-hidden text-center'>
+              <section className='w-full p-8 rounded-2xl bg-deep-900/40 border border-deep-700/20 text-center'>
                 <h4 className='text-white/40 text-[10px] font-black uppercase tracking-[0.2em] mb-4'>
                   {t('why')}
                 </h4>
-                <p className='text-malibu-50/80 text-base sm:text-lg leading-relaxed font-medium italic max-w-2xl mx-auto'>
-                  "{t(`reasoning.${project.slug}`)}"
+                <p className='text-deep-100/80 text-base sm:text-lg leading-relaxed font-medium italic max-w-2xl mx-auto'>
+                  &ldquo;{t(`reasoning.${project.slug}`)}&rdquo;
                 </p>
               </section>
             )}
 
-            {/* CTA Buttons - Centered */}
+            {/* CTA Buttons */}
             <div className='flex flex-col sm:flex-row items-center justify-center gap-4 w-full pt-4'>
               {project.liveUrl && (
                 <a
                   href={project.liveUrl}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='flex items-center justify-center gap-2 px-10 py-4 rounded-2xl bg-malibu-600 hover:bg-malibu-500 text-white font-black text-sm transition-all shadow-lg shadow-malibu-600/20 active:scale-95 w-full sm:w-auto'
+                  className='flex items-center justify-center gap-2 px-10 py-4 rounded-2xl bg-deep-600 hover:bg-deep-500 text-white font-black text-sm transition-all active:scale-95 w-full sm:w-auto'
                 >
                   {t('liveSite')}
                   <svg width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='3' strokeLinecap='round' strokeLinejoin='round'>
@@ -225,7 +223,7 @@ export const FeaturedProjectCard = ({
                   href={project.repoUrl}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='flex items-center justify-center gap-2 px-10 py-4 rounded-2xl border border-white/10 bg-white/5 hover:bg-white/10 text-malibu-50 font-black text-sm transition-all active:scale-95 w-full sm:w-auto'
+                  className='flex items-center justify-center gap-2 px-10 py-4 rounded-2xl border border-deep-700/40 bg-deep-900/40 hover:bg-deep-800/60 text-deep-100 font-black text-sm transition-all active:scale-95 w-full sm:w-auto'
                 >
                   {t('viewRepository')}
                   <svg width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='3' strokeLinecap='round' strokeLinejoin='round'>
