@@ -42,7 +42,6 @@ export function NavPill() {
           ? 'opacity-100 translate-x-0'
           : 'opacity-0 translate-x-4 pointer-events-none'
       }`}>
-      {/* Frosted pill container — groups all dots into one readable unit */}
       <div className='flex flex-col items-center gap-3 rounded-full border border-foreground/10 bg-background/75 px-2.5 py-4 shadow-sm backdrop-blur-md'>
         {SECTIONS.map(({ id, labelKey }) => {
           const isActive = active === id;
@@ -71,8 +70,8 @@ export function NavPill() {
                   block rounded-full transition-all duration-300
                   ${
                     isActive
-                      ? 'h-2.5 w-2.5 bg-malibu-400 shadow-[0_0_8px_rgba(79,175,225,0.65)]'
-                      : 'h-1.5 w-1.5 bg-foreground/50 group-hover:h-2 group-hover:w-2 group-hover:bg-malibu-400/70'
+                      ? 'h-2.5 w-2.5 bg-deep-500'
+                      : 'h-1.5 w-1.5 bg-foreground/50 group-hover:h-2 group-hover:w-2 group-hover:bg-deep-400/70'
                   }
                 `}
               />
