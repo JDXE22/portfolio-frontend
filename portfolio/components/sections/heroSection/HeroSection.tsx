@@ -63,17 +63,17 @@ export function HeroSection() {
       </header>
 
       <div className='relative flex min-h-[100dvh] w-full flex-col items-center justify-center px-6 py-20 text-center transition-all duration-300'>
-        {/* Ambient background glow — Edge-to-edge via full-width container */}
+        {/* Ambient background — subtle teal wash */}
         <div
           aria-hidden='true'
-          className='pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_bottom,rgba(40,149,207,0.1)_0%,rgba(0,0,0,0)_70%)]'
+          className='pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_bottom,rgba(41,110,133,0.08)_0%,rgba(0,0,0,0)_70%)]'
         />
 
         <div className='relative z-10 mx-auto flex max-w-5xl flex-col items-center text-center group'>
-          <h1 className='text-balance text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-malibu-50 transition-colors duration-200'>
+          <h1 className='text-balance text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-deep-50 transition-colors duration-200'>
             {t('title')}
           </h1>
-          <p className='mt-6 max-w-2xl text-lg text-malibu-200 sm:text-xl transition-colors duration-200'>
+          <p className='mt-6 max-w-2xl text-lg text-deep-300 sm:text-xl transition-colors duration-200'>
             {t('subtitle')}
           </p>
 
