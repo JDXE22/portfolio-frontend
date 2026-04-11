@@ -16,11 +16,11 @@ export default function CtaButton({
   children,
   ...rest
 }: CTAButtonProps) {
-  const base = `group relative inline-flex items-center justify-center gap-3 font-semibold rounded-xl transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-malibu-400/50 disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden`;
+  const base = `group relative inline-flex items-center justify-center gap-3 font-semibold rounded-xl transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-deep-400/50 disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden`;
 
   const variants = {
-    primary: `bg-gradient-to-r from-malibu-600 to-malibu-500 text-white shadow-lg shadow-malibu-600/30 hover:shadow-xl hover:shadow-malibu-500/40 hover:-translate-y-0.5 active:translate-y-0`,
-    secondary: `bg-transparent border-2 border-malibu-400/60 text-malibu-100 backdrop-blur-sm hover:border-malibu-400 hover:bg-malibu-800/20 hover:-translate-y-0.5`,
+    primary: `bg-deep-600 text-white hover:bg-deep-500 hover:-translate-y-0.5 active:translate-y-0`,
+    secondary: `bg-transparent border-2 border-deep-500/60 text-deep-200 hover:border-deep-400 hover:bg-deep-800/20 hover:-translate-y-0.5`,
   };
 
   const sizes = {
