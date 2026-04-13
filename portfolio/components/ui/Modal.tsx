@@ -91,7 +91,7 @@ export function Modal({
 
           {title && (
             <div className='px-8 pt-8 pb-6 sm:px-12 sm:pt-12 flex flex-col items-center text-center'>
-              <h3 className='text-3xl sm:text-4xl font-black text-white tracking-tight'>
+              <h3 className='text-3xl sm:text-4xl font-bold text-white tracking-tight font-display'>
                 {title}
               </h3>
               <div className='mt-4 h-[3px] w-12 rounded-full bg-malibu-500' />

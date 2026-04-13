@@ -25,7 +25,7 @@ export function MoreProjectsSlide() {
         🛠️
       </div>
 
-      <h3 className='text-title mb-3 text-white'>
+      <h3 className='text-title mb-3 text-white font-display'>
         {t('moreProjectsTitle')}
       </h3>
 

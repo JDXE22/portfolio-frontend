@@ -70,7 +70,7 @@ export function HeroSection() {
         />
 
         <div className='relative z-10 mx-auto flex max-w-5xl flex-col items-center text-center group'>
-          <h1 className='text-balance text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-malibu-50 transition-colors duration-200'>
+          <h1 className='text-balance text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-malibu-50 font-display transition-colors duration-200'>
             {t('title')}
           </h1>
           <p className='mt-6 max-w-2xl text-lg text-malibu-200 sm:text-xl transition-colors duration-200'>

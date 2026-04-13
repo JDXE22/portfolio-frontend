@@ -38,16 +38,27 @@ section[id] {
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), system-ui, sans-serif;
+}
+
+.font-mono {
+  font-family: var(--font-mono), ui-monospace, monospace;
 }
 
 .text-display {
+  font-family: var(--font-display), system-ui, sans-serif;
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.15;
   letter-spacing: -0.02em;
 }
 
 .text-headline {
+  font-family: var(--font-display), system-ui, sans-serif;
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 600;
   line-height: 1.2;
@@ -55,6 +66,7 @@ body {
 }
 
 .text-title {
+  font-family: var(--font-display), system-ui, sans-serif;
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 600;
   line-height: 1.3;

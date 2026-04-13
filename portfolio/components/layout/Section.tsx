@@ -29,7 +29,7 @@ export function Section({
         {title && (
           <header className={`mb-10`}>
             <h2
-              className={`${alignmentClasses} text-2xl sm:text-3xl font-semibold tracking-tight`}>
+              className={`${alignmentClasses} text-headline font-display`}>
               {title}
             </h2>
           </header>
