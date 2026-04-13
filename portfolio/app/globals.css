@@ -40,13 +40,6 @@ body {
   color: var(--foreground);
 }
 
-.section-border {
-  border-style: solid;
-  border-color: var(--color-malibu-400, #4fafe1);
-  border-radius: 0.75rem;
-  box-shadow: 0 4px 32px 0 rgba(40, 149, 207, 0.08);
-}
-
 .text-display {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 700;
@@ -214,10 +207,4 @@ body {
 
 .lang-toggle-btn.active {
   color: var(--color-malibu-400);
-}
-
-@keyframes shimmer {
-  to {
-    transform: translateX(100%);
-  }
 }
