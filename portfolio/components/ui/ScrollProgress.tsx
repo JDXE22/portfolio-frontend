@@ -18,15 +18,14 @@ export function ScrollProgress() {
         top: 0,
         left: 0,
         right: 0,
-        height: '4px',
-        background: 'rgba(255, 255, 255, 0.08)',
+        height: '3px',
+        background: 'rgba(255, 255, 255, 0.05)',
         zIndex: 9999,
       }}>
       <motion.div
         style={{
           height: '100%',
-          background: 'linear-gradient(to right, #1977b0, #4fafe1, #1977b0)',
-          boxShadow: '0 0 8px rgba(79, 175, 225, 0.6)',
+          background: '#2895cf',
           transformOrigin: 'left center',
           scaleX,
         }}
