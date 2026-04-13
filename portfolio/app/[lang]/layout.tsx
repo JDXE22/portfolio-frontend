@@ -1,12 +1,21 @@
 import { NextIntlClientProvider } from 'next-intl';
 import React from 'react';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Outfit, Source_Sans_3, Geist_Mono } from 'next/font/google';
 import { ScrollProgress } from '@/components/ui/ScrollProgress';
 import { NavPill } from '@/components/ui/NavPill';
 
-const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
+const outfit = Outfit({
+  variable: '--font-display',
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+});
+const sourceSans = Source_Sans_3({
+  variable: '--font-body',
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+});
 const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+  variable: '--font-mono',
   subsets: ['latin'],
 });
 
@@ -38,7 +47,7 @@ export default async function LangLayout({ children, params }: Props) {
   return (
     <html lang={lang} suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased app-gradient`}>
+        className={`${outfit.variable} ${sourceSans.variable} ${geistMono.variable} antialiased app-gradient`}>
         {/* JSON-LD structured data */}
         <script
           type='application/ld+json'
