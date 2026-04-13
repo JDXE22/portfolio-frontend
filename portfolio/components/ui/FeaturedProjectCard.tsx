@@ -84,7 +84,7 @@ export const FeaturedProjectCard = ({
           {project.techStack?.slice(0, featured ? 5 : 3).map((tech, i) => (
             <span
               key={i}
-              className='px-3 py-1 rounded-full bg-malibu-800/60 backdrop-blur-md border border-malibu-600/40 text-malibu-100 text-[10px] sm:text-xs font-semibold'>
+              className='px-3 py-1 rounded-full bg-malibu-800/70 border border-malibu-700/40 text-malibu-100 text-[10px] sm:text-xs font-semibold'>
               {tech}
             </span>
           ))}
@@ -193,7 +193,7 @@ export const FeaturedProjectCard = ({
 
             {/* Why Reasoning (Centered Block) */}
             {t.has(`reasoning.${project.slug}`) && (
-              <section className='w-full p-8 rounded-[2.5rem] bg-white/[0.02] border border-white/5 relative overflow-hidden text-center'>
+              <section className='w-full p-8 rounded-xl bg-white/[0.02] border border-white/5 text-center'>
                 <h4 className='text-white/40 text-[10px] font-black uppercase tracking-[0.2em] mb-4'>
                   {t('why')}
                 </h4>
@@ -210,7 +210,7 @@ export const FeaturedProjectCard = ({
                   href={project.liveUrl}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='flex items-center justify-center gap-2 px-10 py-4 rounded-2xl bg-malibu-600 hover:bg-malibu-500 text-white font-black text-sm transition-all shadow-lg shadow-malibu-600/20 active:scale-95 w-full sm:w-auto'
+                  className='flex items-center justify-center gap-2 px-10 py-4 rounded-2xl bg-malibu-600 hover:bg-malibu-500 text-white font-black text-sm transition-all active:scale-95 w-full sm:w-auto'
                 >
                   {t('liveSite')}
                   <svg width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='3' strokeLinecap='round' strokeLinejoin='round'>
