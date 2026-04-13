@@ -45,12 +45,9 @@ export function Modal({
 
   return createPortal(
     <div className='fixed inset-0 z-[9999] flex items-center justify-center p-4 sm:p-6'>
-      {/* Backdrop with radial gradient depth and blur */}
+      {/* Backdrop */}
       <div
-        className='absolute inset-0 bg-black/40 backdrop-blur-xl transition-opacity duration-500'
-        style={{
-          background: 'radial-gradient(circle at center, rgba(14, 20, 39, 0.4) 0%, rgba(3, 7, 18, 0.85) 100%)'
-        }}
+        className='absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300'
         onClick={onClose}
       />
 
@@ -61,21 +58,18 @@ export function Modal({
         aria-label={title}
         onClick={(e) => e.stopPropagation()}
         className={classNameGenerator(
-          'relative z-10 w-full max-w-4xl rounded-[2.5rem] border border-malibu-400/20 bg-malibu-950/90 p-1 shadow-[0_0_80px_-15px_rgba(96,165,250,0.4)] backdrop-blur-3xl animate-in fade-in zoom-in slide-in-from-bottom-8 duration-500 ease-out flex flex-col',
+          'relative z-10 w-full max-w-4xl rounded-2xl border border-malibu-800/40 bg-malibu-950 shadow-2xl animate-in fade-in zoom-in slide-in-from-bottom-8 duration-500 ease-out flex flex-col',
           className,
         )}>
 
-        {/* Inner Border / Glow effect */}
-        <div className='absolute inset-0 rounded-[2.5rem] border border-white/5 pointer-events-none' />
-
-        <div className='relative flex flex-col h-full max-h-[90vh] overflow-hidden rounded-[2.4rem] bg-gradient-to-b from-white/[0.03] to-transparent'>
+        <div className='relative flex flex-col h-full max-h-[90vh] overflow-hidden rounded-2xl'>
 
           {showCloseButton && (
             <button
               type='button'
               aria-label='Close'
               onClick={onClose}
-              className='absolute right-6 top-6 z-50 rounded-full p-3 bg-malibu-950/50 backdrop-blur-md text-malibu-100 border border-white/10 hover:bg-malibu-500 hover:text-white transition-all duration-300 group focus:outline-none focus:ring-2 focus:ring-malibu-400/40 shadow-xl
+              className='absolute right-6 top-6 z-50 rounded-full p-3 bg-malibu-900/60 text-malibu-200 border border-malibu-700/30 hover:bg-malibu-700 hover:text-white transition-all duration-200 group focus:outline-none focus:ring-2 focus:ring-malibu-400/40
             '>
               <span aria-hidden>
                 <svg
@@ -100,7 +94,7 @@ export function Modal({
               <h3 className='text-3xl sm:text-4xl font-black text-white tracking-tight'>
                 {title}
               </h3>
-              <div className='mt-4 h-1 w-20 rounded-full bg-gradient-to-r from-transparent via-malibu-500 to-transparent' />
+              <div className='mt-4 h-[3px] w-12 rounded-full bg-malibu-500' />
             </div>
           )}
 
