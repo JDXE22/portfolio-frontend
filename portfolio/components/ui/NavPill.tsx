@@ -70,7 +70,7 @@ export function NavPill() {
                   block rounded-full transition-all duration-300
                   ${
                     isActive
-                      ? 'h-2.5 w-2.5 bg-malibu-400 shadow-[0_0_8px_rgba(79,175,225,0.65)]'
+                      ? 'h-2.5 w-2.5 bg-malibu-400'
                       : 'h-1.5 w-1.5 bg-foreground/50 group-hover:h-2 group-hover:w-2 group-hover:bg-malibu-400/70'
                   }
                 `}
