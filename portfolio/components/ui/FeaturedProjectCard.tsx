@@ -101,7 +101,7 @@ export const FeaturedProjectCard = ({
               target='_blank'
               rel='noopener noreferrer'
               onClick={(e) => e.stopPropagation()}
-              className='px-6 py-2.5 rounded-xl bg-malibu-600 hover:bg-malibu-500 text-white text-xs sm:text-sm font-black transition-all hover:shadow-lg active:scale-95'>
+              className='px-6 py-2.5 rounded-xl bg-malibu-600 hover:bg-malibu-500 text-white text-xs sm:text-sm font-black transition-all active:scale-95'>
               {t('liveSite')} →
             </a>
           )}
@@ -111,7 +111,7 @@ export const FeaturedProjectCard = ({
               target='_blank'
               rel='noopener noreferrer'
               onClick={(e) => e.stopPropagation()}
-              className='px-6 py-2.5 rounded-xl border border-malibu-400/60 hover:bg-white/10 text-malibu-50 text-xs sm:text-sm font-black transition-all backdrop-blur-sm active:scale-95'>
+              className='px-6 py-2.5 rounded-xl border border-malibu-500/50 hover:bg-white/10 text-malibu-50 text-xs sm:text-sm font-black transition-all active:scale-95'>
               {t('viewRepository')} →
             </a>
           )}
