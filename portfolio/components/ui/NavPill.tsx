@@ -42,7 +42,7 @@ export function NavPill() {
           ? 'opacity-100 translate-x-0'
           : 'opacity-0 translate-x-4 pointer-events-none'
       }`}>
-      <div className='flex flex-col items-center gap-3 rounded-full border border-foreground/10 bg-background/75 px-2.5 py-4 shadow-sm backdrop-blur-md'>
+      <div className='flex flex-col items-center rounded-full border border-foreground/10 bg-background/75 px-1 py-2 shadow-sm backdrop-blur-md'>
         {SECTIONS.map(({ id, labelKey }) => {
           const isActive = active === id;
           return (
@@ -51,7 +51,7 @@ export function NavPill() {
               type='button'
               aria-label={`Go to ${t(labelKey)} section`}
               onClick={() => smoothScrollToId(id)}
-              className='group relative flex h-5 w-5 items-center justify-center'>
+              className='group relative flex h-11 w-11 items-center justify-center'>
               {/* Tooltip */}
               <span
                 className='
