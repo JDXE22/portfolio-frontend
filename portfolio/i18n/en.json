@@ -14,7 +14,6 @@
     "noData": "No information available.",
     "headline": "I know, I know you have heard this before, but let's go over it again...",
     "bio": "Hi, I'm David Esparza — a developer with a strong focus on backends, but equally comfortable on the frontend. I care about clean code and building things that actually work well. When I'm not coding, I'm training or keeping my skills sharp. If you think we'd work well together, let's talk.",
-    "skills": "Skills",
     "skillsList": [
       "Team Player",
       "Problem Solver",
@@ -24,7 +23,6 @@
     ],
     "techSkills": "Technical Skills",
     "softSkills": "Soft Skills",
-    "socialLinks": "Social Links",
     "downloadCV": "Download CV",
     "Frontend": "Frontend",
     "Backend": "Backend",
