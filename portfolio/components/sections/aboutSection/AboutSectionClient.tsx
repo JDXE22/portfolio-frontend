@@ -108,7 +108,7 @@ export default function AboutSectionClient({ items }: { items: AboutInfo[] }) {
                     alt='David Esparza'
                     fill
                     quality={75}
-                    sizes='(max-width: 768px) 50px, 40vw'
+                    sizes='(max-width: 768px) 260px, 40vw'
                     className='rounded-2xl object-cover object-top shadow-xl ring-1 ring-white/[0.08]'
                   />
                 </div>
