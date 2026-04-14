@@ -3,6 +3,7 @@ import React from 'react';
 import { Outfit, Source_Sans_3, Geist_Mono } from 'next/font/google';
 import { ScrollProgress } from '@/components/ui/ScrollProgress';
 import { NavPill } from '@/components/ui/NavPill';
+import { Providers } from '@/components/layout/Providers';
 
 const outfit = Outfit({
   variable: '--font-display',
@@ -60,9 +61,11 @@ export default async function LangLayout({ children, params }: Props) {
           Skip to content
         </a>
         <NextIntlClientProvider locale={lang} messages={messages}>
-          <ScrollProgress />
-          <NavPill />
-          {children}
+          <Providers>
+            <ScrollProgress />
+            <NavPill />
+            {children}
+          </Providers>
         </NextIntlClientProvider>
       </body>
     </html>
