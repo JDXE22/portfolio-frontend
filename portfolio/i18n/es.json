@@ -1,7 +1,7 @@
 {
   "hero": {
     "title": "La Historia Detrás De Cada Código",
-    "subtitle": "Bienvenido al Portafolio de David",
+    "subtitle": "Desarrollador — backend sólido, frontend fluido.",
     "nav": "Inicio",
     "buttons": {
       "projects": "Proyectos",
@@ -13,7 +13,7 @@
     "sectionTitle": "Sobre Mí",
     "noData": "Información no disponible.",
     "headline": "Lo sé, lo sé, ya has escuchado esto antes, pero repasémoslo de nuevo...",
-    "bio": "Hola, soy David Esparza, un apasionado desarrollador Full-Stack con un fuerte enfoque en construir backends confiables y eficientes, pero no te dejes engañar: también disfruto creando experiencias front-end fluidas. Con habilidad para resolver problemas y amor por las buenas prácticas de código, disfruto convertir desafíos complejos en soluciones elegantes. Cuando no estoy programando, puedes encontrarme entrenando o mejorando mis habilidades técnicas para mantenerme a la vanguardia en este mundo tecnológico en constante evolución. ¡Conectemos y creemos algo increíble juntos!",
+    "bio": "Hola, soy David Esparza — un desarrollador con fuerte enfoque en backend, pero igual de cómodo en el frontend. Me importa escribir código limpio y construir cosas que realmente funcionen bien. Cuando no estoy programando, estoy entrenando o afilando mis habilidades. Si crees que podríamos trabajar bien juntos, hablemos.",
     "skillsList": [
       "Trabajo en equipo",
       "Resolución de problemas",
@@ -44,11 +44,11 @@
       "vets4pets": "VetsForPets es una innovadora plataforma web diseñada para conectar a dueños de mascotas con veterinarios cercanos. La aplicación simplifica el cuidado de las mascotas permitiendo a los usuarios registrar a sus mascotas, encontrar servicios veterinarios usando un mapa interactivo, agendar citas y acceder a asistencia de emergencia. Los usuarios también pueden beneficiarse de un sistema de recompensas que ofrece descuentos en consultas médicas, vacunas y servicios de cuidado.",
       "commander": "Commander es un generador de fragmentos de texto ligero y basado en comandos, construido con Node.js, Express y MongoDB. Permite mapear entradas de comandos específicas (como /hi1) a respuestas de texto predefinidas, lo que lo hace ideal para equipos de soporte, automatización o escenarios de respuesta rápida."
     },
-    "liveSite": "Url en vivo",
+    "liveSite": "Ver sitio",
     "descriptionTitle": "Descripción del Proyecto",
     "techStackTitle": "Tecnologías",
     "moreInfo": "Más información",
-    "empty": "[]",
+    "empty": "Aún no hay proyectos. Vuelve pronto.",
     "carousel": {
       "previous": "Proyecto anterior",
       "next": "Siguiente proyecto",
@@ -74,7 +74,7 @@
   },
   "contact": {
     "sectionTitle": "Contáctame",
-    "subtitle": "No dudes en contactarme por cualquiera de estos canales — siempre estoy abierto a nuevas oportunidades y conversaciones.",
+    "subtitle": "Abierto a nuevas oportunidades y conversaciones interesantes. Elige un canal.",
     "links": {
       "email": { "label": "Escríbeme", "sublabel": "Respuesta rápida" },
       "linkedin": { "label": "LinkedIn", "sublabel": "Conectemos" },

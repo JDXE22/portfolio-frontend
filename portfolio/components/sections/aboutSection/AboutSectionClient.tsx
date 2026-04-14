@@ -51,7 +51,7 @@ export default function AboutSectionClient({ items }: { items: AboutInfo[] }) {
   }
 
   return (
-    <div className='mx-auto max-w-6xl space-y-8 px-0'>
+    <div className='w-full space-y-8'>
       {items.map((info) => (
         <React.Fragment key={info.headline}>
           {/* Bio*/}
