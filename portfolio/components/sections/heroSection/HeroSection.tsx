@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { useTranslations } from 'next-intl';
+import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { Section } from '@/components/layout/Section';
 import { useRouter, useParams } from 'next/navigation';
@@ -70,14 +71,26 @@ export function HeroSection() {
         />
 
         <div className='relative z-10 mx-auto flex max-w-5xl flex-col items-center text-center group'>
-          <h1 className='text-balance text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-malibu-50 font-display transition-colors duration-200'>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className='text-balance text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-malibu-50 font-display'>
             {t('title')}
-          </h1>
-          <p className='mt-6 max-w-2xl text-lg text-malibu-200 sm:text-xl transition-colors duration-200'>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.15 }}
+            className='mt-6 max-w-2xl text-lg text-malibu-200 sm:text-xl'>
             {t('subtitle')}
-          </p>
+          </motion.p>
 
-          <div className='mt-10 flex flex-wrap items-center justify-center gap-4 group'>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.3 }}
+            className='mt-10 flex flex-wrap items-center justify-center gap-4 group'>
             <Button
               variant='secondary'
               size='sm'
@@ -102,7 +115,7 @@ export function HeroSection() {
               aria-label='Jump to Contact'>
               <span className='btn-content'>{t('buttons.contact')}</span>
             </Button>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
