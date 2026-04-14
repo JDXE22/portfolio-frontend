@@ -27,7 +27,7 @@ export function HeroSection() {
       className='relative isolate min-h-[100dvh] w-full overflow-hidden'>
       <header className='absolute top-4 right-4 z-50'>
         <div
-          className='flex items-center rounded-lg bg-foreground/6 backdrop-blur-md px-2 py-1 shadow-md'
+          className='flex items-center rounded-lg bg-background/90 px-2 py-1 shadow-md'
           aria-label='Site header'>
           <div
             role='group'
