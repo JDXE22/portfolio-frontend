@@ -42,7 +42,7 @@ export function NavPill() {
           ? 'opacity-100 translate-x-0'
           : 'opacity-0 translate-x-4 pointer-events-none'
       }`}>
-      <div className='flex flex-col items-center rounded-full border border-foreground/10 bg-background/90 px-1 py-2 shadow-sm'>
+      <div className='flex flex-col items-center gap-1 rounded-full border border-foreground/10 bg-background/90 px-1 py-3 shadow-sm'>
         {SECTIONS.map(({ id, labelKey }) => {
           const isActive = active === id;
           return (
@@ -66,15 +66,12 @@ export function NavPill() {
               </span>
               {/* Dot */}
               <span
-                className={`
-                  block rounded-full transition-all duration-300
-                  ${
-                    isActive
-                      ? 'h-2.5 w-2.5 bg-malibu-400'
-                      : 'h-1.5 w-1.5 bg-foreground/50 group-hover:h-2 group-hover:w-2 group-hover:bg-malibu-400/70'
-                  }
-                `}
-              />
+                aria-hidden='true'
+                className={`select-none text-base leading-none transition-all duration-300 ${
+                  isActive ? 'text-malibu-400' : 'text-malibu-500'
+                }`}>
+                {isActive ? '●' : '○'}
+              </span>
             </button>
           );
         })}

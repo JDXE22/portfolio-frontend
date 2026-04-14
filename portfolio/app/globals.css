@@ -170,7 +170,25 @@ body {
   transform: scaleX(1);
 }
 
+.nav-dot {
+  display: block;
+  border-radius: 9999px;
+  transition: all 0.3s;
+  width: 7px;
+  height: 7px;
+  background: rgba(79, 175, 225, 0.3);
+  box-shadow: 0 0 0 1.5px rgba(79, 175, 225, 0.5);
+}
+
+.nav-dot-active {
+  width: 10px;
+  height: 10px;
+  background: var(--color-malibu-400);
+  box-shadow: 0 0 6px 2px rgba(79, 175, 225, 0.4);
+}
+
 .lang-toggle {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -186,9 +204,11 @@ body {
   position: absolute;
   top: 4px;
   left: 4px;
-  width: calc(50% - 8px);
+  width: calc(50% - 6px);
   height: calc(100% - 8px);
   border-radius: 8px;
+  background: rgba(79, 175, 225, 0.14);
+  border: 1px solid rgba(79, 175, 225, 0.2);
   transform-origin: left;
   transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: none;
@@ -198,7 +218,7 @@ body {
   transform: translateX(0%);
 }
 .lang-toggle-pill.es {
-  transform: translateX(100%);
+  transform: translateX(calc(100% + 4px));
 }
 
 .lang-toggle-btn {
