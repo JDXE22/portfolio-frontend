@@ -68,7 +68,7 @@ export default function AboutSectionClient({ items }: { items: AboutInfo[] }) {
               </div>
 
               {/* Download CV */}
-              <div className='flex justify-center'>
+              <div className='flex'>
                 <a
                   href={cvPath}
                   download={cvFileName}
