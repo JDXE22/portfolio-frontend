@@ -35,7 +35,13 @@
     "Foundational": "Fundacional",
     "Intermediate": "Intermedio",
     "Advanced": "Avanzado",
-    "Expert": "Experto"
+    "Expert": "Experto",
+    "levelDesc": {
+      "Foundational": "Construyendo conocimiento base",
+      "Intermediate": "Trabaja de forma autónoma",
+      "Advanced": "Experiencia profunda, diseña soluciones",
+      "Expert": "Dominio completo, puede liderar"
+    }
   },
   "projects": {
     "sectionTitle": "Proyectos",

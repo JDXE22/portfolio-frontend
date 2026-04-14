@@ -33,7 +33,13 @@
     "Foundational": "Foundational",
     "Intermediate": "Intermediate",
     "Advanced": "Advanced",
-    "Expert": "Expert"
+    "Expert": "Expert",
+    "levelDesc": {
+      "Foundational": "Building core knowledge",
+      "Intermediate": "Works independently on most tasks",
+      "Advanced": "Deep expertise, can architect solutions",
+      "Expert": "Full mastery, can teach and lead"
+    }
   },
   "projects": {
     "sectionTitle": "Projects",
