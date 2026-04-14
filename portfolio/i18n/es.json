@@ -13,7 +13,7 @@
     "sectionTitle": "Sobre Mí",
     "noData": "Información no disponible.",
     "headline": "Lo sé, lo sé, ya has escuchado esto antes, pero repasémoslo de nuevo...",
-    "bio": "Hola, soy David Esparza — un desarrollador con fuerte enfoque en backend, pero igual de cómodo en el frontend. Me importa escribir código limpio y construir cosas que realmente funcionen bien. Cuando no estoy programando, estoy entrenando o afilando mis habilidades. Si crees que podríamos trabajar bien juntos, hablemos.",
+    "bio": "Hola, soy David Esparza, desarrollador enfocado en backend, con experiencia construyendo interfaces frontend fluidas y funcionales. Me especializo en escribir código limpio, escalable y en crear soluciones que realmente funcionan en entornos reales. Siempre estoy en proceso de mejora continua, ya sea programando o desarrollando disciplina fuera del entorno técnico. Si crees que podemos aportar valor juntos, conversemos.",
     "skillsList": [
       "Trabajo en equipo",
       "Resolución de problemas",
@@ -37,10 +37,10 @@
     "Advanced": "Avanzado",
     "Expert": "Experto",
     "levelDesc": {
-      "Foundational": "Construyendo conocimiento base",
-      "Intermediate": "Trabaja de forma autónoma",
-      "Advanced": "Experiencia profunda, diseña soluciones",
-      "Expert": "Dominio completo, puede liderar"
+      "Foundational": "Construyendo bases sólidas y adquiriendo experiencia práctica",
+      "Intermediate": "Trabaja de forma autónoma y resuelve problemas de manera efectiva",
+      "Advanced": "Cuenta con experiencia profunda y diseña soluciones escalables",
+      "Expert": "Dominio completo, lidera proyectos y toma decisiones técnicas"
     }
   },
   "projects": {
@@ -80,7 +80,7 @@
   },
   "contact": {
     "sectionTitle": "Contáctame",
-    "subtitle": "Abierto a nuevas oportunidades y conversaciones interesantes. Elige un canal.",
+    "subtitle": "¿Tienes algo en mente? Estoy abierto a nuevas oportunidades. Elige el canal y hablemos.",
     "links": {
       "email": { "label": "Escríbeme", "sublabel": "Respuesta rápida" },
       "linkedin": { "label": "LinkedIn", "sublabel": "Conectemos" },
