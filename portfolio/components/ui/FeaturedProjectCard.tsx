@@ -182,7 +182,7 @@ export const FeaturedProjectCard = ({
               <div className='flex items-center justify-center gap-3 mb-2 opacity-50'>
                 <div className='h-px w-8 bg-malibu-500' />
                 <h4 className='text-white text-xs font-bold uppercase tracking-widest'>
-                  {t('descriptionTitle') || 'Details'}
+                  {t('descriptionTitle')}
                 </h4>
                 <div className='h-px w-8 bg-malibu-500' />
               </div>
