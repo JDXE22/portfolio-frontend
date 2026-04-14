@@ -25,9 +25,9 @@ export function Section({
 
   return (
     <section id={id} className={`w-full ${paddingClasses} ${className || ''}`}>
-      <div className={`mx-auto flex flex-col ${heightClass}`}>
+      <div className={`mx-auto w-full max-w-6xl flex flex-col ${heightClass}`}>
         {title && (
-          <header className={`mb-10`}>
+          <header className={`mb-12`}>
             <h2
               className={`${alignmentClasses} text-headline font-display`}>
               {title}
