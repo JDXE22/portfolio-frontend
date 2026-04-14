@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import { useTranslations, useLocale } from 'next-intl';
 import { AboutInfo, KnowledgeLevel } from '@/types/about.types';
 import {
@@ -54,9 +55,14 @@ export default function AboutSectionClient({ items }: { items: AboutInfo[] }) {
     <div className='w-full space-y-8'>
       {items.map((info) => (
         <React.Fragment key={info.headline}>
-          {/* Bio*/}
+          {/* Bio */}
           <div className='grid grid-cols-1 items-start gap-10 md:grid-cols-5'>
-            <div className='flex flex-col gap-8 md:col-span-3'>
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.55, ease: 'easeOut' }}
+              className='flex flex-col gap-8 md:col-span-3'>
               <div className='relative pl-5'>
                 <div className='absolute left-0 top-0 h-full w-[3px] rounded-full bg-gradient-to-b from-malibu-400 via-malibu-600 to-transparent' />
                 <h3 className='text-display mb-5 text-foreground'>
@@ -86,11 +92,16 @@ export default function AboutSectionClient({ items }: { items: AboutInfo[] }) {
                   {t('downloadCV')}
                 </a>
               </div>
-            </div>
+            </motion.div>
 
             {/* Portrait */}
             {info.avatarIconUrl && (
-              <div className='order-first md:col-span-2 md:order-last'>
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.55, ease: 'easeOut', delay: 0.15 }}
+                className='order-first md:col-span-2 md:order-last'>
                 <div className='relative mx-auto aspect-[3/4] w-full max-w-[260px] md:max-w-none'>
                   <Image
                     src={info.avatarIconUrl}
@@ -101,15 +112,20 @@ export default function AboutSectionClient({ items }: { items: AboutInfo[] }) {
                     className='rounded-2xl object-cover object-top shadow-xl ring-1 ring-white/[0.08]'
                   />
                 </div>
-              </div>
+              </motion.div>
             )}
           </div>
 
-          {/* ── Skills row  */}
+          {/* Skills row */}
           <div className='grid grid-cols-1 gap-6 md:grid-cols-2'>
             {/* Soft skills */}
             {softSkills.length > 0 && (
-              <div className='section-card p-6'>
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.5, ease: 'easeOut' }}
+                className='section-card p-6'>
                 <h4 className='text-title mb-6 text-foreground/90'>
                   {t('softSkills')}
                 </h4>
@@ -134,12 +150,17 @@ export default function AboutSectionClient({ items }: { items: AboutInfo[] }) {
                     </span>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             )}
 
-            {/* Technical skills — qualitative level indicators */}
+            {/* Technical skills */}
             {info.techSkills && info.techSkills.length > 0 && (
-              <div className='section-card p-6'>
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }}
+                className='section-card p-6'>
                 <h4 className='text-title mb-6 text-foreground/90'>
                   {t('techSkills')}
                 </h4>
@@ -168,16 +189,30 @@ export default function AboutSectionClient({ items }: { items: AboutInfo[] }) {
                               />
                             ))}
                           </div>
-                          <span
-                            className={`min-w-[5rem] text-right text-xs font-medium sm:min-w-[5.5rem] ${knowledgeLevelTextColor(level)}`}>
-                            {t(skill.level)}
+                          {/* Level label with tooltip */}
+                          <span className='group/lvl relative min-w-[5rem] cursor-default text-right sm:min-w-[5.5rem]'>
+                            <span
+                              className={`text-xs font-medium ${knowledgeLevelTextColor(level)}`}>
+                              {t(skill.level)}
+                            </span>
+                            <span className='
+                              pointer-events-none absolute right-full top-1/2 mr-2.5 -translate-y-1/2
+                              whitespace-nowrap rounded-md border border-foreground/10
+                              bg-background/95 px-2.5 py-1
+                              text-[11px] font-normal text-foreground/70
+                              opacity-0 translate-x-1
+                              transition-all duration-200
+                              group-hover/lvl:opacity-100 group-hover/lvl:translate-x-0
+                            '>
+                              {t(`levelDesc.${skill.level}` as Parameters<typeof t>[0])}
+                            </span>
                           </span>
                         </div>
                       </div>
                     );
                   })}
                 </div>
-              </div>
+              </motion.div>
             )}
           </div>
         </React.Fragment>
