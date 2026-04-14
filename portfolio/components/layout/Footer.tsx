@@ -7,7 +7,7 @@ export default function Footer() {
 
   return (
     <footer className='w-full border-t border-malibu-800/20 px-6 py-8'>
-      <div className='mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 sm:flex-row'>
+      <div className='mx-auto flex max-w-6xl w-full flex-col items-center justify-between gap-4 sm:flex-row'>
         <p className='text-xs font-medium tracking-wide text-foreground/40'>
           {t('rights', { year })}
         </p>
