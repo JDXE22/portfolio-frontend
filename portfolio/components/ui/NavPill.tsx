@@ -42,7 +42,7 @@ export function NavPill() {
           ? 'opacity-100 translate-x-0'
           : 'opacity-0 translate-x-4 pointer-events-none'
       }`}>
-      <div className='flex flex-col items-center rounded-full border border-foreground/10 bg-background/75 px-1 py-2 shadow-sm backdrop-blur-md'>
+      <div className='flex flex-col items-center rounded-full border border-foreground/10 bg-background/90 px-1 py-2 shadow-sm'>
         {SECTIONS.map(({ id, labelKey }) => {
           const isActive = active === id;
           return (
@@ -57,7 +57,7 @@ export function NavPill() {
                 className='
                   pointer-events-none absolute right-full mr-3 whitespace-nowrap
                   rounded-md border border-foreground/10 bg-background/90 px-2.5 py-1
-                  text-xs font-medium text-foreground/80 shadow-sm backdrop-blur-sm
+                  text-xs font-medium text-foreground/80 shadow-sm
                   opacity-0 translate-x-1
                   transition-all duration-200
                   group-hover:opacity-100 group-hover:translate-x-0
