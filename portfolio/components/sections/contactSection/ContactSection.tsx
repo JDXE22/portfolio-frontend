@@ -1,9 +1,22 @@
 'use client';
+import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { motion } from 'framer-motion';
 import { Section } from '@/components/layout/Section';
 
 export default function ContactSection() {
   const dictionary = useTranslations('contact');
+  const [discordCopied, setDiscordCopied] = useState(false);
+
+  const handleCopyDiscord = async () => {
+    try {
+      await navigator.clipboard.writeText('juandavid_35956');
+      setDiscordCopied(true);
+      setTimeout(() => setDiscordCopied(false), 2000);
+    } catch {
+      // clipboard API unavailable — fail silently
+    }
+  };
 
   return (
     <Section id='contact' title={dictionary('sectionTitle')} align='center'>
@@ -12,9 +25,13 @@ export default function ContactSection() {
       </p>
 
       {/* Primary contact — email, full-width row */}
-      <a
+      <motion.a
         href='mailto:davidesparzaj22@gmail.com'
         aria-label='Email David Esparza'
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-40px' }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
         className='group mb-4 flex w-full flex-col items-center justify-center gap-2 section-card rounded-xl px-6 py-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-malibu-400/40'>
         <div className='flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-malibu-700/30 transition-colors group-hover:bg-malibu-600/40'>
           <svg
@@ -37,16 +54,20 @@ export default function ContactSection() {
           </p>
           <p className='text-sm text-malibu-300'>davidesparzaj22@gmail.com</p>
         </div>
-      </a>
+      </motion.a>
 
       {/* Secondary contacts — compact 3-column row */}
       <div className='grid grid-cols-1 gap-3 sm:grid-cols-3'>
         {/* LinkedIn */}
-        <a
+        <motion.a
           href='https://www.linkedin.com/in/juan-david-esparza-castillo/'
           target='_blank'
           rel='noopener noreferrer'
           aria-label='LinkedIn profile (opens in new tab)'
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.5, ease: 'easeOut', delay: 0.08 }}
           className='group flex flex-col items-center justify-center gap-2 section-card rounded-xl px-4 py-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-malibu-400/40'>
           <div className='flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-malibu-700/30 transition-colors group-hover:bg-malibu-600/40'>
             <svg
@@ -65,14 +86,18 @@ export default function ContactSection() {
               {dictionary('links.linkedin.sublabel')}
             </p>
           </div>
-        </a>
+        </motion.a>
 
         {/* GitHub */}
-        <a
+        <motion.a
           href='https://github.com/JDXE22'
           target='_blank'
           rel='noopener noreferrer'
           aria-label='GitHub profile (opens in new tab)'
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.5, ease: 'easeOut', delay: 0.16 }}
           className='group flex flex-col items-center justify-center gap-2 section-card rounded-xl px-4 py-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-malibu-400/40'>
           <div className='flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-malibu-700/30 transition-colors group-hover:bg-malibu-600/40'>
             <svg
@@ -91,11 +116,19 @@ export default function ContactSection() {
               {dictionary('links.github.sublabel')}
             </p>
           </div>
-        </a>
+        </motion.a>
 
-        {/* Discord */}
-        <div className='flex flex-col items-center justify-center gap-2 section-card rounded-xl px-4 py-4'>
-          <div className='flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-malibu-700/30'>
+        {/* Discord — click to copy username */}
+        <motion.button
+          type='button'
+          onClick={handleCopyDiscord}
+          aria-label='Copy Discord username juandavid_35956'
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.5, ease: 'easeOut', delay: 0.24 }}
+          className='group flex w-full flex-col items-center justify-center gap-2 section-card rounded-xl px-4 py-4 cursor-pointer transition-all duration-200 hover:-translate-y-0.5 hover:border-malibu-400/40'>
+          <div className='flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-malibu-700/30 transition-colors group-hover:bg-malibu-600/40'>
             <svg
               aria-hidden='true'
               className='h-4 w-4 text-malibu-400'
@@ -108,11 +141,11 @@ export default function ContactSection() {
             <p className='text-sm font-medium text-foreground'>
               {dictionary('links.discord.label')}
             </p>
-            <p className='font-mono text-xs text-foreground/50'>
-              juandavid_35956
+            <p className={`font-mono text-xs transition-colors duration-200 ${discordCopied ? 'text-malibu-400' : 'text-foreground/50'}`}>
+              {discordCopied ? '✓ Copied!' : 'juandavid_35956'}
             </p>
           </div>
-        </div>
+        </motion.button>
       </div>
     </Section>
   );

@@ -196,11 +196,11 @@ export default function AboutSectionClient({ items }: { items: AboutInfo[] }) {
                               {t(skill.level)}
                             </span>
                             <span className='
-                              pointer-events-none absolute right-full top-1/2 mr-2.5 -translate-y-1/2
+                              pointer-events-none absolute left-full top-1/2 ml-2.5 -translate-y-1/2
                               whitespace-nowrap rounded-md border border-foreground/10
                               bg-background/95 px-2.5 py-1
                               text-[11px] font-normal text-foreground/70
-                              opacity-0 translate-x-1
+                              opacity-0 -translate-x-1
                               transition-all duration-200
                               group-hover/lvl:opacity-100 group-hover/lvl:translate-x-0
                             '>
