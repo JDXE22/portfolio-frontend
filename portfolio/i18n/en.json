@@ -1,7 +1,7 @@
 {
   "hero": {
     "title": "Behind Every Code, There's a Story",
-    "subtitle": "Welcome to David's Portfolio",
+    "subtitle": "Full-Stack Developer — backend-focused, frontend-capable.",
     "nav": "Home",
     "buttons": {
       "projects": "Projects",
@@ -13,8 +13,7 @@
     "sectionTitle": "About Me",
     "noData": "No information available.",
     "headline": "I know, I know you have heard this before, but let's go over it again...",
-    "bio": "Hi there, I'm David Esparza, a passionate Full-Stack Developer with a strong focus on building reliable and efficient backends, but don't be fooled- I also enjoy crafting seamless front-end experiences. With a knack for problem-solving and a love for clean code practices, I enjoy turning complex challenges into elegant solutions. When I'm not coding, you can find me training or improving my technical skills to stay ahead in this ever-evolving tech world. Let's connect and create something amazing together!",
-    "skills": "Skills",
+    "bio": "Hi, I'm David Esparza — a developer with a strong focus on backends, but equally comfortable on the frontend. I care about clean code and building things that actually work well. When I'm not coding, I'm training or keeping my skills sharp. If you think we'd work well together, let's talk.",
     "skillsList": [
       "Team Player",
       "Problem Solver",
@@ -24,7 +23,6 @@
     ],
     "techSkills": "Technical Skills",
     "softSkills": "Soft Skills",
-    "socialLinks": "Social Links",
     "downloadCV": "Download CV",
     "Frontend": "Frontend",
     "Backend": "Backend",
@@ -35,7 +33,13 @@
     "Foundational": "Foundational",
     "Intermediate": "Intermediate",
     "Advanced": "Advanced",
-    "Expert": "Expert"
+    "Expert": "Expert",
+    "levelDesc": {
+      "Foundational": "Building core knowledge",
+      "Intermediate": "Works independently on most tasks",
+      "Advanced": "Deep expertise, can architect solutions",
+      "Expert": "Full mastery, can teach and lead"
+    }
   },
   "projects": {
     "sectionTitle": "Projects",
@@ -44,7 +48,7 @@
     "descriptionTitle": "Project Description",
     "techStackTitle": "Tech Stack",
     "moreInfo": "More Info",
-    "empty": "[]",
+    "empty": "No projects yet — check back soon.",
     "carousel": {
       "previous": "Previous project",
       "next": "Next project",
@@ -74,7 +78,7 @@
   },
   "contact": {
     "sectionTitle": "Contact Me",
-    "subtitle": "Feel free to reach out through any of these channels — I'm always open to new opportunities and conversations.",
+    "subtitle": "Open to new opportunities and interesting conversations. Pick a channel below.",
     "links": {
       "email": { "label": "Email Me", "sublabel": "Quick response" },
       "linkedin": { "label": "LinkedIn", "sublabel": "Let's connect" },

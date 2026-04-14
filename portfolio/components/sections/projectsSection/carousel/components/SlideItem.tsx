@@ -18,7 +18,7 @@ export const SlideItem = memo(function SlideItem({
         opacity: isCurrent ? 1 : 0.42,
         transform: isCurrent ? 'scale(1)' : 'scale(0.95)',
         transition: 'opacity 0.35s ease, transform 0.35s ease',
-        willChange: 'transform, opacity',
+        willChange: isCurrent ? 'transform, opacity' : 'auto',
       }}>
       {slide.type === 'project' ? (
         <ProjectSlide project={slide.data} index={index} />

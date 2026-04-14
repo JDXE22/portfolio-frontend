@@ -23,9 +23,8 @@ export function ProjectSlide({ project, index }: ProjectSlideProps) {
     <div
       data-testid='project-card'
       /* Explicit height prevents CLS — fixed dimension so the carousel track
-         never shifts layout between slides. Taller than wide = portrait card. */
-      className='w-full'
-      style={{ height: '480px' }}>
+         never shifts layout between slides. */
+      className='h-[480px] w-full'>
       <FeaturedProjectCard
         project={project}
         featured

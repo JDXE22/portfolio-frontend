@@ -13,23 +13,10 @@ export function ScrollProgress() {
     <div
       role='presentation'
       aria-hidden='true'
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        height: '4px',
-        background: 'rgba(255, 255, 255, 0.08)',
-        zIndex: 9999,
-      }}>
+      className='fixed inset-x-0 top-0 z-[9999] h-[3px] bg-white/5'>
       <motion.div
-        style={{
-          height: '100%',
-          background: 'linear-gradient(to right, #1977b0, #4fafe1, #1977b0)',
-          boxShadow: '0 0 8px rgba(79, 175, 225, 0.6)',
-          transformOrigin: 'left center',
-          scaleX,
-        }}
+        className='h-full bg-malibu-500'
+        style={{ transformOrigin: 'left center', scaleX }}
       />
     </div>
   );

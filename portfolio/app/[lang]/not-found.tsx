@@ -12,7 +12,7 @@ export default function NotFound() {
       id='main-content'
       tabIndex={-1}
       className='flex min-h-screen flex-col items-center justify-center px-6 text-center'>
-      <p className='text-8xl font-extrabold text-malibu-400'>404</p>
+      <p className='text-8xl font-bold text-malibu-400 font-display'>404</p>
       <h1 className='mt-4 text-2xl font-semibold text-foreground'>
         {t('title')}
       </h1>

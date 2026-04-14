@@ -45,7 +45,7 @@ export default function TechnologiesSectionClient({
   return (
     <div className='space-y-8'>
       {/* Section heading */}
-      <h2 className='text-headline text-center text-foreground'>
+      <h2 className='text-headline font-display text-center text-foreground'>
         {t('sectionTitle')}
       </h2>
 

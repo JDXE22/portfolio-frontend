@@ -104,11 +104,12 @@ export function ProjectCarousel({ slides }: ProjectCarouselProps) {
           {slides.map((_, i) => (
             <button
               key={i}
+              tabIndex={-1}
               onClick={() => setCurrentIndex(i)}
               aria-label={`Go to slide ${i + 1}`}
               aria-current={i === currentIndex ? 'true' : undefined}
-              style={{ outline: 'none' }}
               className={[
+                'outline-none',
                 'rounded-full transition-all duration-300',
                 i === currentIndex
                   ? 'w-5 h-2 bg-malibu-400'

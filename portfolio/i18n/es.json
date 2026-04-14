@@ -1,7 +1,7 @@
 {
   "hero": {
     "title": "La Historia Detrás De Cada Código",
-    "subtitle": "Bienvenido al Portafolio de David",
+    "subtitle": "Desarrollador — backend sólido, frontend fluido.",
     "nav": "Inicio",
     "buttons": {
       "projects": "Proyectos",
@@ -13,7 +13,7 @@
     "sectionTitle": "Sobre Mí",
     "noData": "Información no disponible.",
     "headline": "Lo sé, lo sé, ya has escuchado esto antes, pero repasémoslo de nuevo...",
-    "bio": "Hola, soy David Esparza, un apasionado desarrollador Full-Stack con un fuerte enfoque en construir backends confiables y eficientes, pero no te dejes engañar: también disfruto creando experiencias front-end fluidas. Con habilidad para resolver problemas y amor por las buenas prácticas de código, disfruto convertir desafíos complejos en soluciones elegantes. Cuando no estoy programando, puedes encontrarme entrenando o mejorando mis habilidades técnicas para mantenerme a la vanguardia en este mundo tecnológico en constante evolución. ¡Conectemos y creemos algo increíble juntos!",
+    "bio": "Hola, soy David Esparza, desarrollador enfocado en backend, con experiencia construyendo interfaces frontend fluidas y funcionales. Me especializo en escribir código limpio, escalable y en crear soluciones que realmente funcionan en entornos reales. Siempre estoy en proceso de mejora continua, ya sea programando o desarrollando disciplina fuera del entorno técnico. Si crees que podemos aportar valor juntos, conversemos.",
     "skillsList": [
       "Trabajo en equipo",
       "Resolución de problemas",
@@ -35,7 +35,13 @@
     "Foundational": "Fundacional",
     "Intermediate": "Intermedio",
     "Advanced": "Avanzado",
-    "Expert": "Experto"
+    "Expert": "Experto",
+    "levelDesc": {
+      "Foundational": "Construyendo bases sólidas y adquiriendo experiencia práctica",
+      "Intermediate": "Trabaja de forma autónoma y resuelve problemas de manera efectiva",
+      "Advanced": "Cuenta con experiencia profunda y diseña soluciones escalables",
+      "Expert": "Dominio completo, lidera proyectos y toma decisiones técnicas"
+    }
   },
   "projects": {
     "sectionTitle": "Proyectos",
@@ -44,11 +50,11 @@
       "vets4pets": "VetsForPets es una innovadora plataforma web diseñada para conectar a dueños de mascotas con veterinarios cercanos. La aplicación simplifica el cuidado de las mascotas permitiendo a los usuarios registrar a sus mascotas, encontrar servicios veterinarios usando un mapa interactivo, agendar citas y acceder a asistencia de emergencia. Los usuarios también pueden beneficiarse de un sistema de recompensas que ofrece descuentos en consultas médicas, vacunas y servicios de cuidado.",
       "commander": "Commander es un generador de fragmentos de texto ligero y basado en comandos, construido con Node.js, Express y MongoDB. Permite mapear entradas de comandos específicas (como /hi1) a respuestas de texto predefinidas, lo que lo hace ideal para equipos de soporte, automatización o escenarios de respuesta rápida."
     },
-    "liveSite": "Url en vivo",
+    "liveSite": "Ver sitio",
     "descriptionTitle": "Descripción del Proyecto",
     "techStackTitle": "Tecnologías",
     "moreInfo": "Más información",
-    "empty": "[]",
+    "empty": "Aún no hay proyectos. Vuelve pronto.",
     "carousel": {
       "previous": "Proyecto anterior",
       "next": "Siguiente proyecto",
@@ -74,7 +80,7 @@
   },
   "contact": {
     "sectionTitle": "Contáctame",
-    "subtitle": "No dudes en contactarme por cualquiera de estos canales — siempre estoy abierto a nuevas oportunidades y conversaciones.",
+    "subtitle": "¿Tienes algo en mente? Estoy abierto a nuevas oportunidades. Elige el canal y hablemos.",
     "links": {
       "email": { "label": "Escríbeme", "sublabel": "Respuesta rápida" },
       "linkedin": { "label": "LinkedIn", "sublabel": "Conectemos" },

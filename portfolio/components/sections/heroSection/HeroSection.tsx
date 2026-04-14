@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { useTranslations } from 'next-intl';
+import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/Button';
 import { Section } from '@/components/layout/Section';
 import { useRouter, useParams } from 'next/navigation';
@@ -26,7 +27,7 @@ export function HeroSection() {
       className='relative isolate min-h-[100dvh] w-full overflow-hidden'>
       <header className='absolute top-4 right-4 z-50'>
         <div
-          className='flex items-center rounded-lg bg-foreground/6 backdrop-blur-md px-2 py-1 shadow-md'
+          className='flex items-center rounded-lg bg-background/90 px-2 py-1 shadow-md'
           aria-label='Site header'>
           <div
             role='group'
@@ -70,14 +71,26 @@ export function HeroSection() {
         />
 
         <div className='relative z-10 mx-auto flex max-w-5xl flex-col items-center text-center group'>
-          <h1 className='text-balance text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-malibu-50 transition-colors duration-200'>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            className='text-balance text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl lg:text-7xl text-malibu-50 font-display'>
             {t('title')}
-          </h1>
-          <p className='mt-6 max-w-2xl text-lg text-malibu-200 sm:text-xl transition-colors duration-200'>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.15 }}
+            className='mt-6 max-w-2xl text-lg text-malibu-200 sm:text-xl'>
             {t('subtitle')}
-          </p>
+          </motion.p>
 
-          <div className='mt-10 flex flex-wrap items-center justify-center gap-4 group'>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.3 }}
+            className='mt-10 flex flex-wrap items-center justify-center gap-4 group'>
             <Button
               variant='secondary'
               size='sm'
@@ -102,7 +115,7 @@ export function HeroSection() {
               aria-label='Jump to Contact'>
               <span className='btn-content'>{t('buttons.contact')}</span>
             </Button>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
