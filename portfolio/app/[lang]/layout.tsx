@@ -24,12 +24,16 @@ const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://davidesparza.dev';
 
 type Props = {
   children: React.ReactNode;
-  params: Promise<{ lang: 'en' | 'es' }>;
+  params: Promise<{ lang: string }>;
 };
+
+export async function generateStaticParams() {
+  return [{ lang: 'en' }, { lang: 'es' }];
+}
 
 export default async function LangLayout({ children, params }: Props) {
   const { lang } = await params;
-  const messages = (await import(`../../i18n/${lang}.json`)).default;
+  const messages = (await import(`../../i18n/${lang as 'en' | 'es'}.json`)).default;
 
   const jsonLd = {
     '@context': 'https://schema.org',
