@@ -80,7 +80,7 @@ export const FeaturedProjectCard = ({
           )}
         </div>
 
-        <div className='flex flex-wrap gap-2 opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100'>
+        <div className='flex flex-wrap gap-2 opacity-100 [@media(hover:hover)]:opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100'>
           {project.techStack?.slice(0, featured ? 5 : 3).map((tech, i) => (
             <span
               key={i}
@@ -90,11 +90,11 @@ export const FeaturedProjectCard = ({
           ))}
         </div>
 
-        <p className='text-white/80 text-sm sm:text-base line-clamp-2 opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200'>
+        <p className='text-white/80 text-sm sm:text-base line-clamp-2 opacity-100 [@media(hover:hover)]:opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200'>
           {t.has(`description.${project.slug}`) ? t(`description.${project.slug}`) : project.description}
         </p>
 
-        <div className='flex flex-wrap gap-4 pt-2 opacity-100 lg:opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-300'>
+        <div className='flex flex-wrap gap-4 pt-2 opacity-100 [@media(hover:hover)]:opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-300'>
           {project.liveUrl && (
             <a
               href={project.liveUrl}

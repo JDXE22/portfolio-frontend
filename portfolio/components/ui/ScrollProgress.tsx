@@ -13,7 +13,7 @@ export function ScrollProgress() {
     <div
       role='presentation'
       aria-hidden='true'
-      className='fixed inset-x-0 top-0 z-[9999] h-[3px] bg-white/5'>
+      className='fixed inset-x-0 top-0 z-[9999] h-1 md:h-[3px] bg-white/5'>
       <motion.div
         className='h-full bg-malibu-500'
         style={{ transformOrigin: 'left center', scaleX }}

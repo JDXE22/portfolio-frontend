@@ -68,7 +68,7 @@ export function NavPill() {
               <span
                 aria-hidden='true'
                 className={`select-none text-base leading-none transition-all duration-300 ${
-                  isActive ? 'text-malibu-400' : 'text-malibu-500'
+                  isActive ? 'text-malibu-400 scale-125' : 'text-malibu-500 hover:scale-110'
                 }`}>
                 {isActive ? '●' : '○'}
               </span>
